@@ -1,0 +1,237 @@
+:root {
+  /* Nova paleta de cores - Tema RPG */
+  --primary-dark: #0d1117;     /* Fundo escuro profundo */
+  --primary-blue: #132347;     /* Azul noturno */
+  --accent-blue: #1e3a8a;      /* Azul elétrico para destaques */
+  --light-blue: #3b82f6;       /* Azul brilhante */
+  --gold-accent: #d4af37;      /* Dourado para elementos nobres */
+  
+  /* Cores de texto */
+  --text-primary: #e5e7eb;     /* Branco suave */
+  --text-secondary: #9ca3af;   /* Cinza azulado */
+  
+  /* Cores de botão */
+  --button-primary: #1e40af;   /* Azul real */
+  --button-hover: #1e3a8a;     /* Azul mais escuro */
+  --button-text: #ffffff;      /* Branco puro */
+  
+  /* Cores de borda */
+  --border-color: #1e3a8a;     /* Azul escuro */
+  --border-gold: #d4af37;      /* Dourado para bordas especiais */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cinzel', 'Georgia', serif; /* Fonte medieval */
+    background: var(--primary-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: var(--text-primary);
+    background-image: radial-gradient(circle at center, var(--primary-blue) 0%, var(--primary-dark) 100%);
+}
+
+.container {
+    background: rgba(13, 17, 23, 0.8);
+    border-radius: 10px;
+    border: 1px solid var(--border-gold);
+    box-shadow: 0 0 20px rgba(30, 58, 138, 0.5), 
+                0 0 40px rgba(30, 58, 138, 0.3);
+    position: relative;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+    overflow: hidden;
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.sign-up-container {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.right-panel-active .sign-in-container {
+    transform: translateX(100%);
+}
+
+.container.right-panel-active .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+}
+
+form {
+    background: rgb(19, 35, 71);
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+}
+
+input {
+    background: rgba(13, 17, 23, 0.7);
+    border: 1px solid var(--light-blue);
+    color: var(--text-primary);
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    font-family: 'Cinzel', serif;
+    transition: all 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--gold-accent);
+    box-shadow: 0 0 5px var(--gold-accent);
+}
+
+button {
+    border: none;
+    padding: 12px 45px;
+    background-color: var(--button-primary);
+    color: var(--button-text);
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 58, 138, 0.4);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button.ghost {
+    background-color: transparent;
+    border: 1px solid var(--gold-accent);
+    color: var(--gold-accent);
+}
+
+button.ghost:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.container.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+.overlay {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+    color: var(--text-primary);
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+    border-left: 1px solid var(--border-gold);
+}
+
+.container.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+.overlay-panel {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transition: transform 0.6s ease-in-out;
+}
+
+.overlay-panel h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--gold-accent);
+}
+
+.overlay-left {
+    transform: translateX(-20%);
+}
+
+.overlay-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-left {
+    transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+    transform: translateX(20%);
+}
+
+/* Efeitos especiais RPG */
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    animation: pulse 15s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(10%, 10%);
+    }
+    100% {
+        transform: translate(-10%, -10%);
+    }
+}
