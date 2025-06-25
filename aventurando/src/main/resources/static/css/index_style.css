@@ -1,0 +1,232 @@
+:root {
+  /* Nova paleta de cores - Tema RPG */
+  --primary-dark: #0d1117;     /* Fundo escuro profundo */
+  --primary-blue: #132347;     /* Azul noturno */
+  --accent-blue: #1e3a8a;      /* Azul elétrico para destaques */
+  --light-blue: #3b82f6;       /* Azul brilhante */
+  --gold-accent: #d4af37;      /* Dourado para elementos nobres */
+  
+  /* Cores de texto */
+  --text-primary: #e5e7eb;     /* Branco suave */
+  --text-secondary: #9ca3af;   /* Cinza azulado */
+  
+  /* Cores de botão */
+  --button-primary: #1e40af;   /* Azul real */
+  --button-hover: #1e3a8a;     /* Azul mais escuro */
+  --button-text: #ffffff;      /* Branco puro */
+  
+  /* Cores de borda */
+  --border-color: #1e3a8a;     /* Azul escuro */
+  --border-gold: #d4af37;      /* Dourado para bordas especiais */
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--primary-dark);
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Cinzel', 'Georgia', serif;
+    color: var(--text-primary);
+}
+
+.question{
+    cursor: pointer;
+}
+.question:hover{
+    transform: scale(1.3) rotate(180deg);
+}
+
+.navbar{
+    background-color: var(--primary-blue);
+}
+
+.card img {
+  object-fit: cover;
+  height: 120px;
+}
+.carousel-item {
+  padding: 10px 0;
+}
+
+.personagem-card {
+    width: 12rem;
+    height: 20rem;
+    background-color: var(--primary-blue);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease;
+}
+
+.personagem-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3); /* light-blue */
+    cursor: pointer;
+}
+
+.personagem-card .card-img-top {
+    height: 110px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nome-personagem {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--gold-accent);
+}
+
+.infos {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-left: 5px;
+    line-height: 1.3;
+    color: var(--text-secondary);
+    
+}
+
+.card-footer i {
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.card-footer i:hover {
+    color: var(--light-blue);
+}
+
+
+
+/* ESTATISTICAS */
+.order-card {
+    color: #fff;
+}
+
+.bg-c-blue {
+    background: linear-gradient(45deg,#4099ff,#73b4ff);
+}
+
+.bg-c-green {
+    background: linear-gradient(45deg,#2ed8b6,#59e0c5);
+}
+
+.bg-c-yellow {
+    background: linear-gradient(45deg,#FFB64D,#ffcb80);
+}
+
+.bg-c-pink {
+    background: linear-gradient(45deg,#FF5370,#ff869a);
+}
+
+
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    border: none;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.card .card-block {
+    padding: 25px;
+}
+
+.order-card i {
+    font-size: 26px;
+}
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
+
+
+/* FAB */
+.fab-container {
+  position: fixed;
+  bottom: 60px;
+  right: 80px;
+  z-index: 1000;
+}
+
+.fab-main {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--accent-blue); /* Azul vibrante */
+  color: var(--button-text);
+  border: none;
+  font-size: 22px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.fab-main:hover {
+  background-color: var(--button-hover);
+}
+
+.fab-options {
+  position: absolute;
+  bottom: 70px;
+  right: 9px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;                /* ← sempre visível no DOM */
+  flex-direction: column;
+  gap: 10px;
+
+  opacity: 0;                   /* ← invisível por padrão */
+  visibility: hidden;
+  pointer-events: none;         /* ← não clicável */
+
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.fab-options {
+  transform: translateY(20px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.fab-options.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.fab-options button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--primary-blue); /* Azul noturno */
+  color: var(--gold-accent); /* Dourado nos ícones */
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.fab-options button:hover {
+  background-color: var(--accent-blue); /* Azul mais vibrante ao passar o mouse */
+  transform: scale(1.1);
+}
