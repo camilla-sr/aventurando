@@ -196,7 +196,7 @@ create table if not exists CLASSES(
 	classe				varchar(30) not null unique,
     descricao_classe	varchar(200) not null,
     habilidade_primaria	varchar(30) not null,
-    dvida				int unsigned not null,
+    dado_vida			int unsigned not null,
     p_armas_armad		varchar(200) not null,
     pt_resistencia		varchar(30) not null,		#Proficiência em Teste de Resistência
     
