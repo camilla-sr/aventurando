@@ -197,8 +197,8 @@ create table if not exists CLASSES(
     descricao_classe	varchar(200) not null,
     habilidade_primaria	varchar(30) not null,
     dado_vida			int unsigned not null,
-    p_armas_armad		varchar(200) not null,
-    pt_resistencia		varchar(30) not null,		#Proficiência em Teste de Resistência
+    p_armas_armaduras	varchar(200) not null,		#Proficiência em Armas e Armaduras
+    p_teste_resistencia	varchar(30) not null,		#Proficiência em Teste de Resistência
     
     constraint foreign key (dado_vida) references DADOS(id_dado)
 );
