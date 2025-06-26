@@ -82,12 +82,12 @@ create table if not exists JOGADOR(				# TELA 1
     i_classe			int unsigned,
     i_tendencia			int unsigned,
     i_antecedente		int unsigned,
-    pv					int default 10,		# Pontos de vida totais
-    pv_atual			int default 0,
-	pv_temp				int default 0,			# Pontos de vida temporários/não aparece, mas soma o pv
+    pontos_vida			int default 10,		# Pontos de vida totais
+    pontos_vida_atual	int default 0,
+	pontos_vida_temporaria	int default 0,			# Pontos de vida temporários/não aparece, mas soma o pv
     proficiencia		int default 0,
-    ca					int default 0,			# Somado CA da armadura com atributos e o bonus
-	ca_bonus			int default 0,
+    classe_armadura		int default 0,			# Somado CA da armadura com atributos e o bonus
+	classe_armadura_bonus int default 0,
     iniciativa			int default 0,			# Puxa Mod. Destreza
     iniciativa_bonus	int default 0,			# Incrementa Iniciativa acima
 	deslocamento		decimal(4,2) default 9.0,
@@ -95,7 +95,7 @@ create table if not exists JOGADOR(				# TELA 1
     deslocamento_agua	decimal(4,2) default 0.0,
     deslocamento_escalada decimal(4,2) default 0.0,
     deslocamento_voo	decimal(4,2) default 0.0,
-    percepcao_pass		int default 0,			# 10 + proeficiência percepção + mod. sabedoria
+    percepcao_passiva	int default 0,			# 10 + proeficiência percepção + mod. sabedoria
     
     # ATRIBUTOS
     forca				int default 0,
@@ -112,42 +112,42 @@ create table if not exists JOGADOR(				# TELA 1
     mod_car				int default 0,
     
     # PERÍCIAS
-    atletismo			int default 0,			#FORÇA
-    atle_valor			int default 0,	# Mod. atributo + bônus
-    acrobacia			int default 0,			#DESTREZA
-    acro_valor			int default 0,
+    atletismo_base		int default 0,			#FORÇA
+    atletismo			int default 0,	# Mod. atributo + bônus
+    acrobacia_base		int default 0,			#DESTREZA
+    acrobacia			int default 0,
+    furtividade_base	int default 0,
     furtividade			int default 0,
-    furt_valor			int default 0,
+    prestidigitacao_base	int default 0,
     prestidigitacao		int default 0,
-    prest_valor			int default 0,
-    arcanismo			int default 0,			#INTELIGÊNCIA
-    arca_valor			int default 0,
+    arcanismo_base		int default 0,			#INTELIGÊNCIA
+    arcanismo			int default 0,
+    historia_base		int default 0,
     historia			int default 0,
-    histo_valor			int default 0,
+    investigacao_base	int default 0,
     investigacao		int default 0,
-    inves_valor			int default 0,
+    natureza_base		int default 0,
     natureza			int default 0,
-    natu_valor			int default 0,
+    religiao_base		int default 0,
     religiao			int default 0,
-    reli_valor			int default 0,
-    intuicao			int default 0,			#SABEDORIA
-    intui_valor			int default 0,
-    lidar_Animais		int default 0,
-    lidar_valor			int default 0,
+    intuicao_base		int default 0,			#SABEDORIA
+    intuicao			int default 0,
+    lidar_animais_base	int default 0,
+    lidar_animais		int default 0,
+    medicina_base		int default 0,
     medicina			int default 0,
-    medi_valor			int default 0,
+    percepcao_base		int default 0,
     percepcao			int default 0,
-    perc_valor			int default 0,
+    sobrevivencia_base	int default 0,
     sobrevivencia		int default 0,
-    sobre_valor			int default 0,
-    atuacao				int default 0,			#CARISMA
-    atua_valor			int default 0,
+    atuacao_base		int default 0,			#CARISMA
+    atuacao				int default 0,
+    enganacao_base		int default 0,
     enganacao			int default 0,
-    enga_valor			int default 0,
+    intimidacao_base	int default 0,
     intimidacao			int default 0,
-    inti_valor			int default 0,
+    persuasao_base		int default 0,
     persuasao			int default 0,
-    persu_valor			int default 0,
     
     constraint foreign key (i_usuario) references USUARIO(id_usuario),
     constraint foreign key (i_raca) references RACAS(id_raca),
