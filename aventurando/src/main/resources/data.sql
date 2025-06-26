@@ -59,7 +59,7 @@ create table if not exists IDIOMAS(
     alfabeto			varchar(45) default ''
 );
 
-create table if not exists HAB_MAGIA(
+create table if not exists HABILIDADE_MAGIA(
 	id_habilidade		int unsigned auto_increment primary key,
     habilidade_chave	varchar(30) not null
 );
