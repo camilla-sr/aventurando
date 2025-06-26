@@ -200,7 +200,7 @@ create table if not exists CLASSES(
     p_armas_armad		varchar(200) not null,
     pt_resistencia		varchar(30) not null,		#Proficiência em Teste de Resistência
     
-    constraint foreign key (dvida) references DADOS(id_dado)
+    constraint foreign key (dado_vida) references DADOS(id_dado)
 );
 
 create table if not exists HABILIDADES_CLASSE(			#Habilidades de Classe
