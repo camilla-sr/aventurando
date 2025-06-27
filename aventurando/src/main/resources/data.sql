@@ -307,7 +307,7 @@ create table if not exists ARSENAL(				# Armazena apenas armas
 );
 
 create table if not exists MOCHILA(				# Armazena apenas itens da tabela de equipamentos
-	id_tralhas			int unsigned auto_increment primary key,
+	id_mochila			int unsigned auto_increment primary key,
     i_item				int unsigned not null,
     quantidade			int default 0,
     constraint foreign key (i_item) references EQUIPAMENTOS(id_item)
@@ -326,8 +326,6 @@ create table if not exists TRANQUEIRAS(			# Armazena apenas itens da tabela de b
     quantidade			int default 0,
     constraint foreign key (i_bugiganga) references BUGIGANGAS(id_bugiganga)
 );
-
-
 
 create table if not exists DETALHES_PERSONAGEM(				# TELA 2
 	id_detalhes				int unsigned auto_increment primary key,
