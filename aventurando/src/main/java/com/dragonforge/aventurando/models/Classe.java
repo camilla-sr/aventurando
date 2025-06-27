@@ -31,13 +31,13 @@ public class Classe {
 	
 	public Classe() {}
 	
-	public Classe(Integer idClasse, String classe, String descricaoClasse, String habilidadePrimaria, String pArmasArmaduras,
+	public Classe(Integer idClasse, String classe, String descricaoClasse, String habilidadePrimaria, Dado dadoVida, String pArmasArmaduras,
 			String pTesteResistencia) {
 		this.idClasse = idClasse;
 		this.classe = classe;
 		this.descricaoClasse = descricaoClasse;
 		this.habilidadePrimaria = habilidadePrimaria;
-		this.dadoVida = new Dado();
+		this.dadoVida = dadoVida;
 		this.pArmasArmaduras = pArmasArmaduras;
 		this.pTesteResistencia = pTesteResistencia;
 	}

@@ -28,11 +28,11 @@ public class Equipamento {
 	
 	public Equipamento() {}
 	
-	public Equipamento(Integer idItem, String item, int preco, float peso) {
+	public Equipamento(Integer idItem, String item, int preco, Moeda moeda, float peso) {
 		this.idItem = idItem;
 		this.item = item;
 		this.preco = preco;
-		this.moeda = new Moeda();
+		this.moeda = moeda;
 		this.peso = peso;
 	}
 

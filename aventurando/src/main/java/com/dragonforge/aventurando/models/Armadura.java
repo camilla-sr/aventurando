@@ -33,11 +33,12 @@ public class Armadura {
 	
 	public Armadura() {}
 	
-	public Armadura(Integer idArmadura, String tipo, int preco, int classeArmadura, String modificador,
+	public Armadura(Integer idArmadura, String tipo, int preco, Moeda moeda, int classeArmadura, String modificador,
 			String requisito, String desvantagem, float peso) {
 		this.idArmadura = idArmadura;
 		this.tipo = tipo;
 		this.preco = preco;
+		this.moeda = moeda;
 		this.classeArmadura = classeArmadura;
 		this.modificador = modificador;
 		this.requisito = requisito;

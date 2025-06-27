@@ -29,12 +29,12 @@ public class Ferramenta {
 	
 	public Ferramenta() {}
 	
-	public Ferramenta(Integer idFerramenta, String ferramenta, String descricaoFerramenta, int preco, float peso) {
+	public Ferramenta(Integer idFerramenta, String ferramenta, String descricaoFerramenta, int preco, Moeda moeda, float peso) {
 		this.idFerramenta = idFerramenta;
 		this.ferramenta = ferramenta;
 		this.descricaoFerramenta = descricaoFerramenta;
 		this.preco = preco;
-		this.moeda = new Moeda();
+		this.moeda = moeda;
 		this.peso = peso;
 	}
 

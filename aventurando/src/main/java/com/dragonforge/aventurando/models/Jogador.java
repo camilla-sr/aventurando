@@ -101,7 +101,8 @@ public class Jogador {
 	private int persuasaoBase = 0;
 	private int persuasao = 0;
 	
-	public Jogador( Integer idJogador, int xp, int nivel, int pontosVida, int pontosVidaAtual, int pontosVidaTemporaria, int proficiencia,
+	public Jogador( Integer idJogador, Usuario usuario, Raca raca, Classe classe, Tendencia tendencia, Antecedente antecedente,
+			int xp, int nivel, int pontosVida, int pontosVidaAtual, int pontosVidaTemporaria, int proficiencia,
 			int classeArmadura, int classeArmaduraBonus, int iniciativa, int iniciativaBonus, float deslocamento, float deslocamentoBonus,
 		    float deslocamentoAgua, float deslocamentoEscalada, float deslocamentoVoo, int percepcaoPassiva, int forca, int modFor,
 		    int destreza, int modDes, int constituicao, int modCon, int inteligencia, int modInt, int sabedoria, int modSab, int carisma,
@@ -111,8 +112,8 @@ public class Jogador {
 		    int lidarAnimais, int medicinaBase, int medicina, int percepcaoBase, int percepcao, int sobrevivenciaBase, int sobrevivencia, int atuacaoBase, int atuacao, int enganacaoBase, int enganacao,
 		    int intimidacaoBase, int intimidacao, int persuasaoBase, int persuasao ) {
 		
-		    this.idJogador = idJogador; this.usuario = new Usuario(); this.raca = new Raca(); this.classe = new Classe(); this.tendencia = new Tendencia();
-		    this.antecedente = new Antecedente(); this.xp = xp; this.nivel = nivel; this.pontosVida = pontosVida; this.pontosVidaAtual = pontosVidaAtual;
+		    this.idJogador = idJogador; this.usuario = usuario; this.raca = raca; this.classe = classe; this.tendencia = tendencia;
+		    this.antecedente = antecedente; this.xp = xp; this.nivel = nivel; this.pontosVida = pontosVida; this.pontosVidaAtual = pontosVidaAtual;
 		    this.pontosVidaTemporaria = pontosVidaTemporaria; this.proficiencia = proficiencia; this.classeArmadura = classeArmadura;
 		    this.classeArmaduraBonus = classeArmaduraBonus; this.iniciativa = iniciativa; this.iniciativaBonus = iniciativaBonus;
 		    this.deslocamento = deslocamento; this.deslocamentoBonus = deslocamentoBonus; this.deslocamentoAgua = deslocamentoAgua;
