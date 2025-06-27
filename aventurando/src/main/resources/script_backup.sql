@@ -1,6 +1,3 @@
-create database if not exists arquivoFichas;
-use arquivoFichas;
-
 # TABELAS SEM FK
 create table if not exists USUARIO(
 	id_usuario			int unsigned auto_increment primary key,
