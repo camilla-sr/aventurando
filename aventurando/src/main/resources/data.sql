@@ -279,7 +279,7 @@ create table if not exists MAGIAS_PERSONAGEM(
 );
 
 create table if not exists DEPOSITO(				# Armazena apenas armaduras
-	id_controle			int unsigned auto_increment primary key,
+	id_deposito			int unsigned auto_increment primary key,
     i_armadura			int unsigned not null,
     quantidade			int default 0,
     constraint foreign key (i_armadura) references ARMADURAS (id_armadura)
@@ -390,7 +390,7 @@ create table if not exists INVENTARIO(
     i_utilitario	int unsigned,		# Armazena ferramentas
     i_tranqueiras	int unsigned,		# Armazena bugigangas
     constraint foreign key (i_jogador) references JOGADOR(id_jogador),
-    constraint foreign key (i_deposito) references DEPOSITO(id_controle),
+    constraint foreign key (i_deposito) references DEPOSITO(id_deposito),
     constraint foreign key (i_arsenal) references ARSENAL(id_arsenal),
     constraint foreign key (i_mochila) references MOCHILA(id_tralhas),
     constraint foreign key (i_utilitario) references UTILITARIOS(id_utilitario),
