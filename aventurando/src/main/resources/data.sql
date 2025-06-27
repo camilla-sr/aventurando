@@ -207,7 +207,7 @@ create table if not exists HABILIDADES_CLASSE(			#Habilidades de Classe
 	id_habilidade_classe		int unsigned auto_increment primary key,
     i_classe					int unsigned not null,
     nome						varchar(55) not null unique,
-    descricao_hab_classe		text not null,
+    descricao_habilidade_classe		text not null,
     constraint foreign key (i_classe) references CLASSES (id_classe)
 );
 
