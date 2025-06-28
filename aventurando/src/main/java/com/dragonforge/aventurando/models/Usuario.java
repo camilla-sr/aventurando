@@ -19,6 +19,7 @@ public class Usuario {
 	private String usuario;
 	@NotBlank
 	private String senha;
+	private String acesso;
 	
 	public Usuario() {}
 	
@@ -37,4 +38,6 @@ public class Usuario {
 	public void setUsuario(String usuario) { this.usuario = usuario; }
 	public String getSenha() { return senha; }
 	public void setSenha(String senha) { this.senha = senha; }
+	public String getAcesso() { return acesso; }
+	public void setAcesso(String acesso) { this.acesso = acesso; }
 }
