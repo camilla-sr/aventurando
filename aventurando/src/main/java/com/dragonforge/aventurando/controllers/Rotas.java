@@ -21,6 +21,7 @@ public class Rotas {
 			model.addAttribute("userLogado", (Usuario) session.getAttribute("userLogado"));
 		}
 	}
+	
 	public String verificaUsuario(HttpSession session, String page) {
 		if(!s.loginAtivo(session)) return "login";
 		return page;
@@ -33,8 +34,9 @@ public class Rotas {
 	
 	@GetMapping("/")
 	public String index(HttpSession session, Model model) {
-		if(!s.verificaAcesso(session, "admin")) return "redirect:/login?acessoNegado";
+		if(s.verificaAcesso(session, "admin")) return "index_admin";
 		if(s.verificaAcesso(session, "jogador")) return "index_jogador";
-		return "index_mestre";
+		if(s.verificaAcesso(session, "mestre")) return "index_mestre";
+		return "login";
 	}
 }
