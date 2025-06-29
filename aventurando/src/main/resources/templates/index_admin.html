@@ -21,17 +21,14 @@
 <header>
     <nav class="navbar py-0">
         <div class="container-fluid d-flex justify-content-between align-items-center">
-
             <div class="d-flex align-items-center gap-2">
                 <a class="navbar-brand">
                     <img class="logo" src="img/dice.png" height="50px">
                 </a>
-
                 <a href="ajuda.html" target="_blank" rel="noopener noreferrer">
                     <img src="icons/question.png" class="question" width="30px">
                 </a>
             </div>
-
             <div class="dropdown">
                 <a class="btn btn-dark dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Olá, <span th:text="${userLogado.nome}"></span>
@@ -47,68 +44,13 @@
 
 <body>
     <div class="container mt-4">
-        <div id="carouselCards" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- Slide -->
-                <div class="carousel-item active">
-                    <div class="d-flex justify-content-center gap-3">
-
-                        <div class="card personagem-card">
-                            <img src="img/uploads/icon_pp.jpg" class="card-img-top">
-                            <div class="card-body p-2">
-                                <h6 class="nome-personagem mb-3 text-center">Lorien Vael</h6>
-                                <div class="infos small">
-                                    <div class="info"><i class="fas fa-book me-1"></i>D&D 5e</div>
-                                    <div class="info"><i class="fas fa-scroll me-1"></i>A Maldição</div>
-                                    <div class="info"><i class="fas fa-dna me-1"></i>Elfo</div>
-                                    <div class="info"><i class="fas fa-hat-wizard me-1"></i>Mago</div>
-                                    <div class="info"><i class="fas fa-level-up-alt me-1"></i>Lvl 5</div>
-                                </div>
-                            </div>
-                            <div class="card-footer d-flex justify-content-around bg-transparent border-0 py-2">
-                                <a href="#" title="Editar" class="text-warning"><i class="fas fa-edit"></i></a>
-                                <a href="#" title="Excluir" class="text-danger"><i class="fas fa-trash-alt"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="card personagem-card">
-                            <img src="img/uploads/icon_pp2.jpeg" class="card-img-top">
-                            <div class="card-body p-2">
-                                <h6 class="nome-personagem mb-3 text-center">Fulaninho Refri</h6>
-                                <div class="infos small">
-                                    <div class="info"><i class="fas fa-book me-1"></i>D&D 5e</div>
-                                    <div class="info"><i class="fas fa-scroll me-1"></i>A Maldição</div>
-                                    <div class="info"><i class="fas fa-dna me-1"></i>Draconato</div>
-                                    <div class="info"><i class="fas fa-hat-wizard me-1"></i>Guerreiro</div>
-                                    <div class="info"><i class="fas fa-level-up-alt me-1"></i>Lvl 10</div>
-                                </div>
-                            </div>
-                            <div class="card-footer d-flex justify-content-around bg-transparent border-0 py-2">
-                                <a href="#" title="Editar" class="text-warning"><i class="fas fa-edit"></i></a>
-                                <a href="#" title="Excluir" class="text-danger"><i class="fas fa-trash-alt"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Controles -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselCards" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselCards" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
-        </div>
-
-        <!-- ESTATISTICAS -->
+        
         <div class="estatisticas p-3">
             <div class="row g-3">
                 <div class="col-md-4">
                     <div class="card bg-c-blue order-card">
                         <div class="card-block">
-                            <h6 class="m-b-20">Campanhas Ativas</h6>
+                            <h6 class="m-b-20">Sistemas de Jogo</h6>
                             <h2 class="text-right"><i class="fa-solid fa-dice"></i><span> 4</span></h2>
                         </div>
                     </div>
@@ -117,8 +59,8 @@
                 <div class="col-md-4">
                     <div class="card bg-c-green order-card">
                         <div class="card-block">
-                            <h6 class="m-b-20">Pedidos Pendentes</h6>
-                            <h2 class="text-right"><i class="fa-solid fa-spinner"></i><span> 2</span></h2>
+                            <h6 class="m-b-20">Mestres Cadastrados</h6>
+                            <h2 class="text-right"><i class="fa-solid fa-book"></i><span> 2</span></h2>
                         </div>
                     </div>
                 </div>
@@ -126,8 +68,8 @@
                 <div class="col-md-4">
                     <div class="card bg-c-yellow order-card">
                         <div class="card-block">
-                            <h6 class="m-b-20">Pré-Registro</h6>
-                            <h2 class="text-right"><i class="fa-solid fa-check"></i><span> 3</span></h2>
+                            <h6 class="m-b-20">Jogadores Cadastrados</h6>
+                            <h2 class="text-right"><i class="fa-solid fa-users"></i><span> 3</span></h2>
                         </div>
                     </div>
                 </div>
