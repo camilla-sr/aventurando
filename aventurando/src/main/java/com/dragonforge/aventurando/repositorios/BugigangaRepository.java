@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import com.dragonforge.aventurando.models.Bugiganga;
 
 public interface BugigangaRepository extends CrudRepository<Bugiganga, Integer>{
-	Optional<Bugiganga> finById(Integer id);
+	Optional<Bugiganga> findById(Integer id);
 	Iterable<Bugiganga> findAll();
 }

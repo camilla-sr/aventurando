@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.dragonforge.aventurando.models.Vinculo;
 
 public interface VinculoRepository extends CrudRepository<Vinculo, Integer>{
-	Optional<Vinculo> findVinculoById(Integer id);
+	Optional<Vinculo> findById(Integer id);
 	
 	Iterable<Vinculo> findAll();
 }
