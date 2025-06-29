@@ -5,6 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Aventurando</title>
+	<script src="js/libs/sweetalert2.min.js"></script>
+	<script src="js/libs/jquery-3.7.1.min.js"></script>
+	<script src="js/erros/codigos.js"></script>
+	<script src="js/erros/feedback.js"></script>
     <link rel="stylesheet" href="css/login_style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
@@ -12,20 +16,26 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form>
+            <form method="POST" action="/usuario-api/salvar">
                 <h1>Cadastre-se!</h1>
                 <input type="text" name="nome" placeholder="Nome" required>
                 <input type="text" name="usuario" placeholder="Usuário" required>
-                <input type="password" name="senha" placeholder="Senha" required>
-                <input type="password" name="conf_senha" placeholder="Confirme sua senha" required>
-                <button type="submit">Cadastrar</button>
+                <input type="password" id="senha" placeholder="Senha" required>
+                <input type="password" id="conf_senha" placeholder="Confirme sua senha" required>
+				<input type="hidden" id="senhaValida" name="senhaValida">
+				<select id="acesso" name="acesso">
+					<option value="">Meu tipo de usuário é</option>
+					<option value="jogador">Jogador</option>
+					<option value="mestre">Mestre</option>
+				</select>
+                <button type="submit" id="btn-cadastrar">Cadastrar</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form>
+            <form method="POST" action="/usuario-api/logar">
                 <h1>Login</h1>
-                <input type="text" name="user" placeholder="Usuário" required>
-                <input type="password" name="pswd" placeholder="Senha" required>
+                <input type="text" name="usuario" placeholder="Usuário" required>
+                <input type="password" name="senha" placeholder="Senha" required>
                 <button type="submit">Entrar</button>
             </form>
         </div>
@@ -45,6 +55,7 @@
         </div>
     </div>
     <script src="js/login.js"></script>
+	<script src="js/script.js"></script>
 </body>
 
 </html>
