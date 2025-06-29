@@ -25,7 +25,7 @@
 }
 
 body {
-    font-family: 'Cinzel', 'Georgia', serif; /* Fonte medieval */
+    font-family: 'Cinzel', 'Georgia', serif;
     background: var(--primary-dark);
     display: flex;
     justify-content: center;
@@ -90,7 +90,7 @@ form {
     text-align: center
 }
 
-input {
+input, select {
     background: rgba(13, 17, 23, 0.7);
     border: 1px solid var(--light-blue);
     color: var(--text-primary);
@@ -101,7 +101,7 @@ input {
     transition: all 0.3s;
 }
 
-input:focus {
+input:focus, select:focus {
     outline: none;
     border-color: var(--gold-accent);
     box-shadow: 0 0 5px var(--gold-accent);
@@ -234,4 +234,18 @@ button.ghost:hover {
     100% {
         transform: translate(-10%, -10%);
     }
+}
+
+
+
+.input-valid {
+    border: 2px solid var(--gold-accent);
+    box-shadow: 0 0 6px var(--gold-accent);
+    background-color: rgba(212, 175, 55, 0.08);
+}
+
+.input-invalid {
+    border: 2px solid #ff5c5c;
+    box-shadow: 0 0 6px #ff5c5c;
+    background-color: rgba(255, 0, 0, 0.05);
 }
