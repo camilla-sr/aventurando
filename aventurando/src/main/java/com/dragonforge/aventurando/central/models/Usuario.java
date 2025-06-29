@@ -1,4 +1,4 @@
-package com.dragonforge.aventurando.sistemas.dnd5e.models;
+package com.dragonforge.aventurando.central.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

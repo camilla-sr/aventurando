@@ -6,7 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import com.dragonforge.aventurando.sistemas.dnd5e.models.Usuario;
+import com.dragonforge.aventurando.central.controllers.Sessao;
+import com.dragonforge.aventurando.central.models.Usuario;
 
 import jakarta.servlet.http.HttpSession;
 

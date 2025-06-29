@@ -1,18 +1,16 @@
-package com.dragonforge.aventurando.sistemas.dnd5e.controllers;
+package com.dragonforge.aventurando.central.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.dragonforge.aventurando.sistemas.dnd5e.models.Usuario;
-import com.dragonforge.aventurando.sistemas.dnd5e.repositorios.UsuarioRepository;
+import com.dragonforge.aventurando.central.models.Usuario;
+import com.dragonforge.aventurando.central.repositorios.UsuarioRepository;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.servlet.http.HttpSession;
-import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("/usuario-api")

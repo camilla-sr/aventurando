@@ -1,9 +1,9 @@
-package com.dragonforge.aventurando.sistemas.dnd5e.controllers;
+package com.dragonforge.aventurando.central.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.dragonforge.aventurando.sistemas.dnd5e.models.Usuario;
+import com.dragonforge.aventurando.central.models.Usuario;
 
 import jakarta.servlet.http.HttpSession;
 
