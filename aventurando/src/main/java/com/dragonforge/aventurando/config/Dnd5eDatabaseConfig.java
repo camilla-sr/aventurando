@@ -16,13 +16,13 @@ import java.util.HashMap;
 
 @Configuration
 @EnableJpaRepositories(
-    basePackages = "com.dragonforge.aventurando.sistemas.repositorios", // repositórios do DND5E
+    basePackages = "com.dragonforge.aventurando.sistemas.dnd5e.repositorios", // repositórios do DND5E
     entityManagerFactoryRef = "dnd5eEntityManager",
     transactionManagerRef = "dnd5eTransactionManager"
 )
 public class Dnd5eDatabaseConfig {
     @Bean
-    @ConfigurationProperties("spring.datasource.dnd5e")
+    @ConfigurationProperties("dnd5e.datasource")
     public DataSourceProperties dnd5eDataSourceProperties() {
         return new DataSourceProperties();
     }
@@ -40,7 +40,7 @@ public class Dnd5eDatabaseConfig {
 
         return builder
                 .dataSource(dnd5eDataSource())
-                .packages("com.dragonforge.aventurando.sistemas.models") // models do DND5E
+                .packages("com.dragonforge.aventurando.sistemas.dnd5e.models") // models do DND5E
                 .persistenceUnit("dnd5e")
                 .properties(props)
                 .build();

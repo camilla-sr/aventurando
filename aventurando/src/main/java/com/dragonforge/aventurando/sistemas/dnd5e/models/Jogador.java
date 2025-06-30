@@ -1,7 +1,6 @@
 package com.dragonforge.aventurando.sistemas.dnd5e.models;
 
-import com.dragonforge.aventurando.central.models.Usuario;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,9 +17,8 @@ public class Jogador {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idJogador;
 	
-	@ManyToOne
-	@JoinColumn(name = "i_usuario")
-	private Usuario usuario;
+	@Column(name = "i_usuario")
+	private Integer idUsuario;
 	@ManyToOne
 	@JoinColumn(name = "i_raca")
 	private Raca raca;
@@ -103,7 +101,7 @@ public class Jogador {
 	private int persuasaoBase = 0;
 	private int persuasao = 0;
 	
-	public Jogador( Integer idJogador, Usuario usuario, Raca raca, Classe classe, Tendencia tendencia, Antecedente antecedente,
+	public Jogador( Integer idJogador, Integer idUsuario, Raca raca, Classe classe, Tendencia tendencia, Antecedente antecedente,
 			int xp, int nivel, int pontosVida, int pontosVidaAtual, int pontosVidaTemporaria, int proficiencia,
 			int classeArmadura, int classeArmaduraBonus, int iniciativa, int iniciativaBonus, float deslocamento, float deslocamentoBonus,
 		    float deslocamentoAgua, float deslocamentoEscalada, float deslocamentoVoo, int percepcaoPassiva, int forca, int modFor,
@@ -114,7 +112,7 @@ public class Jogador {
 		    int lidarAnimais, int medicinaBase, int medicina, int percepcaoBase, int percepcao, int sobrevivenciaBase, int sobrevivencia, int atuacaoBase, int atuacao, int enganacaoBase, int enganacao,
 		    int intimidacaoBase, int intimidacao, int persuasaoBase, int persuasao ) {
 		
-		    this.idJogador = idJogador; this.usuario = usuario; this.raca = raca; this.classe = classe; this.tendencia = tendencia;
+		    this.idJogador = idJogador; this.idUsuario = idUsuario; this.raca = raca; this.classe = classe; this.tendencia = tendencia;
 		    this.antecedente = antecedente; this.xp = xp; this.nivel = nivel; this.pontosVida = pontosVida; this.pontosVidaAtual = pontosVidaAtual;
 		    this.pontosVidaTemporaria = pontosVidaTemporaria; this.proficiencia = proficiencia; this.classeArmadura = classeArmadura;
 		    this.classeArmaduraBonus = classeArmaduraBonus; this.iniciativa = iniciativa; this.iniciativaBonus = iniciativaBonus;
@@ -134,8 +132,8 @@ public class Jogador {
 		}
 
 	
-	public Usuario getUsuario() { return usuario; }
-	public void setUsuario(Usuario usuario) { this.usuario = usuario; }
+	public Integer getUsuario() { return idUsuario; }
+	public void setUsuario(Integer idUsuario) { this.idUsuario = idUsuario; }
 	public Raca getRaca() { return raca; }
 	public void setRaca(Raca raca) { this.raca = raca; }
 	public Classe getClasse() { return classe; }
