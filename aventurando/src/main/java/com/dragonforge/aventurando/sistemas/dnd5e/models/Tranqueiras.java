@@ -19,11 +19,11 @@ public class Tranqueiras {
 	@JoinColumn(name = "i_bugiganga")
 	private Bugiganga bugiganga;
 	@Positive
-	private int quantidade;
+	private Integer quantidade;
 	
 	public Tranqueiras() {}
 	
-	public Tranqueiras(Integer idTranqueira, Bugiganga bugiganga, int quantidade) {
+	public Tranqueiras(Integer idTranqueira, Bugiganga bugiganga, Integer quantidade) {
 		this.idTranqueira = idTranqueira;
 		this.bugiganga = bugiganga;
 		this.quantidade = quantidade;
@@ -33,6 +33,6 @@ public class Tranqueiras {
 	public void setIdTranqueira(Integer idTranqueira) { this.idTranqueira = idTranqueira; }
 	public Bugiganga getBugiganga() { return bugiganga; }
 	public void setBugiganga(Bugiganga bugiganga) { this.bugiganga = bugiganga; }
-	public int getQuantidade() { return quantidade; }
-	public void setQuantidade(int quantidade) { this.quantidade = quantidade; }
+	public Integer getQuantidade() { return quantidade; }
+	public void setQuantidade(Integer quantidade) { this.quantidade = quantidade; }
 }

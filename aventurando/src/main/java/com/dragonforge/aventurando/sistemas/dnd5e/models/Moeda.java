@@ -17,11 +17,11 @@ public class Moeda {
 	@NotBlank
 	@Column(length = 2)
 	private String moeda;
-	private float peso = 0.0f;
+	private Float peso = 0.0f;
 	
 	public Moeda() {}
 	
-	public Moeda(Integer idMoeda, String moeda, float peso) {
+	public Moeda(Integer idMoeda, String moeda, Float peso) {
 		this.idMoeda = idMoeda;
 		this.moeda = moeda;
 		this.peso = peso;
@@ -31,6 +31,6 @@ public class Moeda {
 	public void setIdMoeda(Integer idMoeda) { this.idMoeda = idMoeda; }
 	public String getMoeda() { return moeda; }
 	public void setMoeda(String moeda) { this.moeda = moeda; }
-	public float getPeso() { return peso; }
-	public void setPeso(float peso) { this.peso = peso; }
+	public Float getPeso() { return peso; }
+	public void setPeso(Float peso) { this.peso = peso; }
 }

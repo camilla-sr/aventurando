@@ -19,12 +19,12 @@ public class Arma {
 	@NotBlank
 	private String arma;
 	@Positive
-	private int preco;
+	private Integer preco;
 	@OneToOne
 	@JoinColumn(name = "i_moeda")
 	private Moeda moeda;
 	@Positive
-	private int quantidadeDano;
+	private Integer quantidadeDano;
 	@OneToOne
 	@JoinColumn(name = "i_dado_dano")
 	private Dado dadoDano;
@@ -32,14 +32,14 @@ public class Arma {
 	@JoinColumn(name = "i_dano")
 	private TipoDano dano;
 	@Positive
-	private float peso;
+	private Float peso;
 	@NotBlank
 	private String propriedades = "";
 	
 	public Arma() {}
 	
-	public Arma(Integer idArma, String arma, int preco, Moeda moeda, int quantidadeDano, Dado dadoDano,
-		TipoDano dano, float peso, String propriedades) {
+	public Arma(Integer idArma, String arma, Integer preco, Moeda moeda, Integer quantidadeDano, Dado dadoDano,
+		TipoDano dano, Float peso, String propriedades) {
 		this.idArma = idArma;
 		this.arma = arma;
 		this.preco = preco;
@@ -55,18 +55,18 @@ public class Arma {
 	public void setIdArma(Integer idArma) { this.idArma = idArma; }
 	public String getArma() { return arma; }
 	public void setArma(String arma) { this.arma = arma; }
-	public int getPreco() { return preco; }
-	public void setPreco(int preco) { this.preco = preco; }
+	public Integer getPreco() { return preco; }
+	public void setPreco(Integer preco) { this.preco = preco; }
 	public Moeda getMoeda() { return moeda; }
 	public void setMoeda(Moeda moeda) { this.moeda = moeda; }
-	public int getQuantidadeDano() { return quantidadeDano; }
-	public void setQuantidadeDano(int quantidadeDano) { this.quantidadeDano = quantidadeDano; }
+	public Integer getQuantidadeDano() { return quantidadeDano; }
+	public void setQuantidadeDano(Integer quantidadeDano) { this.quantidadeDano = quantidadeDano; }
 	public Dado getDadoDano() { return dadoDano; }
 	public void setDadoDano(Dado dadoDano) { this.dadoDano = dadoDano; }
 	public TipoDano getDano() { return dano; }
 	public void setDano(TipoDano dano) { this.dano = dano; }
-	public float getPeso() { return peso; }
-	public void setPeso(float peso) { this.peso = peso; }
+	public Float getPeso() { return peso; }
+	public void setPeso(Float peso) { this.peso = peso; }
 	public String getPropriedades() { return propriedades; }
 	public void setPropriedades(String propriedades) { this.propriedades = propriedades; }
 }

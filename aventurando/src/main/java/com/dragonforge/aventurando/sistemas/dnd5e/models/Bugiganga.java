@@ -14,17 +14,17 @@ public class Bugiganga {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idBugiganga;
 	@NotBlank
-	private String descricao_bugiganga;
+	private String descricaoBugiganga;
 	
 	public Bugiganga() {}
 	
-	public Bugiganga(Integer idBugiganga, String descricao_bugiganga) {
+	public Bugiganga(Integer idBugiganga, String descricaoBugiganga) {
 		this.idBugiganga = idBugiganga;
-		this.descricao_bugiganga = descricao_bugiganga;
+		this.descricaoBugiganga = descricaoBugiganga;
 	}
 	
 	public Integer getIdBugiganga() { return idBugiganga; }
 	public void setIdBugiganga(Integer idBugiganga) { this.idBugiganga = idBugiganga; }
-	public String getDescricao_bugiganga() { return descricao_bugiganga; }
-	public void setDescricao_bugiganga(String descricao_bugiganga) { this.descricao_bugiganga = descricao_bugiganga; }
+	public String getDescricaoBugiganga() { return descricaoBugiganga; }
+	public void setDescricaoBugiganga(String descricaoBugiganga) { this.descricaoBugiganga = descricaoBugiganga; }
 }

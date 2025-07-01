@@ -21,11 +21,11 @@ public class Deposito {
 	private Armadura armadura;
 	
 	@Positive
-	private int quantidade = 0;
+	private Integer quantidade = 0;
 	
 	public Deposito () {}
 	
-	public Deposito(Integer idDeposito, Armadura armadura, int quantidade) {
+	public Deposito(Integer idDeposito, Armadura armadura, Integer quantidade) {
 		this.idDeposito = idDeposito;
 		this.armadura = armadura;
 		this.quantidade = quantidade;
@@ -35,6 +35,6 @@ public class Deposito {
 	public void setIdDeposito(Integer idDeposito) { this.idDeposito = idDeposito; }
 	public Armadura getArmadura() { return armadura; }
 	public void setArmadura(Armadura armadura) { this.armadura = armadura; }
-	public int getQuantidade() { return quantidade; }
-	public void setQuantidade(int quantidade) { this.quantidade = quantidade; }
+	public Integer getQuantidade() { return quantidade; }
+	public void setQuantidade(Integer quantidade) { this.quantidade = quantidade; }
 }

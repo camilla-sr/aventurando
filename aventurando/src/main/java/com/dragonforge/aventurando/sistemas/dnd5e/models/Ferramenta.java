@@ -20,16 +20,16 @@ public class Ferramenta {
 	private String ferramenta;
 	private String descricaoFerramenta;
 	@Positive
-	private int preco;
+	private Integer preco;
 	@OneToOne
 	@JoinColumn(name = "i_moeda")
 	private Moeda moeda;
 	@Positive
-	private float peso = 0.0f;
+	private Float peso = 0.0f;
 	
 	public Ferramenta() {}
 	
-	public Ferramenta(Integer idFerramenta, String ferramenta, String descricaoFerramenta, int preco, Moeda moeda, float peso) {
+	public Ferramenta(Integer idFerramenta, String ferramenta, String descricaoFerramenta, Integer preco, Moeda moeda, Float peso) {
 		this.idFerramenta = idFerramenta;
 		this.ferramenta = ferramenta;
 		this.descricaoFerramenta = descricaoFerramenta;
@@ -44,10 +44,10 @@ public class Ferramenta {
 	public void setFerramenta(String ferramenta) { this.ferramenta = ferramenta; }
 	public String getDescricaoFerramenta() { return descricaoFerramenta; }
 	public void setDescricaoFerramenta(String descricaoFerramenta) { this.descricaoFerramenta = descricaoFerramenta; }
-	public int getPreco() { return preco; }
-	public void setPreco(int preco) {this.preco = preco; }
+	public Integer getPreco() { return preco; }
+	public void setPreco(Integer preco) {this.preco = preco; }
 	public Moeda getMoeda() { return moeda; }
 	public void setMoeda(Moeda moeda) { this.moeda = moeda; }
-	public float getPeso() { return peso; }
-	public void setPeso(float peso) { this.peso = peso; }
+	public Float getPeso() { return peso; }
+	public void setPeso(Float peso) { this.peso = peso; }
 }

@@ -16,11 +16,11 @@ public class Raca {
 	@NotBlank
 	private String raca;
 	@NotBlank
-	private float deslocamento;
+	private Float deslocamento;
 	
 	public Raca() {}
 	
-	public Raca(Integer idRaca, String raca, float deslocamento) {
+	public Raca(Integer idRaca, String raca, Float deslocamento) {
 		this.idRaca = idRaca;
 		this.raca = raca;
 		this.deslocamento = deslocamento;
@@ -30,6 +30,6 @@ public class Raca {
 	public void setIdRaca(Integer idRaca) { this.idRaca = idRaca; }
 	public String getRaca() { return raca; }
 	public void setRaca(String raca) { this.raca = raca; }
-	public float getDeslocamento() { return deslocamento; }
-	public void setDeslocamento(float deslocamento) { this.deslocamento = deslocamento; }
+	public Float getDeslocamento() { return deslocamento; }
+	public void setDeslocamento(Float deslocamento) { this.deslocamento = deslocamento; }
 }

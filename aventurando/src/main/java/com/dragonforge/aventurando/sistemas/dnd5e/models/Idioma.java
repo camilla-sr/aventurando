@@ -14,21 +14,21 @@ public class Idioma {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idIdioma;
 	@NotBlank
-	private String descricao_idioma;
+	private String descricaoIdioma;
 	private String alfabeto = "";
 	
 	public Idioma() {}
 	
-	public Idioma(Integer idIdioma, String descricao_idioma, String alfabeto) {
+	public Idioma(Integer idIdioma, String descricaoIdioma, String alfabeto) {
 		this.idIdioma = idIdioma;
-		this.descricao_idioma = descricao_idioma;
+		this.descricaoIdioma = descricaoIdioma;
 		this.alfabeto = alfabeto;
 	}
 	
 	public Integer getIdIdioma() { return idIdioma; }
 	public void setIdIdioma(Integer idIdioma) { this.idIdioma = idIdioma; }
-	public String getDescricao_idioma() { return descricao_idioma; }
-	public void setDescricao_idioma(String descricao_idioma) { this.descricao_idioma = descricao_idioma; }
+	public String getDescricaoIdioma() { return descricaoIdioma; }
+	public void setDescricaoIdioma(String descricaoIdioma) { this.descricaoIdioma = descricaoIdioma; }
 	public String getAlfabeto() { return alfabeto; }
 	public void setAlfabeto(String alfabeto) { this.alfabeto = alfabeto; }
 }

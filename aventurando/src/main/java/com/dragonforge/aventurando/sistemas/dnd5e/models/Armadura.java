@@ -19,22 +19,22 @@ public class Armadura {
 	@NotBlank
 	private String tipo;
 	@Positive
-	private int preco;
+	private Integer preco;
 	@OneToOne
 	@JoinColumn(name = "i_moeda")
 	private Moeda moeda;
 	@Positive
-	private int classeArmadura;
+	private Integer classeArmadura;
 	private String modificador;
 	private String requisito;
 	private String desvantagem;
 	@Positive
-	private float peso = 0.0f;
+	private Float peso = 0.0f;
 	
 	public Armadura() {}
 	
-	public Armadura(Integer idArmadura, String tipo, int preco, Moeda moeda, int classeArmadura, String modificador,
-			String requisito, String desvantagem, float peso) {
+	public Armadura(Integer idArmadura, String tipo, Integer preco, Moeda moeda, Integer classeArmadura, String modificador,
+			String requisito, String desvantagem, Float peso) {
 		this.idArmadura = idArmadura;
 		this.tipo = tipo;
 		this.preco = preco;
@@ -50,18 +50,18 @@ public class Armadura {
 	public void setIdArmadura(Integer idArmadura) { this.idArmadura = idArmadura; }
 	public String getTipo() {return tipo; }
 	public void setTipo(String tipo) { this.tipo = tipo; }
-	public int getPreco() { return preco; }
-	public void setPreco(int preco) { this.preco = preco; }
+	public Integer getPreco() { return preco; }
+	public void setPreco(Integer preco) { this.preco = preco; }
 	public Moeda getMoeda() { return moeda; }
 	public void setMoeda(Moeda moeda) { this.moeda = moeda; }
-	public int getClasseArmadura() { return classeArmadura; }
-	public void setClasseArmadura(int classeArmadura) { this.classeArmadura = classeArmadura; }
+	public Integer getClasseArmadura() { return classeArmadura; }
+	public void setClasseArmadura(Integer classeArmadura) { this.classeArmadura = classeArmadura; }
 	public String getModificador() { return modificador; }
 	public void setModificador(String modificador) { this.modificador = modificador; }
 	public String getRequisito() { return requisito; }
 	public void setRequisito(String requisito) { this.requisito = requisito; }
 	public String getDesvantagem() { return desvantagem; }
 	public void setDesvantagem(String desvantagem) { this.desvantagem = desvantagem; }
-	public float getPeso() { return peso; }
-	public void setPeso(float peso) { this.peso = peso; }
+	public Float getPeso() { return peso; }
+	public void setPeso(Float peso) { this.peso = peso; }
 }

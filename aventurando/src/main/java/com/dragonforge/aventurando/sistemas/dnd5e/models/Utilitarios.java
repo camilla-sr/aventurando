@@ -19,11 +19,11 @@ public class Utilitarios {
 	@JoinColumn(name = "i_ferramenta")
 	private Ferramenta ferramenta;
 	@Positive
-	private int quantidade;
+	private Integer quantidade;
 	
 	public Utilitarios() {}
 	
-	public Utilitarios(Integer idUtilitario, Ferramenta ferramenta, int quantidade) {
+	public Utilitarios(Integer idUtilitario, Ferramenta ferramenta, Integer quantidade) {
 		this.idUtilitario = idUtilitario;
 		this.ferramenta = ferramenta;
 		this.quantidade = quantidade;
@@ -33,6 +33,6 @@ public class Utilitarios {
 	public void setIdUtilitario(Integer idUtilitario) { this.idUtilitario = idUtilitario; }
 	public Ferramenta getFerramenta() { return ferramenta; }
 	public void setFerramenta(Ferramenta ferramenta) { this.ferramenta = ferramenta; }
-	public int getQuantidade() { return quantidade; }
-	public void setQuantidade(int quantidade) { this.quantidade = quantidade; }
+	public Integer getQuantidade() { return quantidade; }
+	public void setQuantidade(Integer quantidade) { this.quantidade = quantidade; }
 }

@@ -16,15 +16,15 @@ public class Talento {
 	@NotBlank
 	private String talento;
 	@NotBlank
-	private String descricao_talento;
+	private String descricaoTalento;
 	private String requisito = "Não necessário";
 	
 	public Talento() {}
 	
-	public Talento(Integer idTalento, String talento, String descricao_talento, String requisito) {
+	public Talento(Integer idTalento, String talento, String descricaoTalento, String requisito) {
 		this.idTalento = idTalento;
 		this.talento = talento;
-		this.descricao_talento = descricao_talento;
+		this.descricaoTalento = descricaoTalento;
 		this.requisito = requisito;
 	}
 	
@@ -32,8 +32,8 @@ public class Talento {
 	public void setIdTalento(Integer idTalento) { this.idTalento = idTalento; }
 	public String getTalento() { return talento; }
 	public void setTalento(String talento) { this.talento = talento; }
-	public String getDescricao_talento() { return descricao_talento; }
-	public void setDescricao_talento(String descricao_talento) { this.descricao_talento = descricao_talento; }
+	public String getDescricaoTalento() { return descricaoTalento; }
+	public void setDescricaoTalento(String descricaoTalento) { this.descricaoTalento = descricaoTalento; }
 	public String getRequisito() { return requisito; }
 	public void setRequisito(String requisito) { this.requisito = requisito; }
 }

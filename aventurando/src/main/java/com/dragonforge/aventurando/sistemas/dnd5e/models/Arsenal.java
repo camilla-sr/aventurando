@@ -19,11 +19,11 @@ public class Arsenal {
 	@JoinColumn(name = "i_arma")
 	private Arma arma;
 	@Positive
-	private int quantidade = 0;
+	private Integer quantidade = 0;
 	
 	public Arsenal() {}
 	
-	public Arsenal(Integer idArsenal, Arma arma, int quantidade) {
+	public Arsenal(Integer idArsenal, Arma arma, Integer quantidade) {
 		this.idArsenal = idArsenal;
 		this.arma = arma;
 		this.quantidade = quantidade;
@@ -33,6 +33,6 @@ public class Arsenal {
 	public void setIdArsenal(Integer idArsenal) { this.idArsenal = idArsenal; }
 	public Arma getArma() { return arma; }
 	public void setArma(Arma arma) { this.arma = arma; }
-	public int getQuantidade() { return quantidade; }
-	public void setQuantidade(int quantidade) { this.quantidade = quantidade; }
+	public Integer getQuantidade() { return quantidade; }
+	public void setQuantidade(Integer quantidade) { this.quantidade = quantidade; }
 }

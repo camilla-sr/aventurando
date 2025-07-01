@@ -19,11 +19,11 @@ public class Mochila {
 	@JoinColumn(name = "i_item")
 	private Equipamento item;
 	@Positive
-	private int quantidade;
+	private Integer quantidade;
 	
 	public Mochila() {}
 	
-	public Mochila(Integer idMochila, Equipamento item, int quantidade) {
+	public Mochila(Integer idMochila, Equipamento item, Integer quantidade) {
 		this.idMochila = idMochila;
 		this.item = item;
 		this.quantidade = quantidade;
@@ -33,6 +33,6 @@ public class Mochila {
 	public void setIdMochila(Integer idMochila) { this.idMochila = idMochila; }
 	public Equipamento getItem() { return item; }
 	public void setItem(Equipamento item) { this.item = item; }
-	public int getQuantidade() { return quantidade; }
-	public void setQuantidade(int quantidade) { this.quantidade = quantidade; }	
+	public Integer getQuantidade() { return quantidade; }
+	public void setQuantidade(Integer quantidade) { this.quantidade = quantidade; }	
 }

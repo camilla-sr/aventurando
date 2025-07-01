@@ -17,13 +17,13 @@ public class GlossarioMagias {
 	@NotBlank
 	private String magia;
 	@NotEmpty
-	private int nivel;
+	private Integer nivel;
 	@NotBlank
 	private String descricaoMagia;
 	
 	public GlossarioMagias() {}
 	
-	public GlossarioMagias(Integer idMagia, String magia, int nivel, String descricaoMagia) {
+	public GlossarioMagias(Integer idMagia, String magia, Integer nivel, String descricaoMagia) {
 		this.idMagia = idMagia;
 		this.magia = magia;
 		this.nivel = nivel;
@@ -34,8 +34,8 @@ public class GlossarioMagias {
 	public void setIdMagia(Integer idMagia) { this.idMagia = idMagia; }
 	public String getMagia() { return magia; }
 	public void setMagia(String magia) { this.magia = magia; }
-	public int getNivel() { return nivel; }
-	public void setNivel(int nivel) { this.nivel = nivel; }
+	public Integer getNivel() { return nivel; }
+	public void setNivel(Integer nivel) { this.nivel = nivel; }
 	public String getDescricaoMagia() { return descricaoMagia; }
 	public void setDescricaoMagia(String descricaoMagia) { this.descricaoMagia = descricaoMagia; }
 }
