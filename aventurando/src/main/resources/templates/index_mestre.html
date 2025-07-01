@@ -18,31 +18,8 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/index_style.css">
 </head>
-<header>
-    <nav class="navbar py-0">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center gap-2">
-                <a class="navbar-brand">
-                    <img class="logo" src="img/dice.png" height="50px">
-                </a>
 
-                <a href="ajuda.html" target="_blank" rel="noopener noreferrer">
-                    <img src="icons/question.png" class="question" width="30px">
-                </a>
-            </div>
-
-            <div class="dropdown">
-                <a class="btn btn-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Olá, mestre <span th:text="${userLogado.nome}"></span>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#">Conta</a></li>
-                    <li><a class="dropdown-item" href="/logout">Sair</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
+<div th:replace="~{barra :: barra}"></div>
 
 <body>
     <div class="container mt-4">
