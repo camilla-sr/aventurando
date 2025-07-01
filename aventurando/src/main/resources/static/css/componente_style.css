@@ -1,0 +1,27 @@
+:root {
+  /* Nova paleta de cores - Tema RPG */
+  --primary-dark: #0d1117;     /* Fundo escuro profundo */
+  --primary-blue: #132347;     /* Azul noturno */
+  --accent-blue: #1e3a8a;      /* Azul elétrico para destaques */
+  --light-blue: #3b82f6;       /* Azul brilhante */
+  --gold-accent: #d4af37;      /* Dourado para elementos nobres */
+  
+  /* Cores de texto */
+  --text-primary: #e5e7eb;     /* Branco suave */
+  --text-secondary: #9ca3af;   /* Cinza azulado */
+  
+  /* Cores de botão */
+  --button-primary: #1e40af;   /* Azul real */
+  --button-hover: #1e3a8a;     /* Azul mais escuro */
+  --button-text: #ffffff;      /* Branco puro */
+  
+  /* Cores de borda */
+  --border-color: #1e3a8a;     /* Azul escuro */
+  --border-gold: #d4af37;      /* Dourado para bordas especiais */
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}

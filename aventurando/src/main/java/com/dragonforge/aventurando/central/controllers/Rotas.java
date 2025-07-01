@@ -32,6 +32,11 @@ public class Rotas {
 		return "login";
 	}
 	
+	@GetMapping("compo")
+	public String componentes() {
+		return "dnd5e/tabela-componente";
+	}
+	
 	@GetMapping("/")
 	public String index(HttpSession session, Model model) {
 		if(s.verificaAcesso(session, "admin")) return "dnd5e/index_admin";
