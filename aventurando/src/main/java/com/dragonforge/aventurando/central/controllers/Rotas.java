@@ -1,4 +1,4 @@
-package com.dragonforge.aventurando.sistemas.dnd5e.controllers;
+package com.dragonforge.aventurando.central.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import com.dragonforge.aventurando.central.controllers.Sessao;
 import com.dragonforge.aventurando.central.models.Usuario;
 
 import jakarta.servlet.http.HttpSession;
@@ -35,9 +34,9 @@ public class Rotas {
 	
 	@GetMapping("/")
 	public String index(HttpSession session, Model model) {
-		if(s.verificaAcesso(session, "admin")) return "index_admin";
-		if(s.verificaAcesso(session, "jogador")) return "index_jogador";
-		if(s.verificaAcesso(session, "mestre")) return "index_mestre";
+		if(s.verificaAcesso(session, "admin")) return "dnd5e/index_admin";
+		if(s.verificaAcesso(session, "jogador")) return "dnd5e/index_jogador";
+		if(s.verificaAcesso(session, "mestre")) return "dnd5e/index_mestre";
 		return "login";
 	}
 }
