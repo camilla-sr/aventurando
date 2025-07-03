@@ -1,28 +1,13 @@
-<head>
-	<script src="js/libs/jquery-3.7.1.min.js"></script>
-	<script src="js/libs/sweetalert2.min.js"></script>
-	<script src="js/erros/codigos.js"></script>
-	<script src="js/erros/feedback.js"></script>
-	<script src="js/script.js"></script>
-	<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="fontawesome/css/all.min.css">
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="css/index_style.css">
-	<link rel="stylesheet" href="css/admin.css">
-</head>
-
 <div th:fragment="barra">
 	<header>
 	    <nav class="navbar py-0">
 	        <div class="container-fluid d-flex justify-content-between align-items-center">
 	            <div class="d-flex align-items-center gap-2">
-	                <a class="navbar-brand">
-	                    <img class="logo" src="img/dice.png" height="50px">
+	                <a href="/" title="Index" class="navbar-brand">
+	                    <img class="logo" src="/img/dice.png" height="50px">
 	                </a>
-	                <a href="ajuda.html" target="_blank" rel="noopener noreferrer">
-	                    <img src="icons/question.png" class="question" width="30px">
+	                <a href="ajuda" target="_blank" rel="noopener noreferrer">
+	                    <img src="/icons/question.png" class="question" width="30px">
 	                </a>
 	            </div>
 				
@@ -30,70 +15,73 @@
 					<div class="d-flex justify-content-center">
 		                <ul class="nav">
 		                    <li class="nav-item">
-		                        <a title="Antecedentes" th:href="@{/dnd5e/componente/antecedentes}" class="nav-link"><i class="fa-solid fa-scroll"></i></a>
+		                        <a title="Antecedentes" th:href="@{/admin/tabela/antecedentes}" class="nav-link"><i class="fa-solid fa-scroll"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Armas" th:href="@{/dnd5e/componente/armas}" class="nav-link"><i class="fa-solid fa-khanda"></i></a>
+		                        <a title="Armas" th:href="@{/admin/tabela/armas}" class="nav-link"><i class="fa-solid fa-khanda"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Armaduras" th:href="@{/dnd5e/componente/armaduras}" class="nav-link"><i class="fa-solid fa-shield"></i></a>
+		                        <a title="Armaduras" th:href="@{/admin/tabela/armaduras}" class="nav-link"><i class="fa-solid fa-shield"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Arquétipos" th:href="@{/dnd5e/componente/arquetipos}" class="nav-link"><i class="fa-solid fa-chess-queen"></i></a>
+		                        <a title="Arquétipos" th:href="@{/admin/tabela/arquetipos}" class="nav-link"><i class="fa-solid fa-chess-queen"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Bugigangas" th:href="@{/dnd5e/componente/bugigangas}" class="nav-link"><i class="fa-solid fa-gem"></i></a>
+		                        <a title="Bugigangas" th:href="@{/admin/tabela/bugigangas}" class="nav-link"><i class="fa-solid fa-gem"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Classes" th:href="@{/dnd5e/componente/classes}" class="nav-link"><i class="fa-solid fa-hat-wizard"></i></a>
+		                        <a title="Classes" th:href="@{/admin/tabela/classes}" class="nav-link"><i class="fa-solid fa-hat-wizard"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Dados" th:href="@{/dnd5e/componente/dados}" class="nav-link"><i class="fa-solid fa-dice-d20"></i></a>
+		                        <a title="Dados" th:href="@{/admin/tabela/dados}" class="nav-link"><i class="fa-solid fa-dice-d20"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Defeitos" th:href="@{/dnd5e/componente/defeitos}" class="nav-link"><i class="fa-solid fa-poop"></i></a>
+		                        <a title="Defeitos" th:href="@{/admin/tabela/defeitos}" class="nav-link"><i class="fa-solid fa-poop"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Equipamentos" th:href="@{/dnd5e/componente/equipamentos}" class="nav-link"><i class="fa-solid fa-toolbox"></i></a>
+		                        <a title="Equipamentos" th:href="@{/admin/tabela/equipamentos}" class="nav-link"><i class="fa-solid fa-toolbox"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Ferramentas" th:href="@{/dnd5e/componente/ferramentas}" class="nav-link"><i class="fa-solid fa-hammer"></i></a>
+		                        <a title="Ferramentas" th:href="@{/admin/tabela/ferramentas}" class="nav-link"><i class="fa-solid fa-hammer"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Glossário de Magias" th:href="@{/dnd5e/componente/glossario}" class="nav-link"><i class="fa-solid fa-wand-magic-sparkles"></i></a>
+		                        <a title="Glossário de Magias" th:href="@{/admin/tabela/glossario}" class="nav-link"><i class="fa-solid fa-wand-magic-sparkles"></i></a>
+		                    </li>
+							<li class="nav-item">
+		                        <a title="Habilidades Chave" th:href="@{/admin/tabela/habchave}" class="nav-link"><i class="fa-solid fa-hand-sparkles"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Ideais" th:href="@{/dnd5e/componente/ideais}" class="nav-link"><i class="fa-solid fa-lightbulb"></i></a>
+		                        <a title="Ideais" th:href="@{/admin/tabela/ideais}" class="nav-link"><i class="fa-solid fa-lightbulb"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Idiomas" th:href="@{/dnd5e/componente/idiomas}" class="nav-link"><i class="fa-solid fa-language"></i></a>
+		                        <a title="Idiomas" th:href="@{/admin/tabela/idiomas}" class="nav-link"><i class="fa-solid fa-language"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Jogadores" th:href="@{/dnd5e/componente/jogadores}" class="nav-link"><i class="fa-solid fa-users"></i></a>
+		                        <a title="Jogadores" th:href="@{/admin/tabela/jogadores}" class="nav-link"><i class="fa-solid fa-users"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Mestres" th:href="@{/dnd5e/componente/mestres}" class="nav-link"><i class="fa-solid fa-people-group"></i></a>
+		                        <a title="Mestres" th:href="@{/admin/tabela/mestres}" class="nav-link"><i class="fa-solid fa-people-group"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Moedas" th:href="@{/dnd5e/componente/moedas}" class="nav-link"><i class="fa-solid fa-coins"></i></a>
+		                        <a title="Moedas" th:href="@{/admin/tabela/moedas}" class="nav-link"><i class="fa-solid fa-coins"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Raças" th:href="@{/dnd5e/componente/racas}" class="nav-link"><i class="fa-solid fa-people-arrows"></i></a>
+		                        <a title="Raças" th:href="@{/admin/tabela/racas}" class="nav-link"><i class="fa-solid fa-people-arrows"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Talentos" th:href="@{/dnd5e/componente/talentos}" class="nav-link"><i class="fa-solid fa-medal"></i></a>
+		                        <a title="Talentos" th:href="@{/admin/tabela/talentos}" class="nav-link"><i class="fa-solid fa-medal"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Tendências" th:href="@{/dnd5e/componente/tendencias}" class="nav-link"><i class="fa-solid fa-scale-balanced"></i></a>
+		                        <a title="Tendências" th:href="@{/admin/tabela/tendencias}" class="nav-link"><i class="fa-solid fa-scale-balanced"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Tipos de Dano" th:href="@{/dnd5e/componente/dano}" class="nav-link"><i class="fa-solid fa-bolt"></i></a>
+		                        <a title="Tipos de Dano" th:href="@{/admin/tabela/dano}" class="nav-link"><i class="fa-solid fa-bolt"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Traços de Personalidade" th:href="@{/dnd5e/componente/tracos}" class="nav-link"><i class="fa-solid fa-masks-theater"></i></a>
+		                        <a title="Traços de Personalidade" th:href="@{/admin/tabela/tracos}" class="nav-link"><i class="fa-solid fa-masks-theater"></i></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a title="Vínculos" th:href="@{/dnd5e/componente/vinculos}" class="nav-link"><i class="fa-solid fa-link"></i></a>
+		                        <a title="Vínculos" th:href="@{/admin/tabela/vinculos}" class="nav-link"><i class="fa-solid fa-link"></i></a>
 		                    </li>
 		                </ul>
 		            </div>
@@ -111,4 +99,4 @@
 	        </div>
 	    </nav>
 	</header>
-</idv>
+</div>

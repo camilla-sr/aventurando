@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index - Jogador</title>
 	
-	<script src="js/libs/jquery.min.js"></script>
+	<script src="js/libs/jquery-3.7.1.min.js"></script>
 	<script src="js/libs/sweetalert2.min.js"></script>
+	<script src="js/script.js"></script>
 	<script src="js/erros.js"></script>
 	<script src="js/sweet.js"></script>
 	<script src="js/validacoes/raca.js"></script>
@@ -110,7 +111,9 @@
             </div>
         </div>
 
-        <!-- FAB ESTILOSO -->
+		<div th:replace="~{fab :: fab}"></div>
+		
+        <!-- FAB ESTILOSO
         <div class="fab-container">
             <button id="fab-main" class="fab-main">
                 <i class="fa fa-plus"></i>
@@ -135,7 +138,7 @@
                 $(this).find('i').toggleClass('fa-plus fa-times');
             });
         });
-    </script>
+    </script> -->
 </body>
 
 </html>

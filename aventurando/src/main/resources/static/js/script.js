@@ -28,4 +28,9 @@ $(document).ready(function () {
 	}
 	$inputSenha.on('input', verificarSenha)
 	$inputConfSenha.on('input', verificarSenha)
+	
+	$('#fab-main').click(function () {
+        $('.fab-options').toggleClass('active');
+        $(this).find('i').toggleClass('fa-plus fa-times');
+    });
 })
