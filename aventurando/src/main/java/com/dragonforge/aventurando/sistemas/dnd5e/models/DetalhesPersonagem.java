@@ -17,7 +17,7 @@ public class DetalhesPersonagem {
 	
 	@ManyToOne
 	@JoinColumn(name = "i_jogador")
-	private Jogador jogador;
+	private Integer jogador;
 	
 	@ManyToOne
 	@JoinColumn(name = "i_habilidade_classe")
@@ -53,7 +53,7 @@ public class DetalhesPersonagem {
 	
 	public DetalhesPersonagem() {}
 	
-	public DetalhesPersonagem(Integer idDetalhes, Jogador jogador, HabilidadeClasse habilidadeClasse,
+	public DetalhesPersonagem(Integer idDetalhes, Integer jogador, HabilidadeClasse habilidadeClasse,
 			HabilidadeRaca habilidadeRaca, Arquetipo arquetipo, Talento talento, Idioma idioma, Arma arma,
 			Armadura armadura, Ferramenta ferramenta) {
 		this.idDetalhes = idDetalhes;
@@ -70,8 +70,8 @@ public class DetalhesPersonagem {
 
 	public Integer getIdDetalhes() { return idDetalhes; }
 	public void setIdDetalhes(Integer idDetalhes) { this.idDetalhes = idDetalhes; }
-	public Jogador getJogador() { return jogador; }
-	public void setJogador(Jogador jogador) { this.jogador = jogador; }
+	public Integer getJogador() { return jogador; }
+	public void setJogador(Integer jogador) { this.jogador = jogador; }
 	public HabilidadeClasse getHabilidadeClasse() { return habilidadeClasse; }
 	public void setHabilidadeClasse(HabilidadeClasse habilidadeClasse) { this.habilidadeClasse = habilidadeClasse; }
 	public HabilidadeRaca getHabilidadeRaca() { return habilidadeRaca; }

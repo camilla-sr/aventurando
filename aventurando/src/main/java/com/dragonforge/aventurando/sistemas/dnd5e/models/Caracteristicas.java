@@ -18,7 +18,7 @@ public class Caracteristicas {
 	
 	@ManyToOne
 	@JoinColumn(name = "i_jogador")
-	private Jogador jogador;
+	private Integer jogador;
 	@ManyToOne
 	@JoinColumn(name = "i_traco_personalizado")
 	private TracoPersonalidade traco;
@@ -34,9 +34,9 @@ public class Caracteristicas {
 	
 	private String foto = "";
 	@Positive
-	private int idade;
+	private Integer idade;
 	@Positive
-	private float peso = 0.0f;
+	private Float peso = 0.0f;
 	private String cabelos;
 	private String olhos;
 	private String pele;
@@ -47,8 +47,8 @@ public class Caracteristicas {
 	
 	public Caracteristicas() {}
 	
-	public Caracteristicas(Integer idCaracteristica, Jogador jogador, String foto, int idade,
-			float peso, String cabelos, String olhos, String pele, String caracteristicaPersonalizada,
+	public Caracteristicas(Integer idCaracteristica, Integer jogador, String foto, Integer idade,
+			Float peso, String cabelos, String olhos, String pele, String caracteristicaPersonalizada,
 			TracoPersonalidade traco, Ideal ideal, Vinculo vinculo, Defeito defeito, String historia,
 			String aliadosOrg, String tesouro) {
 		this.idCaracteristica = idCaracteristica; this.jogador = jogador; this.foto = foto; this.idade = idade;
@@ -59,8 +59,8 @@ public class Caracteristicas {
 
 	public Integer getIdCaracteristica() { return idCaracteristica; }
 	public void setIdCaracteristica(Integer idCaracteristica) { this.idCaracteristica = idCaracteristica; }
-	public Jogador getJogador() { return jogador; }
-	public void setJogador(Jogador jogador) { this.jogador = jogador; }
+	public Integer getJogador() { return jogador; }
+	public void setJogador(Integer jogador) { this.jogador = jogador; }
 	public TracoPersonalidade getTraco() { return traco; }
 	public void setTraco(TracoPersonalidade traco) { this.traco = traco; }
 	public Ideal getIdeal() { return ideal; }
@@ -71,10 +71,10 @@ public class Caracteristicas {
 	public void setDefeito(Defeito defeito) { this.defeito = defeito;	}
 	public String getFoto() { return foto; }
 	public void setFoto(String foto) { this.foto = foto; }
-	public int getIdade() { return idade; }
-	public void setIdade(int idade) { this.idade = idade; }
-	public float getPeso() { return peso; }
-	public void setPeso(float peso) { this.peso = peso; }
+	public Integer getIdade() { return idade; }
+	public void setIdade(Integer idade) { this.idade = idade; }
+	public Float getPeso() { return peso; }
+	public void setPeso(Float peso) { this.peso = peso; }
 	public String getCabelos() { return cabelos; }
 	public void setCabelos(String cabelos) { this.cabelos = cabelos; }
 	public String getOlhos() { return olhos; }

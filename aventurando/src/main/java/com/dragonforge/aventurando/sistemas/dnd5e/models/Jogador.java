@@ -18,7 +18,7 @@ public class Jogador {
 	private Integer idJogador;
 	
 	@Column(name = "i_usuario")
-	private Integer idUsuario;
+	private Integer usuario;
 	@ManyToOne
 	@JoinColumn(name = "i_raca")
 	private Raca raca;
@@ -32,87 +32,89 @@ public class Jogador {
 	@JoinColumn(name = "i_antecedente")
 	private Antecedente antecedente;
 	
-	private int xp = 0;
-	private int nivel = 0;
-	private int pontosVida = 10;
-	private int pontosVidaAtual = 0;
-	private int pontosVidaTemporaria = 0;
-	private int proficiencia = 0;
-	private int classeArmadura = 0;			//CA
-	private int classeArmaduraBonus = 0;	//CA
-	private int iniciativa = 0;
-	private int iniciativaBonus = 0;
-	private float deslocamento = 9.0f;
-	private float deslocamentoBonus = 0.0f;
-	private float deslocamentoAgua = 0.0f;
-	private float deslocamentoEscalada = 0.0f;
-	private float deslocamentoVoo = 0.0f;
-	private int percepcaoPassiva = 0;
+	private Integer xp = 0;
+	private Integer nivel = 0;
+	private Integer pontosVida = 10;
+	private Integer pontosVidaAtual = 0;
+	private Integer pontosVidaTemporaria = 0;
+	private Integer proficiencia = 0;
+	private Integer classeArmadura = 0;			//CA
+	private Integer classeArmaduraBonus = 0;	//CA
+	private Integer iniciativa = 0;
+	private Integer iniciativaBonus = 0;
+	private Float deslocamento = 9.0f;
+	private Float deslocamentoBonus = 0.0f;
+	private Float deslocamentoAgua = 0.0f;
+	private Float deslocamentoEscalada = 0.0f;
+	private Float deslocamentoVoo = 0.0f;
+	private Integer percepcaoPassiva = 0;
 	
 	//	ATRIBUTOS
-	private int forca = 0;
-	private int modFor = 0;
-	private int destreza = 0;
-	private int modDes = 0;
-	private int constituicao = 0;
-	private int modCon = 0;
-	private int inteligencia = 0;
-	private int modInt = 0;
-	private int sabedoria = 0;
-	private int modSab = 0;
-	private int carisma = 0;
-	private int modCar = 0;
+	private Integer forca = 0;
+	private Integer modFor = 0;
+	private Integer destreza = 0;
+	private Integer modDes = 0;
+	private Integer constituicao = 0;
+	private Integer modCon = 0;
+	private Integer inteligencia = 0;
+	private Integer modInt = 0;
+	private Integer sabedoria = 0;
+	private Integer modSab = 0;
+	private Integer carisma = 0;
+	private Integer modCar = 0;
 	
 	//PERÍCIAS
-	private int atletismoBase = 0;			//usa modificador de força
-	private int atletismo = 0;	//usa modificador + bônus
-	private int acrobaciaBase = 0;
-	private int acrobacia = 0;	//usa destreza
-	private int furtividadeBase = 0;
-	private int furtividade = 0;
-	private int prestidigitacaoBase = 0;
-	private int prestidigitacao = 0;
-	private int arcanismoBase = 0;			//usa SABEDORIA
-	private int arcanismo = 0;
-	private int historiaBase = 0;
-	private int historia = 0;
-	private int investigacaoBase = 0;
-	private int investigacao = 0;
-	private int naturezaBase = 0;
-	private int natureza = 0;
-	private int religiaoBase = 0;
-	private int religiao = 0;
-	private int intuicaoBase = 0;
-	private int intuicao = 0;
-	private int lidarAnimaisBase = 0;
-	private int lidarAnimais = 0;
-	private int medicinaBase = 0;
-	private int medicina = 0;
-	private int percepcaoBase = 0;
-	private int percepcao = 0;
-	private int sobrevivenciaBase = 0;
-	private int sobrevivencia = 0;
-	private int atuacaoBase = 0;				// CARISMA
-	private int atuacao = 0;
-	private int enganacaoBase = 0;
-	private int enganacao = 0;
-	private int intimidacaoBase = 0;
-	private int intimidacao = 0;
-	private int persuasaoBase = 0;
-	private int persuasao = 0;
+	private Integer atletismoBase = 0;			//usa modificador de força
+	private Integer atletismo = 0;	//usa modificador + bônus
+	private Integer acrobaciaBase = 0;
+	private Integer acrobacia = 0;	//usa destreza
+	private Integer furtividadeBase = 0;
+	private Integer furtividade = 0;
+	private Integer prestidigitacaoBase = 0;
+	private Integer prestidigitacao = 0;
+	private Integer arcanismoBase = 0;			//usa SABEDORIA
+	private Integer arcanismo = 0;
+	private Integer historiaBase = 0;
+	private Integer historia = 0;
+	private Integer investigacaoBase = 0;
+	private Integer investigacao = 0;
+	private Integer naturezaBase = 0;
+	private Integer natureza = 0;
+	private Integer religiaoBase = 0;
+	private Integer religiao = 0;
+	private Integer intuicaoBase = 0;
+	private Integer intuicao = 0;
+	private Integer lidarAnimaisBase = 0;
+	private Integer lidarAnimais = 0;
+	private Integer medicinaBase = 0;
+	private Integer medicina = 0;
+	private Integer percepcaoBase = 0;
+	private Integer percepcao = 0;
+	private Integer sobrevivenciaBase = 0;
+	private Integer sobrevivencia = 0;
+	private Integer atuacaoBase = 0;				// CARISMA
+	private Integer atuacao = 0;
+	private Integer enganacaoBase = 0;
+	private Integer enganacao = 0;
+	private Integer intimidacaoBase = 0;
+	private Integer intimidacao = 0;
+	private Integer persuasaoBase = 0;
+	private Integer persuasao = 0;
+
+	public Jogador() {}
 	
-	public Jogador( Integer idJogador, Integer idUsuario, Raca raca, Classe classe, Tendencia tendencia, Antecedente antecedente,
-			int xp, int nivel, int pontosVida, int pontosVidaAtual, int pontosVidaTemporaria, int proficiencia,
-			int classeArmadura, int classeArmaduraBonus, int iniciativa, int iniciativaBonus, float deslocamento, float deslocamentoBonus,
-		    float deslocamentoAgua, float deslocamentoEscalada, float deslocamentoVoo, int percepcaoPassiva, int forca, int modFor,
-		    int destreza, int modDes, int constituicao, int modCon, int inteligencia, int modInt, int sabedoria, int modSab, int carisma,
-		    int modCar, int atletismoBase, int atletismo, int acrobaciaBase, int acrobacia, int furtividadeBase, int furtividade,
-		    int prestidigitacaoBase, int prestidigitacao, int arcanismoBase, int arcanismo, int historiaBase, int historia, int investigacaoBase,
-		    int investigacao, int naturezaBase, int natureza, int religiaoBase, int religiao, int intuicaoBase, int intuicao, int lidarAnimaisBase,
-		    int lidarAnimais, int medicinaBase, int medicina, int percepcaoBase, int percepcao, int sobrevivenciaBase, int sobrevivencia, int atuacaoBase, int atuacao, int enganacaoBase, int enganacao,
-		    int intimidacaoBase, int intimidacao, int persuasaoBase, int persuasao ) {
+	public Jogador( Integer idJogador, Integer usuario, Raca raca, Classe classe, Tendencia tendencia, Antecedente antecedente,
+			Integer xp, Integer nivel, Integer pontosVida, Integer pontosVidaAtual, Integer pontosVidaTemporaria, Integer proficiencia,
+			Integer classeArmadura, Integer classeArmaduraBonus, Integer iniciativa, Integer iniciativaBonus, Float deslocamento, Float deslocamentoBonus,
+		    Float deslocamentoAgua, Float deslocamentoEscalada, Float deslocamentoVoo, Integer percepcaoPassiva, Integer forca, Integer modFor,
+		    Integer destreza, Integer modDes, Integer constituicao, Integer modCon, Integer inteligencia, Integer modInt, Integer sabedoria, Integer modSab, Integer carisma,
+		    Integer modCar, Integer atletismoBase, Integer atletismo, Integer acrobaciaBase, Integer acrobacia, Integer furtividadeBase, Integer furtividade,
+		    Integer prestidigitacaoBase, Integer prestidigitacao, Integer arcanismoBase, Integer arcanismo, Integer historiaBase, Integer historia, Integer investigacaoBase,
+		    Integer investigacao, Integer naturezaBase, Integer natureza, Integer religiaoBase, Integer religiao, Integer intuicaoBase, Integer intuicao, Integer lidarAnimaisBase,
+		    Integer lidarAnimais, Integer medicinaBase, Integer medicina, Integer percepcaoBase, Integer percepcao, Integer sobrevivenciaBase, Integer sobrevivencia, Integer atuacaoBase, Integer atuacao, Integer enganacaoBase, Integer enganacao,
+		    Integer intimidacaoBase, Integer intimidacao, Integer persuasaoBase, Integer persuasao ) {
 		
-		    this.idJogador = idJogador; this.idUsuario = idUsuario; this.raca = raca; this.classe = classe; this.tendencia = tendencia;
+		    this.idJogador = idJogador; this.usuario = usuario; this.raca = raca; this.classe = classe; this.tendencia = tendencia;
 		    this.antecedente = antecedente; this.xp = xp; this.nivel = nivel; this.pontosVida = pontosVida; this.pontosVidaAtual = pontosVidaAtual;
 		    this.pontosVidaTemporaria = pontosVidaTemporaria; this.proficiencia = proficiencia; this.classeArmadura = classeArmadura;
 		    this.classeArmaduraBonus = classeArmaduraBonus; this.iniciativa = iniciativa; this.iniciativaBonus = iniciativaBonus;
@@ -132,8 +134,8 @@ public class Jogador {
 		}
 
 	
-	public Integer getUsuario() { return idUsuario; }
-	public void setUsuario(Integer idUsuario) { this.idUsuario = idUsuario; }
+	public Integer getUsuario() { return usuario; }
+	public void setUsuario(Integer usuario) { this.usuario= usuario; }
 	public Raca getRaca() { return raca; }
 	public void setRaca(Raca raca) { this.raca = raca; }
 	public Classe getClasse() { return classe; }
@@ -145,132 +147,132 @@ public class Jogador {
 	
 	public Integer getIdJogador() { return idJogador; }
 	public void setIdJogador(Integer idJogador) { this.idJogador = idJogador; }
-	public int getXp() { return xp; }
-	public void setXp(int xp) { this.xp = xp; }
-	public int getNivel() { return nivel; }
-	public void setNivel(int nivel) { this.nivel = nivel; }
-	public int getPontosVida() { return pontosVida; }
-	public void setPontosVida(int pontosVida) { this.pontosVida = pontosVida; }
-	public int getPontosVidaAtual() { return pontosVidaAtual; }
-	public void setPontosVidaAtual(int pontosVidaAtual) { this.pontosVidaAtual = pontosVidaAtual; }
-	public int getPontosVidaTemporaria() { return pontosVidaTemporaria; }
-	public void setPontosVidaTemporaria(int pontosVidaTemporaria) { this.pontosVidaTemporaria = pontosVidaTemporaria; }
-	public int getProficiencia() { return proficiencia; }
-	public void setProficiencia(int proficiencia) { this.proficiencia = proficiencia; }
-	public int getClasseArmadura() { return classeArmadura; }
-	public void setClasseArmadura(int classeArmadura) { this.classeArmadura = classeArmadura; }
-	public int getClasseArmaduraBonus() { return classeArmaduraBonus; }
-	public void setClasseArmaduraBonus(int classeArmaduraBonus) { this.classeArmaduraBonus = classeArmaduraBonus; }
-	public int getIniciativa() { return iniciativa; }
-	public void setIniciativa(int iniciativa) { this.iniciativa = iniciativa; }
-	public int getIniciativaBonus() { return iniciativaBonus; }
-	public void setIniciativaBonus(int iniciativaBonus) { this.iniciativaBonus = iniciativaBonus; }
-	public float getDeslocamento() { return deslocamento; }
-	public void setDeslocamento(float deslocamento) { this.deslocamento = deslocamento; }
-	public float getDeslocamentoBonus() { return deslocamentoBonus; }
-	public void setDeslocamentoBonus(float deslocamentoBonus) { this.deslocamentoBonus = deslocamentoBonus; }
-	public float getDeslocamentoAgua() { return deslocamentoAgua; }
-	public void setDeslocamentoAgua(float deslocamentoAgua) { this.deslocamentoAgua = deslocamentoAgua; }
-	public float getDeslocamentoEscalada() { return deslocamentoEscalada; }
-	public void setDeslocamentoEscalada(float deslocamentoEscalada) { this.deslocamentoEscalada = deslocamentoEscalada; }
-	public float getDeslocamentoVoo() { return deslocamentoVoo; }
-	public void setDeslocamentoVoo(float deslocamentoVoo) { this.deslocamentoVoo = deslocamentoVoo; }
-	public int getPercepcaoPassiva() { return percepcaoPassiva; }
-	public void setPercepcaoPassiva(int percepcaoPassiva) { this.percepcaoPassiva = percepcaoPassiva; }
-	public int getForca() { return forca; }
-	public void setForca(int forca) { this.forca = forca; }
-	public int getModFor() { return modFor; }
-	public void setModFor(int modFor) { this.modFor = modFor; }
-	public int getDestreza() { return destreza; }
-	public void setDestreza(int destreza) { this.destreza = destreza; }
-	public int getModDes() { return modDes; }
-	public void setModDes(int modDes) { this.modDes = modDes; }
-	public int getConstituicao() { return constituicao; }
-	public void setConstituicao(int constituicao) { this.constituicao = constituicao; }
-	public int getModCon() { return modCon; }
-	public void setModCon(int modCon) { this.modCon = modCon; }
-	public int getInteligencia() { return inteligencia; }
-	public void setInteligencia(int inteligencia) { this.inteligencia = inteligencia; }
-	public int getModInt() { return modInt; }
-	public void setModInt(int modInt) { this.modInt = modInt; }
-	public int getSabedoria() { return sabedoria; }
-	public void setSabedoria(int sabedoria) { this.sabedoria = sabedoria; }
-	public int getModSab() { return modSab; }
-	public void setModSab(int modSab) { this.modSab = modSab; }
-	public int getCarisma() { return carisma; }
-	public void setCarisma(int carisma) { this.carisma = carisma; }
-	public int getModCar() { return modCar; }
-	public void setModCar(int modCar) { this.modCar = modCar; }
-	public int getAtletismoBase() { return atletismoBase; }
-	public void setAtletismoBase(int atletismoBase) { this.atletismoBase = atletismoBase; }
-	public int getAtletismo() { return atletismo; }
-	public void setAtletismo(int atletismo) { this.atletismo = atletismo; }
-	public int getAcrobaciaBase() { return acrobaciaBase; }
-	public void setAcrobaciaBase(int acrobaciaBase) { this.acrobaciaBase = acrobaciaBase; }
-	public int getAcrobacia() { return acrobacia; }
-	public void setAcrobacia(int acrobacia) { this.acrobacia = acrobacia; }
-	public int getFurtividadeBase() { return furtividadeBase; }
-	public void setFurtividadeBase(int furtividadeBase) { this.furtividadeBase = furtividadeBase; }
-	public int getFurtividade() { return furtividade; }
-	public void setFurtividade(int furtividade) { this.furtividade = furtividade; }
-	public int getPrestidigitacaoBase() { return prestidigitacaoBase; }
-	public void setPrestidigitacaoBase(int prestidigitacaoBase) { this.prestidigitacaoBase = prestidigitacaoBase; }
-	public int getPrestidigitacao() { return prestidigitacao; }
-	public void setPrestidigitacao(int prestidigitacao) { this.prestidigitacao = prestidigitacao; }
-	public int getArcanismoBase() { return arcanismoBase; }
-	public void setArcanismoBase(int arcanismoBase) { this.arcanismoBase = arcanismoBase; }
-	public int getArcanismo() { return arcanismo; }
-	public void setArcanismo(int arcanismo) { this.arcanismo = arcanismo; }
-	public int getHistoriaBase() { return historiaBase; }
-	public void setHistoriaBase(int historiaBase) { this.historiaBase = historiaBase; }
-	public int getHistoria() { return historia; }
-	public void setHistoria(int historia) { this.historia = historia; }
-	public int getInvestigacaoBase() { return investigacaoBase; }
-	public void setInvestigacaoBase(int investigacaoBase) { this.investigacaoBase = investigacaoBase; }
-	public int getInvestigacao() { return investigacao; }
-	public void setInvestigacao(int investigacao) { this.investigacao = investigacao; }
-	public int getNaturezaBase() { return naturezaBase; }
-	public void setNaturezaBase(int naturezaBase) { this.naturezaBase = naturezaBase; }
-	public int getNatureza() { return natureza; }
-	public void setNatureza(int natureza) { this.natureza = natureza; }
-	public int getReligiaoBase() { return religiaoBase; }
-	public void setReligiaoBase(int religiaoBase) { this.religiaoBase = religiaoBase; }
-	public int getReligiao() { return religiao; }
-	public void setReligiao(int religiao) { this.religiao = religiao; }
-	public int getIntuicaoBase() { return intuicaoBase; }
-	public void setIntuicaoBase(int intuicaoBase) { this.intuicaoBase = intuicaoBase; }
-	public int getIntuicao() { return intuicao; }
-	public void setIntuicao(int intuicao) { this.intuicao = intuicao; }
-	public int getLidarAnimaisBase() { return lidarAnimaisBase; }
-	public void setLidarAnimaisBase(int lidarAnimaisBase) { this.lidarAnimaisBase = lidarAnimaisBase; }
-	public int getLidarAnimais() { return lidarAnimais; }
-	public void setLidarAnimais(int lidarAnimais) { this.lidarAnimais = lidarAnimais; }
-	public int getMedicinaBase() { return medicinaBase; }
-	public void setMedicinaBase(int medicinaBase) { this.medicinaBase = medicinaBase; }
-	public int getMedicina() { return medicina; }
-	public void setMedicina(int medicina) { this.medicina = medicina; }
-	public int getPercepcaoBase() { return percepcaoBase; }
-	public void setPercepcaoBase(int percepcaoBase) { this.percepcaoBase = percepcaoBase; }
-	public int getPercepcao() { return percepcao; }
-	public void setPercepcao(int percepcao) { this.percepcao = percepcao; }
-	public int getSobrevivenciaBase() { return sobrevivenciaBase; }
-	public void setSobrevivenciaBase(int sobrevivenciaBase) { this.sobrevivenciaBase = sobrevivenciaBase; }
-	public int getSobrevivencia() { return sobrevivencia; }
-	public void setSobrevivencia(int sobrevivencia) { this.sobrevivencia = sobrevivencia; }
-	public int getAtuacaoBase() { return atuacaoBase; }
-	public void setAtuacaoBase(int atuacaoBase) { this.atuacaoBase = atuacaoBase; }
-	public int getAtuacao() { return atuacao; }
-	public void setAtuacao(int atuacao) { this.atuacao = atuacao; }
-	public int getEnganacaoBase() { return enganacaoBase; }
-	public void setEnganacaoBase(int enganacaoBase) { this.enganacaoBase = enganacaoBase; }
-	public int getEnganacao() { return enganacao; }
-	public void setEnganacao(int enganacao) { this.enganacao = enganacao; }
-	public int getIntimidacaoBase() { return intimidacaoBase; }
-	public void setIntimidacaoBase(int intimidacaoBase) { this.intimidacaoBase = intimidacaoBase; }
-	public int getIntimidacao() { return intimidacao; }
-	public void setIntimidacao(int intimidacao) { this.intimidacao = intimidacao; }
-	public int getPersuasaoBase() { return persuasaoBase; }
-	public void setPersuasaoBase(int persuasaoBase) { this.persuasaoBase = persuasaoBase; }
-	public int getPersuasao() { return persuasao; }
-	public void setPersuasao(int persuasao) { this.persuasao = persuasao; }
+	public Integer getXp() { return xp; }
+	public void setXp(Integer xp) { this.xp = xp; }
+	public Integer getNivel() { return nivel; }
+	public void setNivel(Integer nivel) { this.nivel = nivel; }
+	public Integer getPontosVida() { return pontosVida; }
+	public void setPontosVida(Integer pontosVida) { this.pontosVida = pontosVida; }
+	public Integer getPontosVidaAtual() { return pontosVidaAtual; }
+	public void setPontosVidaAtual(Integer pontosVidaAtual) { this.pontosVidaAtual = pontosVidaAtual; }
+	public Integer getPontosVidaTemporaria() { return pontosVidaTemporaria; }
+	public void setPontosVidaTemporaria(Integer pontosVidaTemporaria) { this.pontosVidaTemporaria = pontosVidaTemporaria; }
+	public Integer getProficiencia() { return proficiencia; }
+	public void setProficiencia(Integer proficiencia) { this.proficiencia = proficiencia; }
+	public Integer getClasseArmadura() { return classeArmadura; }
+	public void setClasseArmadura(Integer classeArmadura) { this.classeArmadura = classeArmadura; }
+	public Integer getClasseArmaduraBonus() { return classeArmaduraBonus; }
+	public void setClasseArmaduraBonus(Integer classeArmaduraBonus) { this.classeArmaduraBonus = classeArmaduraBonus; }
+	public Integer getIniciativa() { return iniciativa; }
+	public void setIniciativa(Integer iniciativa) { this.iniciativa = iniciativa; }
+	public Integer getIniciativaBonus() { return iniciativaBonus; }
+	public void setIniciativaBonus(Integer iniciativaBonus) { this.iniciativaBonus = iniciativaBonus; }
+	public Float getDeslocamento() { return deslocamento; }
+	public void setDeslocamento(Float deslocamento) { this.deslocamento = deslocamento; }
+	public Float getDeslocamentoBonus() { return deslocamentoBonus; }
+	public void setDeslocamentoBonus(Float deslocamentoBonus) { this.deslocamentoBonus = deslocamentoBonus; }
+	public Float getDeslocamentoAgua() { return deslocamentoAgua; }
+	public void setDeslocamentoAgua(Float deslocamentoAgua) { this.deslocamentoAgua = deslocamentoAgua; }
+	public Float getDeslocamentoEscalada() { return deslocamentoEscalada; }
+	public void setDeslocamentoEscalada(Float deslocamentoEscalada) { this.deslocamentoEscalada = deslocamentoEscalada; }
+	public Float getDeslocamentoVoo() { return deslocamentoVoo; }
+	public void setDeslocamentoVoo(Float deslocamentoVoo) { this.deslocamentoVoo = deslocamentoVoo; }
+	public Integer getPercepcaoPassiva() { return percepcaoPassiva; }
+	public void setPercepcaoPassiva(Integer percepcaoPassiva) { this.percepcaoPassiva = percepcaoPassiva; }
+	public Integer getForca() { return forca; }
+	public void setForca(Integer forca) { this.forca = forca; }
+	public Integer getModFor() { return modFor; }
+	public void setModFor(Integer modFor) { this.modFor = modFor; }
+	public Integer getDestreza() { return destreza; }
+	public void setDestreza(Integer destreza) { this.destreza = destreza; }
+	public Integer getModDes() { return modDes; }
+	public void setModDes(Integer modDes) { this.modDes = modDes; }
+	public Integer getConstituicao() { return constituicao; }
+	public void setConstituicao(Integer constituicao) { this.constituicao = constituicao; }
+	public Integer getModCon() { return modCon; }
+	public void setModCon(Integer modCon) { this.modCon = modCon; }
+	public Integer getInteligencia() { return inteligencia; }
+	public void setInteligencia(Integer inteligencia) { this.inteligencia = inteligencia; }
+	public Integer getModInt() { return modInt; }
+	public void setModInt(Integer modInt) { this.modInt = modInt; }
+	public Integer getSabedoria() { return sabedoria; }
+	public void setSabedoria(Integer sabedoria) { this.sabedoria = sabedoria; }
+	public Integer getModSab() { return modSab; }
+	public void setModSab(Integer modSab) { this.modSab = modSab; }
+	public Integer getCarisma() { return carisma; }
+	public void setCarisma(Integer carisma) { this.carisma = carisma; }
+	public Integer getModCar() { return modCar; }
+	public void setModCar(Integer modCar) { this.modCar = modCar; }
+	public Integer getAtletismoBase() { return atletismoBase; }
+	public void setAtletismoBase(Integer atletismoBase) { this.atletismoBase = atletismoBase; }
+	public Integer getAtletismo() { return atletismo; }
+	public void setAtletismo(Integer atletismo) { this.atletismo = atletismo; }
+	public Integer getAcrobaciaBase() { return acrobaciaBase; }
+	public void setAcrobaciaBase(Integer acrobaciaBase) { this.acrobaciaBase = acrobaciaBase; }
+	public Integer getAcrobacia() { return acrobacia; }
+	public void setAcrobacia(Integer acrobacia) { this.acrobacia = acrobacia; }
+	public Integer getFurtividadeBase() { return furtividadeBase; }
+	public void setFurtividadeBase(Integer furtividadeBase) { this.furtividadeBase = furtividadeBase; }
+	public Integer getFurtividade() { return furtividade; }
+	public void setFurtividade(Integer furtividade) { this.furtividade = furtividade; }
+	public Integer getPrestidigitacaoBase() { return prestidigitacaoBase; }
+	public void setPrestidigitacaoBase(Integer prestidigitacaoBase) { this.prestidigitacaoBase = prestidigitacaoBase; }
+	public Integer getPrestidigitacao() { return prestidigitacao; }
+	public void setPrestidigitacao(Integer prestidigitacao) { this.prestidigitacao = prestidigitacao; }
+	public Integer getArcanismoBase() { return arcanismoBase; }
+	public void setArcanismoBase(Integer arcanismoBase) { this.arcanismoBase = arcanismoBase; }
+	public Integer getArcanismo() { return arcanismo; }
+	public void setArcanismo(Integer arcanismo) { this.arcanismo = arcanismo; }
+	public Integer getHistoriaBase() { return historiaBase; }
+	public void setHistoriaBase(Integer historiaBase) { this.historiaBase = historiaBase; }
+	public Integer getHistoria() { return historia; }
+	public void setHistoria(Integer historia) { this.historia = historia; }
+	public Integer getInvestigacaoBase() { return investigacaoBase; }
+	public void setInvestigacaoBase(Integer investigacaoBase) { this.investigacaoBase = investigacaoBase; }
+	public Integer getInvestigacao() { return investigacao; }
+	public void setInvestigacao(Integer investigacao) { this.investigacao = investigacao; }
+	public Integer getNaturezaBase() { return naturezaBase; }
+	public void setNaturezaBase(Integer naturezaBase) { this.naturezaBase = naturezaBase; }
+	public Integer getNatureza() { return natureza; }
+	public void setNatureza(Integer natureza) { this.natureza = natureza; }
+	public Integer getReligiaoBase() { return religiaoBase; }
+	public void setReligiaoBase(Integer religiaoBase) { this.religiaoBase = religiaoBase; }
+	public Integer getReligiao() { return religiao; }
+	public void setReligiao(Integer religiao) { this.religiao = religiao; }
+	public Integer getIntuicaoBase() { return intuicaoBase; }
+	public void setIntuicaoBase(Integer intuicaoBase) { this.intuicaoBase = intuicaoBase; }
+	public Integer getIntuicao() { return intuicao; }
+	public void setIntuicao(Integer intuicao) { this.intuicao = intuicao; }
+	public Integer getLidarAnimaisBase() { return lidarAnimaisBase; }
+	public void setLidarAnimaisBase(Integer lidarAnimaisBase) { this.lidarAnimaisBase = lidarAnimaisBase; }
+	public Integer getLidarAnimais() { return lidarAnimais; }
+	public void setLidarAnimais(Integer lidarAnimais) { this.lidarAnimais = lidarAnimais; }
+	public Integer getMedicinaBase() { return medicinaBase; }
+	public void setMedicinaBase(Integer medicinaBase) { this.medicinaBase = medicinaBase; }
+	public Integer getMedicina() { return medicina; }
+	public void setMedicina(Integer medicina) { this.medicina = medicina; }
+	public Integer getPercepcaoBase() { return percepcaoBase; }
+	public void setPercepcaoBase(Integer percepcaoBase) { this.percepcaoBase = percepcaoBase; }
+	public Integer getPercepcao() { return percepcao; }
+	public void setPercepcao(Integer percepcao) { this.percepcao = percepcao; }
+	public Integer getSobrevivenciaBase() { return sobrevivenciaBase; }
+	public void setSobrevivenciaBase(Integer sobrevivenciaBase) { this.sobrevivenciaBase = sobrevivenciaBase; }
+	public Integer getSobrevivencia() { return sobrevivencia; }
+	public void setSobrevivencia(Integer sobrevivencia) { this.sobrevivencia = sobrevivencia; }
+	public Integer getAtuacaoBase() { return atuacaoBase; }
+	public void setAtuacaoBase(Integer atuacaoBase) { this.atuacaoBase = atuacaoBase; }
+	public Integer getAtuacao() { return atuacao; }
+	public void setAtuacao(Integer atuacao) { this.atuacao = atuacao; }
+	public Integer getEnganacaoBase() { return enganacaoBase; }
+	public void setEnganacaoBase(Integer enganacaoBase) { this.enganacaoBase = enganacaoBase; }
+	public Integer getEnganacao() { return enganacao; }
+	public void setEnganacao(Integer enganacao) { this.enganacao = enganacao; }
+	public Integer getIntimidacaoBase() { return intimidacaoBase; }
+	public void setIntimidacaoBase(Integer intimidacaoBase) { this.intimidacaoBase = intimidacaoBase; }
+	public Integer getIntimidacao() { return intimidacao; }
+	public void setIntimidacao(Integer intimidacao) { this.intimidacao = intimidacao; }
+	public Integer getPersuasaoBase() { return persuasaoBase; }
+	public void setPersuasaoBase(Integer persuasaoBase) { this.persuasaoBase = persuasaoBase; }
+	public Integer getPersuasao() { return persuasao; }
+	public void setPersuasao(Integer persuasao) { this.persuasao = persuasao; }
 }

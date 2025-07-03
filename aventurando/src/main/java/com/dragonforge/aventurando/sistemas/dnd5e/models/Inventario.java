@@ -19,7 +19,7 @@ public class Inventario {
 	
 	@OneToOne
 	@JoinColumn(name = "i_jogador")
-	private Jogador jogador;
+	private Integer jogador;
 	
 	@ManyToOne
 	@JoinColumn(name = "i_deposito")
@@ -42,28 +42,28 @@ public class Inventario {
 	private Tranqueiras tranqueiras;
 	
 	@Positive
-	private int cobre;
+	private Integer cobre;
 	@Positive
-	private int prata;
+	private Integer prata;
 	@Positive
-	private int electro;
+	private Integer electro;
 	@Positive
-	private int ouro;
+	private Integer ouro;
 	@Positive
-	private int platina;
+	private Integer platina;
 	
 	public Inventario() {}
 	
-	public Inventario(Integer idInventario, Jogador jogador, Deposito deposito, Arsenal arsenal, Mochila mochila,
-		Utilitarios utilitarios, Tranqueiras tranqueiras, int cobre, int prata, int electro, int ouro, int platina) {
+	public Inventario(Integer idInventario, Integer jogador, Deposito deposito, Arsenal arsenal, Mochila mochila,
+		Utilitarios utilitarios, Tranqueiras tranqueiras, Integer cobre, Integer prata, Integer electro, Integer ouro, Integer platina) {
 		this.idInventario = idInventario; this.jogador = jogador; this.deposito = deposito; this.arsenal = arsenal;
 		this.mochila = mochila; this.utilitarios = utilitarios; this.tranqueiras = tranqueiras;
 	}
 
 	public Integer getIdInventario() { return idInventario; }
 	public void setIdInventario(Integer idInventario) { this.idInventario = idInventario; }
-	public Jogador getJogador() { return jogador; }
-	public void setJogador(Jogador jogador) { this.jogador = jogador; }
+	public Integer getJogador() { return jogador; }
+	public void setJogador(Integer jogador) { this.jogador = jogador; }
 	public Deposito getDeposito() { return deposito; }
 	public void setDeposito(Deposito deposito) { this.deposito = deposito; }
 	public Arsenal getArsenal() { return arsenal; }
@@ -74,14 +74,14 @@ public class Inventario {
 	public void setUtilitarios(Utilitarios utilitarios) { this.utilitarios = utilitarios; }
 	public Tranqueiras getTranqueiras() { return tranqueiras; }
 	public void setTranqueiras(Tranqueiras tranqueiras) { this.tranqueiras = tranqueiras; }
-	public int getCobre() { return cobre; }
-	public void setCobre(int cobre) { this.cobre = cobre; }
-	public int getPrata() { return prata; }
-	public void setPrata(int prata) { this.prata = prata; }
-	public int getElectro() { return electro; }
-	public void setElectro(int electro) { this.electro = electro; }
-	public int getOuro() { return ouro; }
-	public void setOuro(int ouro) { this.ouro = ouro; }
-	public int getPlatina() { return platina; }
-	public void setPlatina(int platina) { this.platina = platina; }
+	public Integer getCobre() { return cobre; }
+	public void setCobre(Integer cobre) { this.cobre = cobre; }
+	public Integer getPrata() { return prata; }
+	public void setPrata(Integer prata) { this.prata = prata; }
+	public Integer getElectro() { return electro; }
+	public void setElectro(Integer electro) { this.electro = electro; }
+	public Integer getOuro() { return ouro; }
+	public void setOuro(Integer ouro) { this.ouro = ouro; }
+	public Integer getPlatina() { return platina; }
+	public void setPlatina(Integer platina) { this.platina = platina; }
 }
