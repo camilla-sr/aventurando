@@ -113,11 +113,11 @@ public class ComponenteController {
 				break;
 			case "jogadores":
 				model.addAttribute("titulo", "Jogadores");
-				model.addAttribute("dados", repoUser.findAll());
+				model.addAttribute("dados", repoUser.findByAcesso("jogador"));
 				break;
 			case "mestres":
 				model.addAttribute("titulo", "Mestres");
-				model.addAttribute("dados", repoUser.findAllMestre());
+				model.addAttribute("dados", repoUser.findByAcesso("mestre"));
 				break;
 			case "moedas":
 				model.addAttribute("titulo", "Moedas");
