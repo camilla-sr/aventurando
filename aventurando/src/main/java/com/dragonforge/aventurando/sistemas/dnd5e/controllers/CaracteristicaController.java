@@ -51,7 +51,7 @@ public class CaracteristicaController {
 		if(carac.getIdCaracteristica() != null) {
 			Caracteristicas existe = repo.findById(carac.getIdCaracteristica()).orElse(new Caracteristicas());
 			
-			existe.setJogador(player);
+			existe.setPlayer(player);
 			if(tracoSelect != null) { existe.setTraco(tracoSelect); }
 			if(idealSelect != null) { existe.setIdeal(idealSelect); }
 			if(vincSelect != null) { existe.setVinculo(vincSelect); }

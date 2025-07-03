@@ -1,5 +1,6 @@
 package com.dragonforge.aventurando.sistemas.dnd5e.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,23 +16,20 @@ public class MagiasPersonagem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idRegistro;
 	private String tipo = "";
-	@ManyToOne
-	@JoinColumn(name = "i_jogador")
-	private Jogador jogador;
-	
+	@Column(name = "i_jogador")
+	private Integer player;
 	@ManyToOne
 	@JoinColumn(name = "i_magia")
 	private GlossarioMagias magia;
-	
 	@ManyToOne
 	@JoinColumn(name = "i_classe")
 	private Classe classe;
 	
 	public MagiasPersonagem() {}
 	
-	public MagiasPersonagem(Integer idRegistro, Jogador jogador, GlossarioMagias magia, Classe classe) {
+	public MagiasPersonagem(Integer idRegistro, Integer player, GlossarioMagias magia, Classe classe) {
 		this.idRegistro = idRegistro;
-		this.jogador = jogador;
+		this.player = player;
 		this.magia = magia;
 		this.classe = classe;
 	}
@@ -40,8 +38,8 @@ public class MagiasPersonagem {
 	public void setIdRegistro(Integer idRegistro) { this.idRegistro = idRegistro; }
 	public String getTipo() { return tipo; }
 	public void setTipo(String tipo) { this.tipo = tipo; }
-	public Jogador getJogador() { return jogador; }
-	public void setJogador(Jogador jogador) { this.jogador = jogador; }
+	public Integer getPlayer() { return player; }
+	public void setPlayer(Integer player) { this.player = player; }
 	public GlossarioMagias getMagia() { return magia; }
 	public void setMagia(GlossarioMagias magia) { this.magia = magia; }
 	public Classe getClasse() { return classe; }

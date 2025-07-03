@@ -16,7 +16,6 @@ public class Jogador {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idJogador;
-	
 	@Column(name = "i_usuario")
 	private Integer usuario;
 	@ManyToOne

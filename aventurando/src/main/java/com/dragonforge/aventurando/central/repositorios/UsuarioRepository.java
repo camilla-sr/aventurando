@@ -8,11 +8,11 @@ import com.dragonforge.aventurando.central.models.Usuario;
 public interface UsuarioRepository extends CrudRepository<Usuario, Integer>{
 	Usuario findByUsuario(String usuario);
 	
-	Usuario findByAcesso(String acesso);
+	Iterable<Usuario> findByAcesso(String acesso);
 	
 	Optional<Usuario> findById(Integer id);
 
 	Iterable<Usuario> findAll();
 	
-	Iterable<Usuario> findByIdAndAcesso(Integer id, String acesso);
+	Iterable<Usuario> findByIdUsuarioAndAcesso(Integer id, String acesso);
 }

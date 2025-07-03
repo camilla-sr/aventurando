@@ -1,5 +1,6 @@
 package com.dragonforge.aventurando.sistemas.dnd5e.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,51 +14,41 @@ import jakarta.persistence.Table;
 public class DetalhesPersonagem {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idDetalhes;
-	
-	@ManyToOne
-	@JoinColumn(name = "i_jogador")
-	private Integer jogador;
-	
+	private Integer idDetalhes;	
+	@Column(name = "i_jogador")
+	private Integer player;
 	@ManyToOne
 	@JoinColumn(name = "i_habilidade_classe")
 	private HabilidadeClasse habilidadeClasse;
-	
 	@ManyToOne
 	@JoinColumn(name = "i_habilidade_raca")
 	private HabilidadeRaca habilidadeRaca;
-	
 	@ManyToOne
 	@JoinColumn(name = "i_arquetipo")
 	private Arquetipo arquetipo;
-	
 	@ManyToOne
 	@JoinColumn(name = "i_talento")
 	private Talento talento;
-	
 	@ManyToOne
 	@JoinColumn(name = "i_idioma")
 	private Idioma idioma;
-	
 	@ManyToOne
 	@JoinColumn(name = "i_p_arma")		//PROFICIÊNCIA EM ARMAS
 	private Arma arma;
-	
 	@ManyToOne
 	@JoinColumn(name = "i_p_armadura")	//PROFICIẼNCIA EM ARMADURAS
 	private Armadura armadura;
-	
 	@ManyToOne
 	@JoinColumn(name = "i_p_ferramenta")	//PROFICIÊNCIA EM FERRAMENTA
 	private Ferramenta ferramenta;
 	
 	public DetalhesPersonagem() {}
 	
-	public DetalhesPersonagem(Integer idDetalhes, Integer jogador, HabilidadeClasse habilidadeClasse,
+	public DetalhesPersonagem(Integer idDetalhes, Integer player, HabilidadeClasse habilidadeClasse,
 			HabilidadeRaca habilidadeRaca, Arquetipo arquetipo, Talento talento, Idioma idioma, Arma arma,
 			Armadura armadura, Ferramenta ferramenta) {
 		this.idDetalhes = idDetalhes;
-		this.jogador = jogador;
+		this.player = player;
 		this.habilidadeClasse = habilidadeClasse;
 		this.habilidadeRaca = habilidadeRaca;
 		this.arquetipo = arquetipo;
@@ -70,8 +61,8 @@ public class DetalhesPersonagem {
 
 	public Integer getIdDetalhes() { return idDetalhes; }
 	public void setIdDetalhes(Integer idDetalhes) { this.idDetalhes = idDetalhes; }
-	public Integer getJogador() { return jogador; }
-	public void setJogador(Integer jogador) { this.jogador = jogador; }
+	public Integer getPlayer() { return player; }
+	public void setPlayer(Integer player) { this.player = player; }
 	public HabilidadeClasse getHabilidadeClasse() { return habilidadeClasse; }
 	public void setHabilidadeClasse(HabilidadeClasse habilidadeClasse) { this.habilidadeClasse = habilidadeClasse; }
 	public HabilidadeRaca getHabilidadeRaca() { return habilidadeRaca; }

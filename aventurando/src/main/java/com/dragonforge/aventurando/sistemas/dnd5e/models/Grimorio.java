@@ -1,5 +1,6 @@
 package com.dragonforge.aventurando.sistemas.dnd5e.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,15 +17,11 @@ public class Grimorio {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idGrimorio;
-	
-	@OneToOne
-	@JoinColumn(name = "i_jogador")
+	@Column(name = "i_jogador")
 	private Integer jogador;
-	
 	@ManyToOne
 	@JoinColumn(name = "i_habilidade_chave")
 	private HabilidadeMagia habilidadeMagia;
-	
 	@ManyToOne
 	@JoinColumn(name = "i_magia")
 	private GlossarioMagias magia;

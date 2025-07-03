@@ -1,5 +1,6 @@
 package com.dragonforge.aventurando.sistemas.dnd5e.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,10 +16,8 @@ public class Caracteristicas {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idCaracteristica;
-	
-	@ManyToOne
-	@JoinColumn(name = "i_jogador")
-	private Integer jogador;
+	@Column(name = "i_jogador")
+	private Integer player;
 	@ManyToOne
 	@JoinColumn(name = "i_traco_personalizado")
 	private TracoPersonalidade traco;
@@ -47,11 +46,11 @@ public class Caracteristicas {
 	
 	public Caracteristicas() {}
 	
-	public Caracteristicas(Integer idCaracteristica, Integer jogador, String foto, Integer idade,
+	public Caracteristicas(Integer idCaracteristica, Integer jogadorId, String foto, Integer idade,
 			Float peso, String cabelos, String olhos, String pele, String caracteristicaPersonalizada,
 			TracoPersonalidade traco, Ideal ideal, Vinculo vinculo, Defeito defeito, String historia,
 			String aliadosOrg, String tesouro) {
-		this.idCaracteristica = idCaracteristica; this.jogador = jogador; this.foto = foto; this.idade = idade;
+		this.idCaracteristica = idCaracteristica; this.player = jogadorId; this.foto = foto; this.idade = idade;
 		this.peso = peso; this.cabelos = cabelos; this.olhos = olhos; this.pele = pele; this.tesouro = tesouro;
 		this.caracteristicaPersonalizada = caracteristicaPersonalizada; this.traco = traco; this.ideal = ideal;
 		this.vinculo = vinculo; this.defeito = defeito; this.historia = historia;this.aliadosOrg = aliadosOrg;
@@ -59,8 +58,8 @@ public class Caracteristicas {
 
 	public Integer getIdCaracteristica() { return idCaracteristica; }
 	public void setIdCaracteristica(Integer idCaracteristica) { this.idCaracteristica = idCaracteristica; }
-	public Integer getJogador() { return jogador; }
-	public void setJogador(Integer jogador) { this.jogador = jogador; }
+	public Integer getPlayer() { return player; }
+	public void setPlayer(Integer player) { this.player = player; }
 	public TracoPersonalidade getTraco() { return traco; }
 	public void setTraco(TracoPersonalidade traco) { this.traco = traco; }
 	public Ideal getIdeal() { return ideal; }

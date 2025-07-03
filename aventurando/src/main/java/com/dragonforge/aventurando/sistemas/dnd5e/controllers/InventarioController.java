@@ -54,7 +54,7 @@ public class InventarioController {
 		if(inventario.getIdInventario() != null) {
 			Inventario existe = repo.findById(inventario.getIdInventario()).orElse(new Inventario());
 			
-			existe.setJogador(player);
+			existe.setPlayer(player);
 			if(depoSelect != null) { existe.setDeposito(depoSelect); }
 			if(arsSelect != null) { existe.setArsenal(arsSelect); }
 			if(bagSelect != null) { existe.setMochila(bagSelect); }

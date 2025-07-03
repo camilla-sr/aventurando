@@ -70,7 +70,7 @@ public class DetalhesController {
 		if(detail.getIdDetalhes() != null) {
 			DetalhesPersonagem existe = repo.findById(detail.getIdDetalhes()).orElse(new DetalhesPersonagem());
 			
-			existe.setJogador(player);
+			existe.setPlayer(player);
 			if(classSelect != null) { existe.setHabilidadeClasse(classSelect); }
 			if(racaSelect != null) { existe.setHabilidadeRaca(racaSelect); }
 			if(arqSelect != null) { existe.setArquetipo(arqSelect); }

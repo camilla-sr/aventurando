@@ -7,6 +7,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.dragonforge.aventurando.central.models.Usuario;
+import com.dragonforge.aventurando.sistemas.dnd5e.repositorios.AntecedenteRepository;
+import com.dragonforge.aventurando.sistemas.dnd5e.repositorios.BugigangaRepository;
+import com.dragonforge.aventurando.sistemas.dnd5e.repositorios.DadoRepository;
+import com.dragonforge.aventurando.sistemas.dnd5e.repositorios.DanoRepository;
+import com.dragonforge.aventurando.sistemas.dnd5e.repositorios.GlossarioRepository;
+import com.dragonforge.aventurando.sistemas.dnd5e.repositorios.HabMagiaRepository;
+import com.dragonforge.aventurando.sistemas.dnd5e.repositorios.IdiomaRepository;
+import com.dragonforge.aventurando.sistemas.dnd5e.repositorios.MoedaRepository;
+import com.dragonforge.aventurando.sistemas.dnd5e.repositorios.RacaRepository;
+import com.dragonforge.aventurando.sistemas.dnd5e.repositorios.TalentoRepository;
+import com.dragonforge.aventurando.sistemas.dnd5e.repositorios.TendenciaRepository;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -14,13 +25,28 @@ import jakarta.servlet.http.HttpSession;
 public class Rotas {
 	@Autowired
 	private Sessao s;
-	
-	@ModelAttribute
-	public void userGlobal(HttpSession session, Model model) {
-		if(s.loginAtivo(session)) {
-			model.addAttribute("userLogado", (Usuario) session.getAttribute("userLogado"));
-		}
-	}
+	@Autowired
+	private RacaRepository raca;
+	@Autowired
+	private TendenciaRepository tend;
+	@Autowired
+	private AntecedenteRepository antec;
+	@Autowired
+	private TalentoRepository talent;
+	@Autowired
+	private DadoRepository dice;
+	@Autowired
+	private DanoRepository dano;
+	@Autowired
+	private MoedaRepository coin;
+	@Autowired
+	private BugigangaRepository bugi;
+	@Autowired
+	private IdiomaRepository idioma;
+	@Autowired
+	private HabMagiaRepository habMagia;
+	@Autowired
+	private GlossarioRepository magias;
 	
 	public String verificaUsuario(HttpSession session, String page) {
 		if(!s.loginAtivo(session)) return "login";
@@ -39,7 +65,20 @@ public class Rotas {
 	
 	@GetMapping("/")
 	public String index(HttpSession session, Model model) {
-		if(s.verificaAcesso(session, "admin")) return "dnd5e/index_admin";
+		if(s.verificaAcesso(session, "admin")) {
+			model.addAttribute("racas", raca.count());
+			model.addAttribute("tendencias", tend.count());
+			model.addAttribute("antecedentes", antec.count());
+			model.addAttribute("talentos", talent.count());
+			model.addAttribute("dados", dice.count());
+			model.addAttribute("danos", dano.count());
+			model.addAttribute("moedas", coin.count());
+			model.addAttribute("bugigangas", bugi.count());
+			model.addAttribute("idiomas", idioma.count());
+			model.addAttribute("hab_chave", habMagia.count());
+			model.addAttribute("magias", magias.count());
+			return "dnd5e/index_admin"; 
+		}
 		if(s.verificaAcesso(session, "jogador")) return "dnd5e/index_jogador";
 		if(s.verificaAcesso(session, "mestre")) return "dnd5e/index_mestre";
 		return "login";

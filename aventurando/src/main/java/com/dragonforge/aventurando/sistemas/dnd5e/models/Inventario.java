@@ -1,5 +1,6 @@
 package com.dragonforge.aventurando.sistemas.dnd5e.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,27 +17,20 @@ public class Inventario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idInventario;
-	
-	@OneToOne
-	@JoinColumn(name = "i_jogador")
-	private Integer jogador;
-	
+	@Column(name = "i_jogador")
+	private Integer player;
 	@ManyToOne
 	@JoinColumn(name = "i_deposito")
 	private Deposito deposito;
-	
 	@ManyToOne
 	@JoinColumn(name = "i_arsenal")
 	private Arsenal arsenal;
-	
 	@ManyToOne
 	@JoinColumn(name = "i_mochila")
 	private Mochila mochila;
-	
 	@ManyToOne
 	@JoinColumn(name = "i_utilitarios")
 	private Utilitarios utilitarios;
-	
 	@ManyToOne
 	@JoinColumn(name = "i_tranqueiras")
 	private Tranqueiras tranqueiras;
@@ -54,16 +48,16 @@ public class Inventario {
 	
 	public Inventario() {}
 	
-	public Inventario(Integer idInventario, Integer jogador, Deposito deposito, Arsenal arsenal, Mochila mochila,
+	public Inventario(Integer idInventario, Integer player, Deposito deposito, Arsenal arsenal, Mochila mochila,
 		Utilitarios utilitarios, Tranqueiras tranqueiras, Integer cobre, Integer prata, Integer electro, Integer ouro, Integer platina) {
-		this.idInventario = idInventario; this.jogador = jogador; this.deposito = deposito; this.arsenal = arsenal;
+		this.idInventario = idInventario; this.player = player; this.deposito = deposito; this.arsenal = arsenal;
 		this.mochila = mochila; this.utilitarios = utilitarios; this.tranqueiras = tranqueiras;
 	}
 
 	public Integer getIdInventario() { return idInventario; }
 	public void setIdInventario(Integer idInventario) { this.idInventario = idInventario; }
-	public Integer getJogador() { return jogador; }
-	public void setJogador(Integer jogador) { this.jogador = jogador; }
+	public Integer getPlayer() { return player; }
+	public void setPlayer(Integer player) { this.player = player; }
 	public Deposito getDeposito() { return deposito; }
 	public void setDeposito(Deposito deposito) { this.deposito = deposito; }
 	public Arsenal getArsenal() { return arsenal; }
