@@ -9,13 +9,14 @@
 	<script src="/js/erros/codigos.js"></script>
     <script src="/js/erros/feedback.js"></script>
 	<script src="/js/script.js"></script>
+	<script src="/js/hotkeys.js"></script>
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="/css/componente_style.css">
 	<link rel="stylesheet" href="/css/admin_style.css">
 	<link rel="stylesheet" href="/css/index_style.css">
-	<link rel="stylesheet" href="/css/componente_style.css">
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
 </head>
 
@@ -23,17 +24,30 @@
 
 <body>
 	<div class="container">
+		<div class="container-fluid">
+			<div class="d-flex justify-content-between align-items-center mt-4">
+			    <h3><span th:text="${titulo}"></span></h3>
+				<div>
+					<label class="search-label">
+						<input type="text" name="busca" class="input search-input" required="" placeholder="Buscar...">
+						<kbd class="slash-icon">/</kbd>
+						<i class="search-icon fa-solid fa-magnifying-glass"></i>
+					</label>
+				</div>
+			</div>
+			
+		</div>
 		<div class="tabela-componentes mt-5">
             <table class="table table-dark table-hover">
 				<thead>
-				    <tr class="text-center">
+				    <tr class="text-center align-middle cabecalho">
 						<th th:each="cab : ${cabecalho}" th:text="${cab}"></th>
 						<th>Ações</th>
 					</tr>
 				</thead>
 				<tbody>
-				    <tr class="text-center" th:each="item, iter : ${dados}">
-				        <td th:each="campo : ${campos}" th:text="${#fields.field(item, campo)}"></td>
+				    <tr class="text-center coluna" th:each="item, iter : ${dados}">
+				        <td th:each="campo : ${campos}" th:text="${item[campo]}"></td>
 				        
 				        <td class="d-grid gap-2 d-md-flex justify-content-md-evenly">
 				            <button class="acao" title="Editar">
@@ -44,8 +58,8 @@
 				            </button>
 				        </td>
 				    </tr>
-				    <tr th:if="${#lists.isEmpty(dados)}">
-				        <td colspan="99" class="text-center text-muted">Nenhum registro encontrado</td>
+				    <tr th:if="${#lists.isEmpty(dados)}" class="coluna">
+				        <td colspan="99" class="text-center">Nenhum registro encontrado</td>
 				    </tr>
 				</tbody>
             </table>

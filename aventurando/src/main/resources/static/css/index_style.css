@@ -184,7 +184,7 @@ body{
 
   display: flex;                /* ← sempre visível no DOM */
   flex-direction: column;
-  gap: 10px;
+  gap: 10px !important;
 
   opacity: 0;                   /* ← invisível por padrão */
   visibility: hidden;
