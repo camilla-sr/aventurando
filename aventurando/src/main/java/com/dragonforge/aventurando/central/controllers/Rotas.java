@@ -58,27 +58,14 @@ public class Rotas {
 		return "login";
 	}
 	
-	@GetMapping("compo")
-	public String componentes() {
-		return "dnd5e/tabela-componente";
+	@GetMapping("painelSistema")
+	public String painel() {
+		return "dnd5e/painelSistema";
 	}
 	
 	@GetMapping("/")
-	public String index(HttpSession session, Model model) {
-		if(s.verificaAcesso(session, "admin")) {
-			model.addAttribute("racas", raca.count());
-			model.addAttribute("tendencias", tend.count());
-			model.addAttribute("antecedentes", antec.count());
-			model.addAttribute("talentos", talent.count());
-			model.addAttribute("dados", dice.count());
-			model.addAttribute("danos", dano.count());
-			model.addAttribute("moedas", coin.count());
-			model.addAttribute("bugigangas", bugi.count());
-			model.addAttribute("idiomas", idioma.count());
-			model.addAttribute("hab_chave", habMagia.count());
-			model.addAttribute("magias", magias.count());
-			return "dnd5e/index_admin"; 
-		}
+	public String index(HttpSession session) {
+		if(s.verificaAcesso(session, "admin")) return "dnd5e/index_admin";
 		if(s.verificaAcesso(session, "jogador")) return "dnd5e/index_jogador";
 		if(s.verificaAcesso(session, "mestre")) return "dnd5e/index_mestre";
 		return "login";

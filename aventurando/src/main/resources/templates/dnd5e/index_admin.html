@@ -10,16 +10,17 @@
 	<script src="js/erros/codigos.js"></script>
     <script src="js/erros/feedback.js"></script>
 	<script src="js/script.js"></script>
+	<script src="js/hotkeys.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="css/index_style.css">
+	<link rel="stylesheet" href="css/index_style.css">
     <link rel="stylesheet" href="css/admin_style.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 
-<div th:replace="~{barra :: barra}"></div>
+<div th:replace="~{fragmentos/barra :: barra}"></div>
 
 <body>
     <div class="container mt-4">
@@ -55,6 +56,16 @@
         </div>
 
         <div class="tabela-sistemas mt-4">
+			<div class="d-flex justify-content-between align-items-center mb-3">
+			    <h3>Sistemas de Jogo</h3>
+				<div>
+					<label class="search-label">
+						<input type="text" name="busca" class="input search-input" required="" placeholder="Buscar...">
+						<kbd class="slash-icon">/</kbd>
+						<i class="search-icon fa-solid fa-magnifying-glass"></i>
+					</label>
+				</div>
+			</div>
             <table class="table table-dark table-hover">
                 <thead>
                     <tr class="text-center">
@@ -74,14 +85,16 @@
                         <td>4</td>
                         <td>5</td>
                         <td class="d-grid gap-2 d-md-flex justify-content-md-evenly">
-                            <button class="acao" title="Editar"><i class="fa-solid fa-feather fa-xl"></i></button>
-                            <button class="acao" title="Apagar"><i class="fa-solid fa-trash fa-xl"></i></button>
+							<a class="acao" title="Editar"><i class="fa-solid fa-feather fa-xl"></i></a>
+							<a class="acao" title="Apagar"><i class="fa-solid fa-trash fa-xl"></i></a>
+							<a th:href="@{painelSistema}" class="acao" title="Configurar"><i class="fa-solid fa-gear fa-xl"></i></a>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-		<div th:replace="~{fab :: fab}"></div>
+		<div th:replace="~{fragmentos/fab :: fab}"></div>
+	</div>
 </body>
 </html>

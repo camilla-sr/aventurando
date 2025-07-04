@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="css/index_style.css">
 </head>
 
-<div th:replace="~{barra :: barra}"></div>
+<div th:replace="~{fragmentos/barra :: barra}"></div>
 
 <body>
     <div class="container mt-4">
@@ -111,34 +111,6 @@
             </div>
         </div>
 
-		<div th:replace="~{fab :: fab}"></div>
-		
-        <!-- FAB ESTILOSO
-        <div class="fab-container">
-            <button id="fab-main" class="fab-main">
-                <i class="fa fa-plus"></i>
-            </button>
-            <ul class="fab-options">
-                <li><button title="Criar ficha"><i class="fa-solid fa-scroll"></i></button></li>
-                <li><button title="Sugestão para o mestre"><i class="fa-solid fa-hat-wizard"></i></button></li>
-                <li><button title="Importar/Exportar ficha"><i class="fa-solid fa-file-import"></i></button></li>
-                <li><button title="Configurações"><i class="fa-solid fa-gear"></i></button></li>
-                <li><button title="Entrar em campanha"><i class="fa-solid fa-door-open"></i></button></li>
-                <li><button title="Rolagem de dados"><i class="fa-solid fa-dice-d20"></i></button></li>
-                <li><button title="Relatar bugs"><i class="fa-solid fa-bug"></i></button></li>
-            </ul>
-        </div>
-    </div>
-
-    <script src="jquery/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#fab-main').click(function () {
-                $('.fab-options').toggleClass('active');
-                $(this).find('i').toggleClass('fa-plus fa-times');
-            });
-        });
-    </script> -->
+		<div th:replace="~{fragmentos/fab :: fab}"></div>
 </body>
-
 </html>
