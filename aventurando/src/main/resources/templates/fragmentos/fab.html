@@ -5,20 +5,20 @@
 	    </button>
 	    <ul class="fab-options">
 		<div th:if="${userLogado.acesso == 'admin'}">
-			<li><button title="Novo Sistema"><i class="fa-solid fa-dice-d20"></i></button></li>
+			<li><button title="Novo Sistema" data-bs-toggle="modal" data-bs-target="#cadSistema"><i class="fa-solid fa-dice-d20"></i></button></li>
 			<li><button title="Editar Sistemas"><i class="fa-solid fa-scroll"></i></button></li>
 			<li><button title="Moderação"><i class="fa-solid fa-hat-wizard"></i></button></li>
 			<li><button title="Relatar bugs"><i class="fa-solid fa-bug"></i></button></li>
 		</div>
 		<div th:if="${userLogado.acesso == 'jogador'}">
-		        <li><button title="Criar ficha"><i class="fa-solid fa-scroll"></i></button></li>
-		        <li><button title="Sugestão para o mestre"><i class="fa-solid fa-hat-wizard"></i></button></li>
-		        <li><button title="Importar/Exportar ficha"><i class="fa-solid fa-file-import"></i></button></li>
-		        <li><button title="Configurações"><i class="fa-solid fa-gear"></i></button></li>
-		        <li><button title="Entrar em campanha"><i class="fa-solid fa-door-open"></i></button></li>
-		        <li><button title="Rolagem de dados"><i class="fa-solid fa-dice-d20"></i></button></li>
-		        <li><button title="Relatar bugs"><i class="fa-solid fa-bug"></i></button></li>
-		    </ul>
+	        <li><button title="Criar ficha"><i class="fa-solid fa-scroll"></i></button></li>
+	        <li><button title="Sugestão para o mestre"><i class="fa-solid fa-hat-wizard"></i></button></li>
+	        <li><button title="Importar/Exportar ficha"><i class="fa-solid fa-file-import"></i></button></li>
+	        <li><button title="Configurações"><i class="fa-solid fa-gear"></i></button></li>
+	        <li><button title="Entrar em campanha"><i class="fa-solid fa-door-open"></i></button></li>
+	        <li><button title="Rolagem de dados"><i class="fa-solid fa-dice-d20"></i></button></li>
+	        <li><button title="Relatar bugs"><i class="fa-solid fa-bug"></i></button></li>
+		</ul>
 		</div>
 	</div>
 </div>
