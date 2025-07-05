@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.dragonforge.aventurando.central.models.Usuario;
+import com.dragonforge.aventurando.central.repositorios.SistemaRepository;
 import com.dragonforge.aventurando.sistemas.dnd5e.repositorios.AntecedenteRepository;
 import com.dragonforge.aventurando.sistemas.dnd5e.repositorios.BugigangaRepository;
 import com.dragonforge.aventurando.sistemas.dnd5e.repositorios.DadoRepository;
@@ -25,6 +26,8 @@ import jakarta.servlet.http.HttpSession;
 public class Rotas {
 	@Autowired
 	private Sessao s;
+	@Autowired
+	private SistemaRepository sis;
 	@Autowired
 	private RacaRepository raca;
 	@Autowired
@@ -64,8 +67,11 @@ public class Rotas {
 	}
 	
 	@GetMapping("/")
-	public String index(HttpSession session) {
-		if(s.verificaAcesso(session, "admin")) return "dnd5e/index_admin";
+	public String index(HttpSession session, Model model) {
+		if(s.verificaAcesso(session, "admin")) { 
+			model.addAttribute("sistemas", sis.findAll());
+			return "dnd5e/index_admin";
+		}
 		if(s.verificaAcesso(session, "jogador")) return "dnd5e/index_jogador";
 		if(s.verificaAcesso(session, "mestre")) return "dnd5e/index_mestre";
 		return "login";
