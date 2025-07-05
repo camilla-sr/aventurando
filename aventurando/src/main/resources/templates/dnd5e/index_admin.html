@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="css/theme.css">
 	<link rel="stylesheet" href="css/index_style.css">
     <link rel="stylesheet" href="css/admin_style.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
@@ -71,30 +72,68 @@
                     <tr class="text-center">
                     <th>ID</th>
                     <th>Sistema</th>
-                    <th>Criador</th>
-                    <th>Mestres</th>
-                    <th>Players</th>
+                    <th>Slug</th>
+                    <th>Autor</th>
+                    <th>Status</th>
                     <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="text-center">
-                        <td>1</td>
-                        <td>D&E 5e</td>
-                        <td>Administrador</td>
-                        <td>4</td>
-                        <td>5</td>
+                    <tr class="text-center" th:each="sis : ${sistemas}">
+						<td th:text="${sis.idSistema}"></td>
+						<td th:text="${sis.nomeSistema}"></td>
+						<td th:text="${sis.slug}"></td>
+						<td th:text="${sis.autor}"></td>
+						<td><span  class="badge"
+						           th:text="${sis.ativo} ? 'ativo' : 'desativado'"
+						           th:classappend="${sis.ativo} ? ' bg-success' : ' bg-secondary'">
+						</span></td>
                         <td class="d-grid gap-2 d-md-flex justify-content-md-evenly">
 							<a class="acao" title="Editar"><i class="fa-solid fa-feather fa-xl"></i></a>
 							<a class="acao" title="Apagar"><i class="fa-solid fa-trash fa-xl"></i></a>
 							<a th:href="@{painelSistema}" class="acao" title="Configurar"><i class="fa-solid fa-gear fa-xl"></i></a>
                         </td>
                     </tr>
+					<tr th:if="${sistemas} == null" class="coluna">
+				        <td colspan="99" class="text-center">Nenhum registro encontrado</td>
+				    </tr>
                 </tbody>
             </table>
         </div>
 
-		<div th:replace="~{fragmentos/fab :: fab}"></div>
+		<div class="modal fade" id="cadSistema" tabindex="-1" aria-labelledby="cadSistemaLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content modal-rpg">
+					<div class="modal-header border-0">
+						<h5 class="modal-title" id="cadSistemaLabel"><i class="fa-solid fa-dice-d20 me-2"></i>Sistemas de Jogo</h5>
+					</div>
+	
+					<form>
+						<div class="modal-body">
+							<div class="mb-3">
+								<label for="nomeSistema" class="form-label">Nome do Sistema</label>
+								<input type="text" class="form-control" id="nomeSistema">
+							</div>
+	
+							<div class="mb-3">
+								<label for="slugSistema" class="form-label">Slug</label>
+								<input type="text" class="form-control" id="slugSistema">
+								<small class="d-block mt-1">Identificador único sem espaços (ex: tormenta20)</small>
+							</div>
+						</div>
+	
+						<div class="modal-footer border-0">
+							<button type="button" class="btn btn-cancelar" data-bs-dismiss="modal"><i class="fa-solid fa-xmark me-1"></i>Cancelar</button>
+							<button type="submit" class="btn btn-salvar"><i class="fa-solid fa-floppy-disk me-1"></i>Salvar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+		
+	<div th:replace="~{fragmentos/fab :: fab}"></div>
 	</div>
 </body>
 </html>
