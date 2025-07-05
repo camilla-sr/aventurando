@@ -1,31 +1,6 @@
-:root {
-  /* Nova paleta de cores - Tema RPG */
-  --primary-dark: #0d1117;     /* Fundo escuro profundo */
-  --primary-blue: #132347;     /* Azul noturno */
-  --accent-blue: #1e3a8a;      /* Azul elétrico para destaques */
-  --light-blue: #3b82f6;       /* Azul brilhante */
-  --gold-accent: #d4af37;      /* Dourado para elementos nobres */
-  
-  /* Cores de texto */
-  --text-primary: #e5e7eb;     /* Branco suave */
-  --text-secondary: #9ca3af;   /* Cinza azulado */
-  
-  /* Cores de botão */
-  --button-primary: #1e40af;   /* Azul real */
-  --button-hover: #1e3a8a;     /* Azul mais escuro */
-  --button-text: #ffffff;      /* Branco puro */
-  
-  /* Cores de borda */
-  --border-color: #1e3a8a;     /* Azul escuro */
-  --border-gold: #d4af37;      /* Dourado para bordas especiais */
+.acao{
+	cursor: pointer;
 }
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
-
 .acao > .fa-feather{
     color: #70C0FC;
 }
@@ -187,4 +162,36 @@ background-color: transparent;
 	box-shadow: inset 0 1px 0 0 #3f3f3f, inset 0 0 1px 1px rgb(94, 93, 93), 0 1px 2px 0 rgba(28, 28, 29, 0.4);
 	text-shadow: 0 1px 0 #7e7e7e;
 	color: transparent;
+}
+
+
+
+.modal-rpg {
+	background-color: var(--primary-dark);
+	color: var(--text-primary);
+	border: 1px solid var(--gold-accent);
+	border-radius: 1rem;
+	box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+.modal-rpg .modal-title {
+	color: var(--gold-accent);
+	font-weight: bold;
+}
+.modal-rpg .form-control {
+	background-color: var(--primary-blue);
+	color: var(--text-primary);
+	border-color: var(--border-color);
+}
+.modal-rpg small {
+	color: var(--text-secondary);
+	font-size: 0.85rem;
+}
+.modal-rpg .btn-cancelar {
+	background-color: transparent;
+	border: 1px solid var(--text-secondary);
+	color: var(--text-secondary);
+}
+.modal-rpg .btn-salvar {
+	background-color: var(--gold-accent);
+	color: var(--primary-dark);
 }
