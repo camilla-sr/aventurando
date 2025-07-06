@@ -27,7 +27,10 @@
 	<div class="container">
 		<div class="container-fluid">
 			<div class="d-flex justify-content-between align-items-center mt-4">
-			    <h3><span th:text="${titulo}"></span></h3>
+				<div class="d-flex align-items-center gap-3">
+					<h3 class="m-0"><span th:text="${titulo}"></span></h3>
+					<button class="btn-rpg-tema" th:data-componente="${componente}" onclick="abrirModalCadastro(this)">+</button>
+				</div>
 				<div>
 					<label class="search-label">
 						<input type="text" name="busca" class="input search-input" required="" placeholder="Buscar...">
@@ -65,6 +68,27 @@
 				</tbody>
             </table>
         </div>
+	</div>
+	
+	<div class="modal fade" id="modalDinamico" tabindex="-1" aria-labelledby="modalDinamicoLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg"> <div class="modal-content bg-dark text-light">
+	      <div class="modal-header border-secondary">
+	        <h5 class="modal-title" id="modalDinamicoLabel">Carregando...</h5>
+	        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body" id="modalDinamicoBody">
+	        <div class="text-center py-5">
+	            <div class="spinner-border text-primary" role="status">
+	                <span class="visually-hidden">Loading...</span>
+	            </div>
+	        </div>
+	      </div>
+	      <div class="modal-footer border-secondary">
+	        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+	        <button type="button" id="btnSalvarFormDinamico" class="btn btn-primary">Salvar Cadastro</button>
+	      </div>
+	    </div>
+	  </div>
 	</div>
 	
 	<div th:replace="~{fragmentos/fab :: fab}"></div>

@@ -82,3 +82,42 @@
 	text-shadow: 0 1px 0 #7e7e7e;
 	color: transparent;
 }
+
+
+.btn-rpg-tema {
+  all: unset;
+  font-size: 16px;
+  padding: 0.6em 1.2em;
+  background-color: #2b2b40;
+  color: #f5e8c7;
+  border: 2px solid #f5e8c7;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+
+.btn-rpg-tema::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, #f5e8c7, #bf9444);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.btn-rpg-tema:hover {
+  background-color: #3c3c5e;
+  color: #ffffff;
+  transform: scale(1.03);
+}
+
+.btn-rpg-tema:active {
+  transform: scale(0.97);
+}
