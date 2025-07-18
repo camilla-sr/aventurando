@@ -11,7 +11,7 @@
 	                </a>
 	            </div>
 				
-	            <div th:if="${userLogado.acesso == 'admin'}">
+	            <div th:if="${userLogado != null and userLogado.acesso == 'admin'}">
 					<div class="d-flex justify-content-center">
 		                <ul class="nav">
 		                    <li class="nav-item">
