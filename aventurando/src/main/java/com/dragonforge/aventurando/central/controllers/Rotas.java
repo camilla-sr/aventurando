@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.dragonforge.aventurando.central.models.Usuario;
 import com.dragonforge.aventurando.central.repositorios.SistemaRepository;
+import com.dragonforge.aventurando.central.repositorios.UsuarioRepository;
 import com.dragonforge.aventurando.sistemas.dnd5e.repositorios.AntecedenteRepository;
 import com.dragonforge.aventurando.sistemas.dnd5e.repositorios.BugigangaRepository;
 import com.dragonforge.aventurando.sistemas.dnd5e.repositorios.DadoRepository;
@@ -28,6 +29,8 @@ public class Rotas {
 	private Sessao s;
 	@Autowired
 	private SistemaRepository sis;
+	@Autowired
+	private UsuarioRepository user;
 	@Autowired
 	private RacaRepository raca;
 	@Autowired
@@ -71,6 +74,9 @@ public class Rotas {
 	public String index(HttpSession session, Model model) {
 		if(s.verificaAcesso(session, "admin")) { 
 			model.addAttribute("sistemas", sis.findAll());
+			model.addAttribute("totalsis", sis.count());
+			model.addAttribute("totalmestre", user.countByAcesso("mestre"));
+			model.addAttribute("totaljogador", user.countByAcesso("jogador"));
 			return "dnd5e/index_admin";
 		}
 		if(s.verificaAcesso(session, "jogador")) return "dnd5e/index_jogador";

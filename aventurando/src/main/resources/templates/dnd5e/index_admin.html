@@ -32,7 +32,7 @@
                     <div class="card bg-c-blue order-card">
                         <div class="card-block">
                             <h6 class="m-b-20">Sistemas de Jogo</h6>
-                            <h2 class="text-right"><i class="fa-solid fa-dice"></i><span> 4</span></h2>
+                            <h2 class="text-right"><i class="fa-solid fa-dice"></i> <span th:text="${totalsis}"></span></h2>
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                     <div class="card bg-c-green order-card">
                         <div class="card-block">
                             <h6 class="m-b-20">Mestres Cadastrados</h6>
-                            <h2 class="text-right"><i class="fa-solid fa-book"></i><span> 2</span></h2>
+                            <h2 class="text-right"><i class="fa-solid fa-book"></i> <span th:text="${totalmestre}"></span></h2>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                     <div class="card bg-c-yellow order-card">
                         <div class="card-block">
                             <h6 class="m-b-20">Jogadores Cadastrados</h6>
-                            <h2 class="text-right"><i class="fa-solid fa-users"></i><span> 3</span></h2>
+                            <h2 class="text-right"><i class="fa-solid fa-users"></i> <span th:text="${totaljogador}"></span></h2>
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,8 @@
 						</span></td>
                         <td class="d-grid gap-2 d-md-flex justify-content-md-evenly">
 							<a class="acao" title="Editar"><i class="fa-solid fa-feather fa-xl"></i></a>
-							<a class="acao" title="Apagar"><i class="fa-solid fa-trash fa-xl"></i></a>
+							<button class="acao btn-delete" th:attr="data-id=${sis.idSistema}" title="Apagar">
+								<i class="fa-solid fa-trash fa-xl"></i></button>
 							<a th:href="@{painelSistema}" class="acao" title="Configurar"><i class="fa-solid fa-gear fa-xl"></i></a>
                         </td>
                     </tr>
@@ -133,6 +134,9 @@
 							<button type="submit" class="btn btn-salvar"><i class="fa-solid fa-floppy-disk me-1"></i>Salvar</button>
 						</div>
 					</form>
+					<form id="deleteForm" action="/sistema-api/apagar" method="post" style="display: none;">
+					  <input type="hidden" name="id" id="id">
+					</form>
 				</div>
 			</div>
 		</div>
@@ -141,5 +145,18 @@
 		
 	<div th:replace="~{fragmentos/fab :: fab}"></div>
 	</div>
+	<script>
+		$(document).ready(function () {
+			$('.btn-delete').on('click', function (e) {
+				e.preventDefault();
+				const id = $(this).data('id');
+
+				confirmarExclusao(function () {
+					$('#id').val(id);
+					$('#deleteForm').submit();
+				});
+			});
+		});
+	</script>
 </body>
 </html>

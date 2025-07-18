@@ -52,6 +52,29 @@ function limparUrl() {
 	}
 }
 
+function confirmarExclusao(callbackConfirmado) {
+	Swal.fire({
+		title: 'Você tem certeza?',
+		text: "Esta ação não poderá ser desfeita!",
+		icon: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#b91c1c',
+		cancelButtonColor: '#3085d6',
+		confirmButtonText: 'Sim, excluir!',
+		cancelButtonText: 'Cancelar',
+		background: 'rgba(13, 17, 23, 0.4)',
+		color: '#e5e7eb',
+		customClass: {
+			popup: 'swal-glass'
+		}
+	}).then((result) => {
+		if (result.isConfirmed && typeof callbackConfirmado === 'function') {
+			callbackConfirmado();
+		}
+	});
+}
+
+
 // Isso será executado ao carregar o JS
 (function adicionarEstiloGlassAlert() {
 	const style = document.createElement('style');
