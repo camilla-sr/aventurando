@@ -19,7 +19,7 @@ public class SistemaController {
 	
 	@PostMapping(value = "/salvar")
 	public String salvar(@Valid Sistema sistema, BindingResult result) {
-		if(result.hasErrors()) { return "codigo=06"; }		//DEU ERRO EM ALGUMA COISA
+		if(result.hasErrors()) { return "redirect:/?codigo=06"; }		//DEU ERRO EM ALGUMA COISA
 		
 		if(sistema.getIdSistema() != null) {
 			Sistema existe = repo.findById(sistema.getIdSistema()).orElse(new Sistema());
@@ -27,19 +27,21 @@ public class SistemaController {
 			if(!sistema.getNomeSistema().isEmpty()) { existe.setNomeSistema(sistema.getNomeSistema()); }
 			if(!sistema.getSlug().isEmpty()) { existe.setSlug(sistema.getSlug()); }
 			if(!sistema.getAutor().isEmpty()) { existe.setAutor(sistema.getAutor()); }
-			existe.setAtivo(sistema.getAtivo());
+			
+			if(sistema.getAtivo() == true) { existe.setAtivo(true); }
+			if(sistema.getAtivo() == false) { existe.setAtivo(false); }
 			
 			repo.save(existe);
-			return "codigo=12";		//EDITADO
+			return "redirect:/?codigo=12";		//EDITADO
 		}else{
 			repo.save(sistema);
-			return "codigo=07";		//CADASTROU
+			return "redirect:/?codigo=07";		//CADASTROU
 		}
 	}
 	
 	@PostMapping("/apagar")
 	public String apagar(@RequestParam Integer id) {
 		if(id != null) { repo.deleteById(id); }
-		return "codigo=15";		//APAGOU
+		return "redirect:/?codigo=15";		//APAGOU
 	}
 }
