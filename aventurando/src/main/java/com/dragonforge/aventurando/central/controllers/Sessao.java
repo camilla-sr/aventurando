@@ -2,13 +2,12 @@ package com.dragonforge.aventurando.central.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
 import com.dragonforge.aventurando.central.models.Usuario;
-
 import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class Sessao {
+	
 	@GetMapping("/logout")
 	public String logout (HttpSession session) {
 		session.invalidate();
