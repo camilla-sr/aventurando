@@ -52,7 +52,7 @@ public class Rotas {
 	private GlossarioRepository magias;
 	
 	public String verificaUsuario(HttpSession session, String page) {
-		if(!s.loginAtivo(session)) return "login";
+		if(!s.loginAtivo(session)) return "redirect:/login";
 		return page;
 	}
 	
@@ -62,8 +62,9 @@ public class Rotas {
 	}
 	
 	@GetMapping("painelSistema")
-	public String painel() {
-		return "dnd5e/painelSistema";
+	public String painel(HttpSession session) {
+		if (!s.loginAtivo(session)) return "redirect:/login";
+	    return "dnd5e/painelSistema";
 	}
 	
 	@GetMapping("/")
