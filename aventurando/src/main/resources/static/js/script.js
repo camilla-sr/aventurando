@@ -33,4 +33,36 @@ $(document).ready(function () {
         $('.fab-options').toggleClass('active');
         $(this).find('i').toggleClass('fa-plus fa-times');
     });
+	
+
+	function abrirModalCadastro(buttonElement) {
+		const tipoComponente = $(buttonElement).data('componente');
+		const schema = schemasDeFormulario[tipoComponente];
+	    const modalElement = document.getElementById('modalDinamico');
+	    const modal = new bootstrap.Modal(modalElement);
+	    const modalTitle = $('#modalDinamicoLabel');
+	    const modalBody = $('#modalDinamicoBody');
+	    const url = `/admin/formularios/${tipoComponente}`;
+
+	    modalTitle.text('Carregando Formulário...');
+	    modalBody.html('<div class="text-center py-5"><div class="spinner-border text-primary" role="status"></div></div>');
+	    modal.show();
+
+	    $.get(url)
+	        .done(function(formHtml) {
+	            modalTitle.text('Cadastrar Novo(a) ' + tipoComponente.replace(/s$/, ''));
+	            modalBody.html(formHtml);
+	        })
+	        .fail(function() {
+	            modalTitle.text('Erro');
+	            modalBody.html('<div class="alert alert-danger">Não foi possível carregar o formulário. Tente novamente.</div>');
+	        });
+
+	    $('#btnSalvarFormDinamico').off('click').on('click', function() {
+	        const form = $('#formDinamico');
+	        // ... Lógica para validar, serializar e enviar o form via AJAX ...
+	        // ... E então, chamar o SweetAlert para o fluxo de "cadastrar mais um"...
+	        console.log('Botão Salvar clicado para o formulário:', form.serialize());
+	    });
+	}
 })

@@ -13,7 +13,7 @@
 				
 	            <div th:if="${userLogado != null and userLogado.acesso == 'admin'}">
 					<div class="d-flex justify-content-center">
-		                <ul class="nav">
+		                <ul class="nav" th:if="${mostrarComponentes}">
 		                    <li class="nav-item">
 		                        <a title="Antecedentes" th:href="@{/admin/tabela/antecedentes}" class="nav-link"><i class="fa-solid fa-scroll"></i></a>
 		                    </li>

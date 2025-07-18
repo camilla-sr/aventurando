@@ -5,7 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 
+import com.dragonforge.aventurando.central.models.Sistema;
 import com.dragonforge.aventurando.central.models.Usuario;
 import com.dragonforge.aventurando.central.repositorios.SistemaRepository;
 import com.dragonforge.aventurando.central.repositorios.UsuarioRepository;
@@ -64,10 +66,13 @@ public class Rotas {
 		return "login";
 	}
 	
-	@GetMapping("painelSistema")
-	public String painel(HttpSession session) {
+	@GetMapping("painelSistema/{slug}")
+	public String painel(HttpSession session, Model model, @PathVariable String slug) {
 		if (!s.loginAtivo(session)) return "redirect:/login";
-	    return "dnd5e/painelSistema";
+		
+		model.addAttribute("sistema", sis.findBySlug(slug));
+		model.addAttribute("mostrarComponentes", true);
+	    return "painelSistema";
 	}
 	
 	@GetMapping("/")
@@ -77,7 +82,7 @@ public class Rotas {
 			model.addAttribute("totalsis", sis.count());
 			model.addAttribute("totalmestre", user.countByAcesso("mestre"));
 			model.addAttribute("totaljogador", user.countByAcesso("jogador"));
-			return "dnd5e/index_admin";
+			return "index_admin";
 		}
 		if(s.verificaAcesso(session, "jogador")) return "dnd5e/index_jogador";
 		if(s.verificaAcesso(session, "mestre")) return "dnd5e/index_mestre";

@@ -6,5 +6,8 @@ import com.dragonforge.aventurando.central.models.Sistema;
 
 public interface SistemaRepository extends CrudRepository<Sistema, Integer>{
 	Optional<Sistema> findById(Integer id);
+	
+	Optional<Sistema> findBySlug(String Slug);
+	
 	Iterable<Sistema> findAll();
 }

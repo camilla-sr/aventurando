@@ -224,6 +224,7 @@ public class ComponenteController {
 				model.addAttribute("titulo", "Componente não encontrado");
 				model.addAttribute("dados", null);
 		}
+		model.addAttribute("mostrarComponentes", true);
 		model.addAttribute("cabecalho", cabecalho);
 		model.addAttribute("campos", campos);
 		model.addAttribute("componente", componente.toLowerCase());
