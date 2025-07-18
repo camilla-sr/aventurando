@@ -23,50 +23,28 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 @RequestMapping("/admin/tabela")
 public class ComponenteController {
-	@Autowired
-	private AntecedenteRepository repoAntec;
-	@Autowired
-	private ArmaRepository repoWeapon;
-	@Autowired
-	private ArmaduraRepository repoArmor;
-	@Autowired
-	private ArquetipoRepository repoArq;
-	@Autowired
-	private BugigangaRepository repoBugi;
-	@Autowired
-	private ClasseRepository repoClasse;
-	@Autowired
-	private DadoRepository repoDice;
-	@Autowired
-	private DefeitoRepository repoDef;
-	@Autowired
-	private EquipamentoRepository repoEquip;
-	@Autowired
-	private FerramentaRepository repoTool;
-	@Autowired
-	private GlossarioRepository repoGloss;
-	@Autowired
-	private IdealRepository repoIdeal;
-	@Autowired
-	private IdiomaRepository repoIdi;
-	@Autowired
-	private UsuarioRepository repoUser;
-	@Autowired
-	private MoedaRepository repoMoeda;
-	@Autowired
-	private RacaRepository repoRaca;
-	@Autowired
-	private TalentoRepository repoTalent;
-	@Autowired
-	private TendenciaRepository repoTend;
-	@Autowired
-	private DanoRepository repoHit;
-	@Autowired
-	private TracoRepository repoTraco;
-	@Autowired
-	private VinculoRepository repoLink;	
-	@Autowired
-    private ObjectMapper objectMapper;
+	@Autowired private AntecedenteRepository repoAntec;
+	@Autowired private ArmaRepository repoWeapon;
+	@Autowired private ArmaduraRepository repoArmor;
+	@Autowired private ArquetipoRepository repoArq;
+	@Autowired private BugigangaRepository repoBugi;
+	@Autowired private ClasseRepository repoClasse;
+	@Autowired private DadoRepository repoDice;
+	@Autowired private DefeitoRepository repoDef;
+	@Autowired private EquipamentoRepository repoEquip;
+	@Autowired private FerramentaRepository repoTool;
+	@Autowired private GlossarioRepository repoGloss;
+	@Autowired private IdealRepository repoIdeal;
+	@Autowired private IdiomaRepository repoIdi;
+	@Autowired private UsuarioRepository repoUser;
+	@Autowired private MoedaRepository repoMoeda;
+	@Autowired private RacaRepository repoRaca;
+	@Autowired private TalentoRepository repoTalent;
+	@Autowired private TendenciaRepository repoTend;
+	@Autowired private DanoRepository repoHit;
+	@Autowired private TracoRepository repoTraco;
+	@Autowired private VinculoRepository repoLink;	
+	@Autowired private ObjectMapper objectMapper;
 
 	
     private List<Map<String, Object>> converter(Iterable<?> dados) {

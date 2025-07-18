@@ -1,52 +1,18 @@
 <!DOCTYPE html>
 <body>
+    <form th:fragment="form_dinamico" 
+          id="formDinamico" 
+          th:object="${entidade}" 
+          th:action="@{/admin/formularios/{tipo}(tipo=${tipoComponente})}" 
+          method="post" 
+          novalidate>
 
-<form th:fragment="form_dinamico" id="formDinamico" th:object="${entidade}" novalidate>
-
-    <div th:switch="${tipoComponente}">
-
-        <div th:case="'armas'">
-            <div class="mb-3">
-                <label for="nome" class="form-label">Nome da Arma</label>
-                <input type="text" class="form-control" th:field="*{nome}" placeholder="Ex: Espada Longa" required>
-            </div>
-            <div class="mb-3">
-                <label for="dano" class="form-label">Dano</label>
-                <input type="text" class="form-control" th:field="*{dano}" placeholder="Ex: 1d8 cortante" required>
-            </div>
-             <div class="mb-3">
-                <label for="preco" class="form-label">Preço</label>
-                <input type="number" step="0.01" class="form-control" th:field="*{preco}" placeholder="Ex: 15.50" required>
+        <div th:replace="~{'fragmentos/campos/' + ${tipoComponente} :: campos}">
+            <div class="alert alert-danger">
+                Configuração de formulário (fragmento de campos) não encontrada para este componente.
             </div>
         </div>
 
-        <div th:case="'racas'">
-            <div class="mb-3">
-                <label for="nome" class="form-label">Nome da Raça</label>
-                <input type="text" class="form-control" th:field="*{nome}" placeholder="Ex: Anão da Montanha" required>
-            </div>
-            <div class="mb-3">
-                <label for="deslocamento" class="form-label">Deslocamento</label>
-                <input type="number" class="form-control" th:field="*{deslocamento}" placeholder="Ex: 9" required>
-            </div>
-        </div>
-        
-        <div th:case="'classes'">
-            <div class="mb-3">
-                <label for="nome" class="form-label">Nome da Classe</label>
-                <input type="text" class="form-control" th:field="*{nome}" placeholder="Ex: Mago" required>
-            </div>
-            <div class="mb-3">
-                <label for="descricao" class="form-label">Descrição da Classe</label>
-                <textarea class="form-control" rows="3" th:field="*{descricao}" required></textarea>
-            </div>
-        </div>
-
-        <div th:case="*">
-            <div class="alert alert-danger">Configuração de formulário não encontrada para este componente.</div>
-        </div>
-    </div>
-</form>
-
+    </form>
 </body>
 </html>

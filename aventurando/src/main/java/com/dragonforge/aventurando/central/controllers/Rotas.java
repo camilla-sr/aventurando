@@ -27,34 +27,20 @@ import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class Rotas {
-	@Autowired
-	private Sessao s;
-	@Autowired
-	private SistemaRepository sis;
-	@Autowired
-	private UsuarioRepository user;
-	@Autowired
-	private RacaRepository raca;
-	@Autowired
-	private TendenciaRepository tend;
-	@Autowired
-	private AntecedenteRepository antec;
-	@Autowired
-	private TalentoRepository talent;
-	@Autowired
-	private DadoRepository dice;
-	@Autowired
-	private DanoRepository dano;
-	@Autowired
-	private MoedaRepository coin;
-	@Autowired
-	private BugigangaRepository bugi;
-	@Autowired
-	private IdiomaRepository idioma;
-	@Autowired
-	private HabMagiaRepository habMagia;
-	@Autowired
-	private GlossarioRepository magias;
+	@Autowired private Sessao s;
+	@Autowired private SistemaRepository sis;
+	@Autowired private UsuarioRepository user;
+	@Autowired private RacaRepository raca;
+	@Autowired private TendenciaRepository tend;
+	@Autowired private AntecedenteRepository antec;
+	@Autowired private TalentoRepository talent;
+	@Autowired private DadoRepository dice;
+	@Autowired private DanoRepository dano;
+	@Autowired private MoedaRepository coin;
+	@Autowired private BugigangaRepository bugi;
+	@Autowired private IdiomaRepository idioma;
+	@Autowired private HabMagiaRepository habMagia;
+	@Autowired private GlossarioRepository magias;
 	
 	public String verificaUsuario(HttpSession session, String page) {
 		if(!s.loginAtivo(session)) return "redirect:/login";
