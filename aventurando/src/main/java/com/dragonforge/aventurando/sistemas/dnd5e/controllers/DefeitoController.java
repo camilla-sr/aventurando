@@ -27,8 +27,8 @@ public class DefeitoController {
 	
 		Antecedente antecSelect = repoAntec.findById(antec).orElseThrow();
 		
-		if(def.getIdDefeito() != null) {
-			Defeito existe = repo.findById(def.getIdDefeito()).orElse(new Defeito());
+		if(def.getId() != null) {
+			Defeito existe = repo.findById(def.getId()).orElse(new Defeito());
 			
 			if(antecSelect != null) { existe.setAntecedente(antecSelect); }
 			if(!def.getDescricaoDefeito().isEmpty()) { existe.setDescricaoDefeito(def.getDescricaoDefeito()); }

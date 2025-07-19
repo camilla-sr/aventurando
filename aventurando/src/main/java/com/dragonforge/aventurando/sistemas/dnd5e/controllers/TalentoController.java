@@ -22,8 +22,8 @@ public class TalentoController {
 	public String salvar(@Valid Talento talento, BindingResult result, @RequestParam("url") String url) {
 		if(result.hasErrors()) { return "redirect:" + url + "?codigo=06"; }
 		
-		if(talento.getIdTalento() != null) {
-			Talento existe = repo.findById(talento.getIdTalento()).orElse(new Talento());
+		if(talento.getId() != null) {
+			Talento existe = repo.findById(talento.getId()).orElse(new Talento());
 			
 			if(!talento.getTalento().isEmpty()) { existe.setTalento(talento.getTalento()); }
 			if(!talento.getDescricaoTalento().isEmpty()) { existe.setDescricaoTalento(talento.getDescricaoTalento()); }

@@ -45,8 +45,8 @@ public class InventarioController {
 		Utilitarios utilSelect = repoUtil.findById(util).orElseThrow();
 		Tranqueiras tranqSelect = repoTranq.findById(tranq).orElseThrow();
 		
-		if(inventario.getIdInventario() != null) {
-			Inventario existe = repo.findById(inventario.getIdInventario()).orElse(new Inventario());
+		if(inventario.getId() != null) {
+			Inventario existe = repo.findById(inventario.getId()).orElse(new Inventario());
 			
 			existe.setPlayer(player);
 			if(depoSelect != null) { existe.setDeposito(depoSelect); }

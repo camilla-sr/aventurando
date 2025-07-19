@@ -22,8 +22,8 @@ public class BugigangaController {
 	public String salvar(@Valid Bugiganga bugi, BindingResult result, @RequestParam("url") String url) {
 		if(result.hasErrors()) { return "redirect:" + url + "?codigo=06"; }
 		
-		if(bugi.getIdBugiganga() != null) {
-			Bugiganga existe = repo.findById(bugi.getIdBugiganga()).orElse(new Bugiganga());
+		if(bugi.getId() != null) {
+			Bugiganga existe = repo.findById(bugi.getId()).orElse(new Bugiganga());
 			if(!bugi.getDescricaoBugiganga().isEmpty()) { existe.setDescricaoBugiganga(bugi.getDescricaoBugiganga()); }
 			
 			repo.save(existe);

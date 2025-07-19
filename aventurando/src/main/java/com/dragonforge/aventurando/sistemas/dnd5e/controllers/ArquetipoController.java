@@ -26,8 +26,8 @@ public class ArquetipoController {
 		if(result.hasErrors()) { return "redirect:" + url + "?codigo=06"; }
 		
 		Classe classSelect = repoClass.findById(classe).orElseThrow();
-		if(arq.getIdArquetipo() != null) {
-			Arquetipo existe = repo.findById(arq.getIdArquetipo()).orElse(new Arquetipo());
+		if(arq.getId() != null) {
+			Arquetipo existe = repo.findById(arq.getId()).orElse(new Arquetipo());
 			
 			if(classSelect != null) { existe.setClasse(classSelect); }
 			if(!arq.getTitulo().isEmpty()) { existe.setTitulo(arq.getTitulo()); }

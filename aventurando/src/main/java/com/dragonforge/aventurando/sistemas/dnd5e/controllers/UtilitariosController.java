@@ -27,8 +27,8 @@ public class UtilitariosController {
 	
 		Ferramenta toolSelect = repoTool.findById(tool).orElseThrow();
 		
-		if(util.getIdUtilitario() != null) {
-			Utilitarios existe = repo.findById(util.getIdUtilitario()).orElse(new Utilitarios());
+		if(util.getId() != null) {
+			Utilitarios existe = repo.findById(util.getId()).orElse(new Utilitarios());
 			
 			if(toolSelect != null) { existe.setFerramenta(toolSelect); }
 			if(util.getQuantidade() != null) { existe.setQuantidade(util.getQuantidade()); }

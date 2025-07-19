@@ -10,28 +10,23 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name = "USUARIO")
 public class Usuario {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idUsuario;
-	@NotBlank
-	private String nome;
-	@NotBlank
-	private String usuario;
-	@NotBlank
-	private String senha;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@NotBlank private String nome;
+	@NotBlank private String usuario;
+	@NotBlank private String senha;
 	private String acesso;
 	
 	public Usuario() {}
 	
-	public Usuario(Integer idUsuario, String nome, String usuario, String senha) {
-		this.idUsuario = idUsuario;
+	public Usuario(Integer id, String nome, String usuario, String senha) {
+		this.id = id;
 		this.nome = nome;
 		this.usuario = usuario;
 		this.senha = senha;
 	}
 	
-	public Integer getIdUsuario() { return idUsuario; }
-	public void setIdUsuario(Integer idUsuario) { this.idUsuario = idUsuario; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public String getNome() { return nome; }
 	public void setNome(String nome) { this.nome = nome; }
 	public String getUsuario() { return usuario; }

@@ -26,8 +26,8 @@ public class DepositoController {
 	
 		Armadura armorSelect = repoArmor.findById(armor).orElseThrow();
 		
-		if(depo.getIdDeposito() != null) {
-			Deposito existe = repo.findById(depo.getIdDeposito()).orElse(new Deposito());
+		if(depo.getId() != null) {
+			Deposito existe = repo.findById(depo.getId()).orElse(new Deposito());
 			
 			if(armorSelect != null) { existe.setArmadura(armorSelect); }
 			if(depo.getQuantidade() != null) { existe.setQuantidade(depo.getQuantidade()); }

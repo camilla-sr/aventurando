@@ -27,8 +27,8 @@ public class IdealController {
 	
 		Antecedente antecSelect = repoAntec.findById(antec).orElseThrow();
 		
-		if(ideal.getIdIdeal() != null) {
-			Ideal existe = repo.findById(ideal.getIdIdeal()).orElse(new Ideal());
+		if(ideal.getId() != null) {
+			Ideal existe = repo.findById(ideal.getId()).orElse(new Ideal());
 			
 			if(antecSelect != null) { existe.setAntecedente(antecSelect); }
 			if(!ideal.getDescricaoIdeal().isEmpty()) { existe.setDescricaoIdeal(ideal.getDescricaoIdeal()); }

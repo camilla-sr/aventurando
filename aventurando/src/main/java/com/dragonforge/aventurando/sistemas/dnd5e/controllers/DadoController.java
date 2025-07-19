@@ -22,8 +22,8 @@ public class DadoController {
 	public String salvar(@Valid Dado dado, BindingResult result, @RequestParam("url") String url) {
 		if(result.hasErrors()) { return "redirect:" + url + "?codigo=06"; }
 		
-		if(dado.getIdDado() != null) {
-			Dado existe = repo.findById(dado.getIdDado()).orElse(new Dado());
+		if(dado.getId() != null) {
+			Dado existe = repo.findById(dado.getId()).orElse(new Dado());
 			
 			if(!dado.getTipo().isEmpty()) { existe.setTipo(dado.getTipo()); }
 			

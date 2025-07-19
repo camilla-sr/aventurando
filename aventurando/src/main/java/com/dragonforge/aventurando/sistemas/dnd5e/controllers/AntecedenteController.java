@@ -23,8 +23,8 @@ public class AntecedenteController {
 	public String salvar(@Valid Antecedente antec, @RequestParam("url") String url, BindingResult result) {
 		if(result.hasErrors()) { return "redirect:" + url + "?codigo=06"; }		//DEU ERRO EM ALGUMA COISA
 		
-		if(antec.getIdAntecedente() != null) {
-			Antecedente existe = repo.findById(antec.getIdAntecedente()).orElse(new Antecedente());
+		if(antec.getId() != null) {
+			Antecedente existe = repo.findById(antec.getId()).orElse(new Antecedente());
 			if(!antec.getAntecedente().isEmpty()) { existe.setAntecedente(antec.getAntecedente()); }
 			
 			repo.save(existe);

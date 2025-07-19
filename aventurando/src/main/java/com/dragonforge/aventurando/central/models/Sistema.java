@@ -10,28 +10,24 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name = "SISTEMA")
 public class Sistema {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idSistema;
-	@NotBlank
-	private String nomeSistema;
-	@NotBlank
-	private String slug;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@NotBlank private String nomeSistema;
+	@NotBlank private String slug;
 	private String autor;
 	private Boolean ativo = true;
 	
 	public Sistema() {}
 	
-	public Sistema(Integer idSistema, String nomeSistema, String slug, String autor, Boolean ativo) {
-		this.idSistema = idSistema;
+	public Sistema(Integer id, String nomeSistema, String slug, String autor, Boolean ativo) {
+		this.id = id;
 		this.nomeSistema = nomeSistema;
 		this.slug = slug;
 		this.autor = autor;
 		this.ativo = ativo;
 	}
 
-	public Integer getIdSistema() { return idSistema; }	
-	public void setIdSistema(Integer idSistema) { this.idSistema = idSistema; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public String getNomeSistema() { return nomeSistema; }
 	public void setNomeSistema(String nomeSistema) { this.nomeSistema = nomeSistema; }
 	public String getSlug() { return slug; }

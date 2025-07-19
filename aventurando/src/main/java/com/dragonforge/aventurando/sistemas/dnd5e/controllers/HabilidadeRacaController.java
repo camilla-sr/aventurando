@@ -27,8 +27,8 @@ public class HabilidadeRacaController {
 	
 		Raca racaSelect = repoRaca.findById(raca).orElseThrow();
 		
-		if(habRaca.getIdHabilidadeRaca() != null) {
-			HabilidadeRaca existe = repo.findById(habRaca.getIdHabilidadeRaca()).orElse(new HabilidadeRaca());
+		if(habRaca.getId() != null) {
+			HabilidadeRaca existe = repo.findById(habRaca.getId()).orElse(new HabilidadeRaca());
 			
 			if(racaSelect != null) { existe.setRaca(racaSelect); }
 			if(!habRaca.getNome().isEmpty()) { existe.setNome(habRaca.getNome()); }

@@ -38,24 +38,30 @@ $(document).ready(function () {
 function abrirModalCadastro(buttonElement) {
     const tipoComponente = $(buttonElement).data('componente');
     const modalElement = document.getElementById('modalDinamico');
-    // Usamos 'new' apenas uma vez. Para reabrir, usamos getInstance.
+    // uso 'new' apenas uma vez. Pra reabrir, getInstance.
     const modal = bootstrap.Modal.getOrCreateInstance(modalElement);
     const modalTitle = $('#modalDinamicoLabel');
     const modalBody = $('#modalDinamicoBody');
     const url = `/admin/formularios/${tipoComponente}`;
 
-    modalTitle.text('Carregando Formulário...');
+    modalTitle.text('...');
     modalBody.html('<div class="text-center py-5"><div class="spinner-border text-primary" role="status"></div></div>');
     modal.show();
 
-    // Carregar o formulário do backend
-    $.get(url)
-        .done(function(formHtml) {
-            modalTitle.text('Cadastrar Novo(a) ' + tipoComponente.replace(/s$/, ''));
-            modalBody.html(formHtml);
+	$.get(url)
+	    .done(function(formHtml) {
+	        let nomeComponente = tipoComponente;
+	        if (nomeComponente.endsWith('s')) {
+	            nomeComponente = nomeComponente.slice(0, -1);
+	        }
+
+	        const tituloFormatado = nomeComponente.charAt(0).toUpperCase() + nomeComponente.slice(1);
+	        modalTitle.text('Novo ' + tituloFormatado);
+	        modalBody.html(formHtml);
+
 			const urlAtual = window.location.href;
 			$('#url').val(urlAtual)
-        })
+	    })
         .fail(function() {
             modalTitle.text('Erro');
             modalBody.html('<div class="alert alert-danger">Não foi possível carregar o formulário. Tente novamente.</div>');

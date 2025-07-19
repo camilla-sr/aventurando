@@ -22,8 +22,8 @@ public class RacaController {
 	public String salvar(@Valid Raca raca, BindingResult result, @RequestParam("url") String url) {
 		if(result.hasErrors()) { return "redirect:" + url + "?codigo=06"; }
 	
-		if(raca.getIdRaca() != null) {
-			Raca existe = repo.findById(raca.getIdRaca()).orElse(new Raca());
+		if(raca.getId() != null) {
+			Raca existe = repo.findById(raca.getId()).orElse(new Raca());
 			
 			if(raca.getDeslocamento() != null) { existe.setDeslocamento(raca.getDeslocamento()); }
 			if(!raca.getRaca().isEmpty()) { existe.setRaca(raca.getRaca()); }

@@ -32,24 +32,15 @@ import jakarta.validation.Valid;
 @Controller
 @RequestMapping("/detalhes-api")
 public class DetalhesController {
-	@Autowired
-	private DetalhesRepository repo;
-	@Autowired
-	private HabClasseRepository repoClass;
-	@Autowired
-	private HabRacaRepository repoRaca;
-	@Autowired
-	private ArquetipoRepository repoArq;
-	@Autowired
-	private TalentoRepository repoTalen;
-	@Autowired
-	private IdiomaRepository repoIdi;
-	@Autowired
-	private ArmaRepository repoWeapon;
-	@Autowired
-	private ArmaduraRepository repoArmor;
-	@Autowired
-	private FerramentaRepository repoTool;
+	@Autowired private DetalhesRepository repo;
+	@Autowired private HabClasseRepository repoClass;
+	@Autowired private HabRacaRepository repoRaca;
+	@Autowired private ArquetipoRepository repoArq;
+	@Autowired private TalentoRepository repoTalen;
+	@Autowired private IdiomaRepository repoIdi;
+	@Autowired private ArmaRepository repoWeapon;
+	@Autowired private ArmaduraRepository repoArmor;
+	@Autowired private FerramentaRepository repoTool;
 	
 	@PostMapping("/salvar")
 	public String salvar(@Valid DetalhesPersonagem detail, @RequestParam("idJogador") Integer player, @RequestParam("habclasse") Integer classe,
@@ -67,8 +58,8 @@ public class DetalhesController {
 		Armadura armorSelect = repoArmor.findById(armor).orElseThrow();
 		Ferramenta toolSelect = repoTool.findById(tool).orElseThrow();
 		
-		if(detail.getIdDetalhes() != null) {
-			DetalhesPersonagem existe = repo.findById(detail.getIdDetalhes()).orElse(new DetalhesPersonagem());
+		if(detail.getId() != null) {
+			DetalhesPersonagem existe = repo.findById(detail.getId()).orElse(new DetalhesPersonagem());
 			
 			existe.setPlayer(player);
 			if(classSelect != null) { existe.setHabilidadeClasse(classSelect); }

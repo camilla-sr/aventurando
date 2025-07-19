@@ -27,8 +27,8 @@ public class HabilidadeClasseController {
 	
 		Classe classeSelect = repoClass.findById(classe).orElseThrow();
 		
-		if(habClass.getIdHabilidadeClasse() != null) {
-			HabilidadeClasse existe = repo.findById(habClass.getIdHabilidadeClasse()).orElse(new HabilidadeClasse());
+		if(habClass.getId() != null) {
+			HabilidadeClasse existe = repo.findById(habClass.getId()).orElse(new HabilidadeClasse());
 			
 			if(classeSelect != null) { existe.setClasse(classeSelect); }
 			if(!habClass.getNome().isEmpty()) { existe.setNome(habClass.getNome()); }

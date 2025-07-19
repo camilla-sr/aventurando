@@ -44,8 +44,8 @@ public class JogadorController {
 		Tendencia tendSelect = repoTend.findById(tend).orElseThrow();
 		Antecedente antecSelect = repoAntec.findById(antec).orElseThrow();
 		
-		if(jogador.getIdJogador() != null) {
-			Jogador existe = repo.findById(jogador.getIdJogador()).orElse(new Jogador());
+		if(jogador.getId() != null) {
+			Jogador existe = repo.findById(jogador.getId()).orElse(new Jogador());
 			
 			existe.setUsuario(user);
 			if(racaSelect != null) { existe.setRaca(racaSelect); }

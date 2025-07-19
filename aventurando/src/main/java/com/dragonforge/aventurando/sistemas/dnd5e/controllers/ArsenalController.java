@@ -26,8 +26,8 @@ public class ArsenalController {
 		if(result.hasErrors()) { return "redirect:" + url + "?codigo=06"; }
 		
 		Arma armaSelect = repoArma.findById(arma).orElseThrow();
-		if(arse.getIdArsenal() != null) {
-			Arsenal existe = repo.findById(arse.getIdArsenal()).orElse(new Arsenal());
+		if(arse.getId() != null) {
+			Arsenal existe = repo.findById(arse.getId()).orElse(new Arsenal());
 			
 			if(armaSelect != null) {
 				existe.setArma(armaSelect);

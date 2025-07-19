@@ -26,8 +26,8 @@ public class ClasseController {
 		if(result.hasErrors()) { return "redirect:" + url + "?codigo=15"; }
 	
 		Dado dadoSelect = repoDado.findById(dadoVida).orElseThrow();
-		if(classe.getIdClasse() != null) {
-			Classe existe = repo.findById(classe.getIdClasse()).orElse(new Classe());
+		if(classe.getId() != null) {
+			Classe existe = repo.findById(classe.getId()).orElse(new Classe());
 			
 			if(dadoSelect != null) { existe.setDadoVida(dadoSelect); }
 			if(!classe.getClasse().isEmpty()) { existe.setClasse(classe.getClasse()); }

@@ -27,8 +27,8 @@ public class VinculoController {
 	
 		Antecedente antecSelect = repoAntec.findById(antec).orElseThrow();
 		
-		if(vinculo.getIdVinculo() != null) {
-			Vinculo existe = repo.findById(vinculo.getIdVinculo()).orElse(new Vinculo());
+		if(vinculo.getId() != null) {
+			Vinculo existe = repo.findById(vinculo.getId()).orElse(new Vinculo());
 			
 			if(antecSelect != null) { existe.setAntecedente(antecSelect); }
 			if(!vinculo.getDescricaoVinculo().isEmpty()) { existe.setDescricaoVinculo(vinculo.getDescricaoVinculo()); }

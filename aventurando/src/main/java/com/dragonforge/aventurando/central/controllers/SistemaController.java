@@ -14,15 +14,14 @@ import jakarta.validation.Valid;
 @Controller
 @RequestMapping("/sistema-api")
 public class SistemaController {
-	@Autowired
-	private SistemaRepository repo;
+	@Autowired private SistemaRepository repo;
 	
 	@PostMapping(value = "/salvar")
 	public String salvar(@Valid Sistema sistema, BindingResult result) {
 		if(result.hasErrors()) { return "redirect:/?codigo=06"; }		//DEU ERRO EM ALGUMA COISA
 		
-		if(sistema.getIdSistema() != null) {
-			Sistema existe = repo.findById(sistema.getIdSistema()).orElse(new Sistema());
+		if(sistema.getId() != null) {
+			Sistema existe = repo.findById(sistema.getId()).orElse(new Sistema());
 			
 			if(!sistema.getNomeSistema().isEmpty()) { existe.setNomeSistema(sistema.getNomeSistema()); }
 			if(!sistema.getSlug().isEmpty()) { existe.setSlug(sistema.getSlug()); }

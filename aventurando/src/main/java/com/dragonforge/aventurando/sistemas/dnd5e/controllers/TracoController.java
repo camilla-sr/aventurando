@@ -27,8 +27,8 @@ public class TracoController {
 	
 		Antecedente antecSelect = repoAntec.findById(antec).orElseThrow();
 		
-		if(traco.getIdTraco() != null) {
-			TracoPersonalidade existe = repo.findById(traco.getIdTraco()).orElse(new TracoPersonalidade());
+		if(traco.getId() != null) {
+			TracoPersonalidade existe = repo.findById(traco.getId()).orElse(new TracoPersonalidade());
 			
 			if(antecSelect != null) { existe.setAntecedente(antecSelect); }
 			if(!traco.getDescricaoTraco().isEmpty()) { existe.setDescricaoTraco(traco.getDescricaoTraco()); }

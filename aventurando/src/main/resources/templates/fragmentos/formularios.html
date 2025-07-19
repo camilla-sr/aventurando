@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <body>
     <form th:fragment="form_dinamico" 
           id="formDinamico" 
@@ -7,30 +8,41 @@
           method="post" 
           novalidate>
 
+        <input type="hidden" th:field="*{id}" />
         <input type="hidden" name="url" id="url" />
-
-        <div th:each="field : ${formFields}" class="mb-3">
-            
-            <label th:for="${field.nome}" class="form-label" th:text="${field.label}"></label>
-
-            <div th:switch="${field.tipo}">
-
-                <div th:case="'select'">
-                    <select class="form-select" th:field="*{__${field.nome}__}" th:required="${field.required}">
-                        <option value="">Selecione...</option>
-                        <option th:each="option : ${field.options}"
-                                th:value="${option.key}"
-                                th:text="${option.value}">
-                        </option>
-                    </select>
-                </div>
-
-                <div th:case="*">
-                    <input type="text" class="form-control" th:field="*{__${field.nome}__}" th:required="${field.required}">
-                </div>
-
+        
+        <div th:if="${#lists.size(formFields) <= 3}">
+            <div th:each="field : ${formFields}" class="mb-3">
+                <label th:for="${field.nome}" class="form-label" th:text="${field.label}"></label>
+                <div th:replace="~{:: inputField (field=${field})}"></div>
             </div>
         </div>
+
+        <div th:if="${#lists.size(formFields) > 3}" class="row">
+            <div th:each="field, iter : ${formFields}" class="col-md-6">
+                <div class="mb-3">
+                    <label th:for="${field.nome}" class="form-label" th:text="${field.label}"></label>
+                    <div th:replace="~{:: inputField (field=${field})}"></div>
+                </div>
+            </div>
+        </div>
+
     </form>
+    
+    <div th:fragment="inputField(field)" th:switch="${field.tipo}">
+        <div th:case="'select'">
+            <select class="form-control" th:field="*{__${field.nome}__}" th:required="${field.required}">
+                <option value="">Selecione...</option>
+                <option th:each="option : ${field.options}"
+                        th:value="${option.key}"
+                        th:text="${option.value}">
+                </option>
+            </select>
+        </div>
+        <div th:case="*">
+            <input type="text" class="form-control" th:field="*{__${field.nome}__}" th:required="${field.required}">
+        </div>
+    </div>
+
 </body>
 </html>

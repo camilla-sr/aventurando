@@ -27,8 +27,8 @@ public class EquipamentoController {
 	
 		Moeda moedaSelect = repoCoin.findById(moeda).orElseThrow();
 		
-		if(equip.getIdItem() != null) {
-			Equipamento existe = repo.findById(equip.getIdItem()).orElse(new Equipamento());
+		if(equip.getId() != null) {
+			Equipamento existe = repo.findById(equip.getId()).orElse(new Equipamento());
 			
 			if(moedaSelect != null) { existe.setMoeda(moedaSelect); }
 			if(!equip.getItem().isEmpty()) { existe.setItem(equip.getItem()); }

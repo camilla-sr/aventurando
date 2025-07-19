@@ -22,8 +22,8 @@ public class TipoDanoController {
 	public String salvar(@Valid TipoDano dano, BindingResult result, @RequestParam("url") String url) {
 		if(result.hasErrors()) { return "redirect:" + url + "?codigo=06"; }
 		
-		if(dano.getIdDano() != null) {
-			TipoDano existe = repo.findById(dano.getIdDano()).orElse(new TipoDano());
+		if(dano.getId() != null) {
+			TipoDano existe = repo.findById(dano.getId()).orElse(new TipoDano());
 			
 			if(!dano.getDescricaoDano().isEmpty()) { existe.setDescricaoDano(dano.getDescricaoDano()); }
 

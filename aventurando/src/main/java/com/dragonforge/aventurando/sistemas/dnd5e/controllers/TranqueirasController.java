@@ -27,8 +27,8 @@ public class TranqueirasController {
 	
 		Bugiganga bugiSelect = repoBugi.findById(bugi).orElseThrow();
 		
-		if(tranq.getIdTranqueira() != null) {
-			Tranqueiras existe = repo.findById(tranq.getIdTranqueira()).orElse(new Tranqueiras());
+		if(tranq.getId() != null) {
+			Tranqueiras existe = repo.findById(tranq.getId()).orElse(new Tranqueiras());
 			
 			if(bugiSelect != null) { existe.setBugiganga(bugiSelect); }
 			if(tranq.getQuantidade() != null) { existe.setQuantidade(tranq.getQuantidade()); }

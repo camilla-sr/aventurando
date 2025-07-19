@@ -22,8 +22,8 @@ public class GlossarioController {
 	public String salvar(@Valid GlossarioMagias magia, BindingResult result, @RequestParam("url") String url) {
 		if(result.hasErrors()) { return "redirect:" + url + "?codigo=06"; }
 	
-		if(magia.getIdMagia() != null) {
-			GlossarioMagias existe = repo.findById(magia.getIdMagia()).orElse(new GlossarioMagias());
+		if(magia.getId() != null) {
+			GlossarioMagias existe = repo.findById(magia.getId()).orElse(new GlossarioMagias());
 			
 			if(!magia.getMagia().isEmpty()) { existe.setMagia(magia.getMagia()); }
 			if(magia.getNivel() != null) { existe.setNivel(magia.getNivel()); }

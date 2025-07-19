@@ -22,8 +22,8 @@ public class HabilidadeMagiaController {
 	public String salvar(@Valid HabilidadeMagia habMagic, BindingResult result, @RequestParam("url") String url) {
 		if(result.hasErrors()) { return "redirect:" + url + "?codigo=06"; }
 		
-		if(habMagic.getIdHabilidade() != null) {
-			HabilidadeMagia existe = repo.findById(habMagic.getIdHabilidade()).orElse(new HabilidadeMagia());
+		if(habMagic.getId() != null) {
+			HabilidadeMagia existe = repo.findById(habMagic.getId()).orElse(new HabilidadeMagia());
 			
 			if(!habMagic.getHabilidadeChave().isEmpty()) { existe.setHabilidadeChave(habMagic.getHabilidadeChave()) ;}
 

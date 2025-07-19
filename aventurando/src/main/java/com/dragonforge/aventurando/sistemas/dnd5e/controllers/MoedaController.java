@@ -22,8 +22,8 @@ public class MoedaController {
 	public String salvar(@Valid Moeda moeda, BindingResult result, @RequestParam("url") String url) {
 		if(result.hasErrors()) { return "redirect:" + url + "?codigo=06"; }
 		
-		if(moeda.getIdMoeda() != null) {
-			Moeda existe = repo.findById(moeda.getIdMoeda()).orElse(new Moeda());
+		if(moeda.getId() != null) {
+			Moeda existe = repo.findById(moeda.getId()).orElse(new Moeda());
 			
 			if(!moeda.getMoeda().isEmpty()) { existe.setMoeda(moeda.getMoeda()); }
 			if(moeda.getPeso() != null) { existe.setPeso(moeda.getPeso()); }

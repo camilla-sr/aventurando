@@ -68,73 +68,73 @@ public class FormGerador {
 
     private Map<Object, String> getOptionsFor(Class<?> fieldType) {
         if (fieldType == Antecedente.class) {
-            return antec.findAll().stream().collect(Collectors.toMap(Antecedente::getIdAntecedente, Antecedente::getAntecedente));
+            return antec.findAll().stream().collect(Collectors.toMap(Antecedente::getId, Antecedente::getAntecedente));
         }
         if (fieldType == Arma.class) {
-            return arma.findAll().stream().collect(Collectors.toMap(Arma::getIdArma, Arma::getArma));
+            return arma.findAll().stream().collect(Collectors.toMap(Arma::getId, Arma::getArma));
         }
         if (fieldType == Armadura.class) {
-            return armadura.findAll().stream().collect(Collectors.toMap(Armadura::getIdArmadura, Armadura::getTipo));
+            return armadura.findAll().stream().collect(Collectors.toMap(Armadura::getId, Armadura::getTipo));
         }
         if (fieldType == Arquetipo.class) {
-            return arque.findAll().stream().collect(Collectors.toMap(Arquetipo::getIdArquetipo, Arquetipo::getTitulo));
+            return arque.findAll().stream().collect(Collectors.toMap(Arquetipo::getId, Arquetipo::getTitulo));
         }
         if (fieldType == Bugiganga.class) {
-            return bugi.findAll().stream().collect(Collectors.toMap(Bugiganga::getIdBugiganga, Bugiganga::getDescricaoBugiganga));
+            return bugi.findAll().stream().collect(Collectors.toMap(Bugiganga::getId, Bugiganga::getDescricaoBugiganga));
         }
         if (fieldType == Classe.class) {
-            return classe.findAll().stream().collect(Collectors.toMap(Classe::getIdClasse, Classe::getClasse));
+            return classe.findAll().stream().collect(Collectors.toMap(Classe::getId, Classe::getClasse));
         }
         if (fieldType == Dado.class) {
-            return dice.findAll().stream().collect(Collectors.toMap(Dado::getIdDado, Dado::getTipo));
+            return dice.findAll().stream().collect(Collectors.toMap(Dado::getId, Dado::getTipo));
         }
         if (fieldType == Defeito.class) {
-            return defeito.findAll().stream().collect(Collectors.toMap(Defeito::getIdDefeito, Defeito::getDescricaoDefeito));
+            return defeito.findAll().stream().collect(Collectors.toMap(Defeito::getId, Defeito::getDescricaoDefeito));
         }
         if (fieldType == Equipamento.class) {
-            return equip.findAll().stream().collect(Collectors.toMap(Equipamento::getIdItem, Equipamento::getItem));
+            return equip.findAll().stream().collect(Collectors.toMap(Equipamento::getId, Equipamento::getItem));
         }
         if (fieldType == Ferramenta.class) {
-            return tool.findAll().stream().collect(Collectors.toMap(Ferramenta::getIdFerramenta, Ferramenta::getFerramenta));
+            return tool.findAll().stream().collect(Collectors.toMap(Ferramenta::getId, Ferramenta::getFerramenta));
         }
         if (fieldType == GlossarioMagias.class) { // Magias
-            return magias.findAll().stream().collect(Collectors.toMap(GlossarioMagias::getIdMagia, GlossarioMagias::getMagia));
+            return magias.findAll().stream().collect(Collectors.toMap(GlossarioMagias::getId, GlossarioMagias::getMagia));
         }
         if (fieldType == HabilidadeClasse.class) {
-            return hab_classe.findAll().stream().collect(Collectors.toMap(HabilidadeClasse::getIdHabilidadeClasse, HabilidadeClasse::getNome));
+            return hab_classe.findAll().stream().collect(Collectors.toMap(HabilidadeClasse::getId, HabilidadeClasse::getNome));
         }
         if (fieldType == HabilidadeMagia.class) {
-            return hab_magica.findAll().stream().collect(Collectors.toMap(HabilidadeMagia::getIdHabilidade, HabilidadeMagia::getHabilidadeChave));
+            return hab_magica.findAll().stream().collect(Collectors.toMap(HabilidadeMagia::getId, HabilidadeMagia::getHabilidadeChave));
         }
         if (fieldType == HabilidadeRaca.class) {
-            return hab_raca.findAll().stream().collect(Collectors.toMap(HabilidadeRaca::getIdHabilidadeRaca, HabilidadeRaca::getNome));
+            return hab_raca.findAll().stream().collect(Collectors.toMap(HabilidadeRaca::getId, HabilidadeRaca::getNome));
         }
         if (fieldType == Ideal.class) {
-            return ideal.findAll().stream().collect(Collectors.toMap(Ideal::getIdIdeal, Ideal::getDescricaoIdeal));
+            return ideal.findAll().stream().collect(Collectors.toMap(Ideal::getId, Ideal::getDescricaoIdeal));
         }
         if (fieldType == Idioma.class) {
-            return idioma.findAll().stream().collect(Collectors.toMap(Idioma::getIdIdioma, Idioma::getDescricaoIdioma));
+            return idioma.findAll().stream().collect(Collectors.toMap(Idioma::getId, Idioma::getDescricaoIdioma));
         }
         if (fieldType == Moeda.class) {
-            return moeda.findAll().stream().collect(Collectors.toMap(Moeda::getIdMoeda, Moeda::getMoeda));
+            return moeda.findAll().stream().collect(Collectors.toMap(Moeda::getId, Moeda::getMoeda));
         }
         if (fieldType == Raca.class) {
-            return raca.findAll().stream().collect(Collectors.toMap(Raca::getIdRaca, Raca::getRaca));
+            return raca.findAll().stream().collect(Collectors.toMap(Raca::getId, Raca::getRaca));
         }
         if (fieldType == Talento.class) {
-            return talent.findAll().stream().collect(Collectors.toMap(Talento::getIdTalento, Talento::getTalento));
+            return talent.findAll().stream().collect(Collectors.toMap(Talento::getId, Talento::getTalento));
         }
         if (fieldType == Tendencia.class) {
-            return tend.findAll().stream().collect(Collectors.toMap(Tendencia::getIdTendencia, Tendencia::getTendencia));
+            return tend.findAll().stream().collect(Collectors.toMap(Tendencia::getId, Tendencia::getTendencia));
         }
         if (fieldType == TipoDano.class) {
-            return dano.findAll().stream().collect(Collectors.toMap(TipoDano::getIdDano, TipoDano::getDescricaoDano));
+            return dano.findAll().stream().collect(Collectors.toMap(TipoDano::getId, TipoDano::getDescricaoDano));
         }
         if (fieldType == TracoPersonalidade.class) {
-            return traco.findAll().stream().collect(Collectors.toMap(TracoPersonalidade::getIdTraco, TracoPersonalidade::getDescricaoTraco));
+            return traco.findAll().stream().collect(Collectors.toMap(TracoPersonalidade::getId, TracoPersonalidade::getDescricaoTraco));
         }
         if (fieldType == Vinculo.class) {
-            return vinculo.findAll().stream().collect(Collectors.toMap(Vinculo::getIdVinculo, Vinculo::getDescricaoVinculo));
+            return vinculo.findAll().stream().collect(Collectors.toMap(Vinculo::getId, Vinculo::getDescricaoVinculo));
         }
         return null; // Retorna nulo se não houver um repositório mapeado
     }

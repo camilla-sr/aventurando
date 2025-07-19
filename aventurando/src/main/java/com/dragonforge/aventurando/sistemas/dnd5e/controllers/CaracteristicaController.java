@@ -43,8 +43,8 @@ public class CaracteristicaController {
 		Vinculo vincSelect = repoVinc.findById(vinc).orElseThrow();
 		Defeito defSelect = repoDef.findById(def).orElseThrow();
 		
-		if(carac.getIdCaracteristica() != null) {
-			Caracteristicas existe = repo.findById(carac.getIdCaracteristica()).orElse(new Caracteristicas());
+		if(carac.getId() != null) {
+			Caracteristicas existe = repo.findById(carac.getId()).orElse(new Caracteristicas());
 			
 			existe.setPlayer(player);
 			if(tracoSelect != null) { existe.setTraco(tracoSelect); }

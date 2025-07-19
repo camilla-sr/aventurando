@@ -22,8 +22,8 @@ public class IdiomaController {
 	public String salvar(@Valid Idioma idioma, BindingResult result, @RequestParam("url") String url) {
 		if(result.hasErrors()) { return "redirect:" + url + "?codigo=06"; }
 		
-		if(idioma.getIdIdioma() != null) {
-			Idioma existe = repo.findById(idioma.getIdIdioma()).orElse(new Idioma());
+		if(idioma.getId() != null) {
+			Idioma existe = repo.findById(idioma.getId()).orElse(new Idioma());
 			
 			if(!idioma.getDescricaoIdioma().isEmpty()) { existe.setDescricaoIdioma(idioma.getDescricaoIdioma()); }
 			if(!idioma.getAlfabeto().isEmpty()) { existe.setAlfabeto(idioma.getAlfabeto()); }

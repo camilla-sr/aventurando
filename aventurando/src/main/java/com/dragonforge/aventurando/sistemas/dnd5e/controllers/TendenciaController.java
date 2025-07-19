@@ -22,8 +22,8 @@ public class TendenciaController {
 	public String salvar(@Valid Tendencia tend, BindingResult result, @RequestParam("url") String url) {
 		if(result.hasErrors()) { return "redirect:" + url + "?codigo=06"; }
 	
-		if(tend.getIdTendencia() != null) {
-			Tendencia existe = repo.findById(tend.getIdTendencia()).orElse(new Tendencia());
+		if(tend.getId() != null) {
+			Tendencia existe = repo.findById(tend.getId()).orElse(new Tendencia());
 			
 			if(!tend.getTendencia().isEmpty()) { existe.setTendencia(tend.getTendencia()); }
 

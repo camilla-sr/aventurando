@@ -27,8 +27,8 @@ public class FerramentaController {
 	
 		Moeda moedaSelect = repoCoin.findById(moeda).orElseThrow();
 		
-		if(tool.getIdFerramenta() != null) {
-			Ferramenta existe = repo.findById(tool.getIdFerramenta()).orElse(new Ferramenta());
+		if(tool.getId() != null) {
+			Ferramenta existe = repo.findById(tool.getId()).orElse(new Ferramenta());
 			
 			if(moedaSelect != null) { existe.setMoeda(moedaSelect); }
 			if(!tool.getFerramenta().isEmpty()) { existe.setFerramenta(tool.getFerramenta()); }

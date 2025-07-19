@@ -32,8 +32,8 @@ public class GrimorioController {
 		HabilidadeMagia habSelect = repoHab.findById(hab).orElseThrow();
 		GlossarioMagias magicSelect = repoMagic.findById(magic).orElseThrow();
 		
-		if(grim.getIdGrimorio() != null) {
-			Grimorio existe = repo.findById(grim.getIdGrimorio()).orElse(new Grimorio());
+		if(grim.getId() != null) {
+			Grimorio existe = repo.findById(grim.getId()).orElse(new Grimorio());
 			
 			existe.setJogador(player);
 			if(habSelect != null) { existe.setHabilidadeMagia(habSelect); }

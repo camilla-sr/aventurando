@@ -35,8 +35,8 @@ public class ClasseMagicaController {
 		GlossarioMagias magiaSelect = repoGloss.findById(magia).orElseThrow();
 		HabilidadeMagia habSelect = repoHab.findById(hab).orElseThrow();
 		
-		if(cMagica.getIdLigacao() != null) {
-			ClasseMagica existe = repo.findById(cMagica.getIdLigacao()).orElse(new ClasseMagica());
+		if(cMagica.getId() != null) {
+			ClasseMagica existe = repo.findById(cMagica.getId()).orElse(new ClasseMagica());
 			
 			if(classeSelect != null) { existe.setClasse(classeSelect); }
 			if(magiaSelect != null) { existe.setMagia(magiaSelect); }

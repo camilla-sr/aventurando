@@ -26,8 +26,8 @@ public class ArmaduraController {
 		if(result.hasErrors()) { return "redirect:" + url + "?codigo=06"; }		//DEU ERRO EM ALGUMA COISA
 		
 		Moeda moedaSelect = repoCoin.findById(idMoeda).orElseThrow();
-		if(armor.getIdArmadura() != null) {
-			Armadura existe = repo.findById(armor.getIdArmadura()).orElse(new Armadura());
+		if(armor.getId() != null) {
+			Armadura existe = repo.findById(armor.getId()).orElse(new Armadura());
 			
 			if(moedaSelect != null) { existe.setMoeda(moedaSelect); }
 			if(!armor.getTipo().isEmpty()) { existe.setTipo(armor.getTipo()); }

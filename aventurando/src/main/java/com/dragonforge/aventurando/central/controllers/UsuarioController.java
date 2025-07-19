@@ -15,8 +15,7 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 @RequestMapping("/usuario-api")
 public class UsuarioController {
-	@Autowired
-	private UsuarioRepository repo;
+	@Autowired private UsuarioRepository repo;
 	
 	@PostConstruct
 	private void verificarAdmin() {

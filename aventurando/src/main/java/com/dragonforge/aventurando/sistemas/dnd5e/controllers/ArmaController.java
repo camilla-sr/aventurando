@@ -36,8 +36,8 @@ public class ArmaController {
 		TipoDano danoSelect = repoDano.findById(dano).orElseThrow();
 		Dado dadoSelect = repoDado.findById(dado).orElseThrow();
 		
-		if(weapon.getIdArma() != null) {
-			Arma existe = repo.findById(weapon.getIdArma()).orElse(new Arma());
+		if(weapon.getId() != null) {
+			Arma existe = repo.findById(weapon.getId()).orElse(new Arma());
 			
 			if(danoSelect != null ) { existe.setDano(danoSelect); }
 			if(dadoSelect != null) { existe.setDadoDano(dadoSelect); }
