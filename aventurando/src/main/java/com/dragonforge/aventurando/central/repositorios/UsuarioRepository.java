@@ -14,7 +14,7 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Integer>{
 
 	Iterable<Usuario> findAll();
 	
-	Iterable<Usuario> findByIdUsuarioAndAcesso(Integer id, String acesso);
+	Iterable<Usuario> findByIdAndAcesso(Integer id, String acesso);
 	
 	long countByAcesso(String acesso);
 }
