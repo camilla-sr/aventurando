@@ -10,11 +10,8 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name = "DADOS")
 public class Dado {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idDado;
-	@NotBlank
-	private String tipo;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer idDado;
+	@NotBlank private String tipo;
 	
 	public Dado() {}
 	

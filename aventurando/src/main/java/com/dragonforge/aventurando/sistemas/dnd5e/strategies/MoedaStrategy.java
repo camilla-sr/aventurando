@@ -5,8 +5,7 @@ import com.dragonforge.aventurando.sistemas.dnd5e.models.Moeda;
 
 @Component
 public class MoedaStrategy implements FormularioStrategy{
-	@Override
-	public String getTipoComponente() { return "moedas"; }
-	@Override
-	public Object getEntidadeVazia() { return new Moeda(); }
+	@Override public String getTipoComponente() { return "moedas"; }
+	@Override public Object getEntidadeVazia() { return new Moeda(); }
+	@Override public String getEndpoint() {return "/moeda-api"; }
 }

@@ -26,18 +26,12 @@ import jakarta.validation.Valid;
 @Controller
 @RequestMapping("/jogador-api")
 public class JogadorController {
-	@Autowired
-	private JogadorRepository repo;
-	@Autowired
-	private UsuarioRepository repoUser;
-	@Autowired
-	private RacaRepository repoRaca;
-	@Autowired
-	private ClasseRepository repoClass;
-	@Autowired
-	private TendenciaRepository repoTend;
-	@Autowired
-	private AntecedenteRepository repoAntec;
+	@Autowired private JogadorRepository repo;
+	@Autowired private UsuarioRepository repoUser;
+	@Autowired private RacaRepository repoRaca;
+	@Autowired private ClasseRepository repoClass;
+	@Autowired private TendenciaRepository repoTend;
+	@Autowired private AntecedenteRepository repoAntec;
 	
 	@PostMapping("/salvar")
 	public String salvar(@Valid Jogador jogador, @RequestParam("idUsuario") Integer user, @RequestParam("raca") Integer raca,

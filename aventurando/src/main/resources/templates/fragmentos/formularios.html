@@ -3,16 +3,34 @@
     <form th:fragment="form_dinamico" 
           id="formDinamico" 
           th:object="${entidade}" 
-          th:action="@{/admin/formularios/{tipo}(tipo=${tipoComponente})}" 
+          th:action="@{${apiUrl}}" 
           method="post" 
           novalidate>
 
-        <div th:replace="~{'fragmentos/campos/' + ${tipoComponente} :: campos}">
-            <div class="alert alert-danger">
-                Configuração de formulário (fragmento de campos) não encontrada para este componente.
+        <input type="hidden" name="url" id="url" />
+
+        <div th:each="field : ${formFields}" class="mb-3">
+            
+            <label th:for="${field.nome}" class="form-label" th:text="${field.label}"></label>
+
+            <div th:switch="${field.tipo}">
+
+                <div th:case="'select'">
+                    <select class="form-select" th:field="*{__${field.nome}__}" th:required="${field.required}">
+                        <option value="">Selecione...</option>
+                        <option th:each="option : ${field.options}"
+                                th:value="${option.key}"
+                                th:text="${option.value}">
+                        </option>
+                    </select>
+                </div>
+
+                <div th:case="*">
+                    <input type="text" class="form-control" th:field="*{__${field.nome}__}" th:required="${field.required}">
+                </div>
+
             </div>
         </div>
-
     </form>
 </body>
 </html>

@@ -5,8 +5,7 @@ import com.dragonforge.aventurando.sistemas.dnd5e.models.Arquetipo;
 
 @Component
 public class ArquetipoStrategy implements FormularioStrategy{
-	@Override
-	public String getTipoComponente() { return "arquetipos"; }
-	@Override
-	public Object getEntidadeVazia() { return new Arquetipo(); }
+	@Override public String getTipoComponente() { return "arquetipos"; }
+	@Override public Object getEntidadeVazia() { return new Arquetipo(); }
+	@Override public String getEndpoint() {return "/arquetipo-api"; }
 }

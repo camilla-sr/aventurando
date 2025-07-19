@@ -53,6 +53,8 @@ function abrirModalCadastro(buttonElement) {
         .done(function(formHtml) {
             modalTitle.text('Cadastrar Novo(a) ' + tipoComponente.replace(/s$/, ''));
             modalBody.html(formHtml);
+			const urlAtual = window.location.href;
+			$('#url').val(urlAtual)
         })
         .fail(function() {
             modalTitle.text('Erro');

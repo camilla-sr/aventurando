@@ -27,18 +27,13 @@ import jakarta.validation.Valid;
 @Controller
 @RequestMapping("/caracteristica-api")
 public class CaracteristicaController {
-	@Autowired
-	private CaracteristicaRepository repo;
-	@Autowired
-	private TracoRepository repoTraco;
-	@Autowired
-	private IdealRepository repoIdeal;
-	@Autowired
-	private VinculoRepository repoVinc;
-	@Autowired
-	private DefeitoRepository repoDef;
+	@Autowired private CaracteristicaRepository repo;
+	@Autowired private TracoRepository repoTraco;
+	@Autowired private IdealRepository repoIdeal;
+	@Autowired private VinculoRepository repoVinc;
+	@Autowired private DefeitoRepository repoDef;
 	
-	@PostMapping("/salvar")
+	@PostMapping
 	public String salvar(@Valid Caracteristicas carac, @RequestParam("idJogador") Integer player, @RequestParam("traco") Integer traco,
 			@RequestParam("ideal") Integer ideal, @RequestParam("vinculo") Integer vinc, @RequestParam("defeito") Integer def, BindingResult result) {
 		if(result.hasErrors()) { return "codigo=06"; }

@@ -5,8 +5,7 @@ import com.dragonforge.aventurando.sistemas.dnd5e.models.Dado;
 
 @Component
 public class DadoStrategy implements FormularioStrategy{
-	@Override
-	public String getTipoComponente() { return "dados"; }
-	@Override
-	public Object getEntidadeVazia() { return new Dado(); }
+	@Override public String getTipoComponente() { return "dados"; }
+	@Override public Object getEntidadeVazia() { return new Dado(); }
+	@Override public String getEndpoint() {return "/dado-api"; }
 }

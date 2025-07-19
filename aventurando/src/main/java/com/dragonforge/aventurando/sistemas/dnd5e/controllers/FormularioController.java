@@ -11,11 +11,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.dragonforge.aventurando.central.services.FormGerador;
+import com.dragonforge.aventurando.central.util.FormField;
 import com.dragonforge.aventurando.sistemas.dnd5e.strategies.FormularioStrategy;
 
 @Controller
 public class FormularioController {
+	@Autowired private FormGerador formGerador; 
+
 	private final Map<String, FormularioStrategy> sMap;
+	
 	@Autowired
 	public FormularioController(List<FormularioStrategy> strategies) {
 		this.sMap = strategies.stream().collect(Collectors.toMap(FormularioStrategy::getTipoComponente, Function.identity()));
@@ -24,11 +29,15 @@ public class FormularioController {
 	@GetMapping("/admin/formularios/{tipoComponente}")
 	public String getFormularioFragment(@PathVariable String tipoComponente, Model model) {
 		FormularioStrategy strategy = sMap.get(tipoComponente);
-		if(strategy == null) {
-			return "o-fragmento-de-erro";			//ACRESCENTAR ERRO AQUI DEPOIS
-		}
+		if(strategy == null) { return "erro"; }
+		
+		Object entidadeVazia = strategy.getEntidadeVazia();
+		List<FormField> formFields = formGerador.generateFieldsFor(entidadeVazia);
+		
+		model.addAttribute("formFields", formFields);
 		model.addAttribute("tipoComponente", tipoComponente);
-		model.addAttribute("entidade", strategy.getEntidadeVazia());
+		model.addAttribute("entidade", entidadeVazia);
+		model.addAttribute("apiUrl", strategy.getEndpoint());
 		return "fragmentos/formularios :: form_dinamico";
 	}
 }

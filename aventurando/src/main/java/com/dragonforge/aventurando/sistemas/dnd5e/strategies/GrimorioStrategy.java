@@ -5,8 +5,7 @@ import com.dragonforge.aventurando.sistemas.dnd5e.models.Grimorio;
 
 @Component
 public class GrimorioStrategy implements FormularioStrategy{
-	@Override
-	public String getTipoComponente() { return "grimorio"; }
-	@Override
-	public Object getEntidadeVazia() { return new Grimorio(); }
+	@Override public String getTipoComponente() { return "grimorio"; }
+	@Override public Object getEntidadeVazia() { return new Grimorio(); }
+	@Override public String getEndpoint() {return "/grimorio-api"; }
 }

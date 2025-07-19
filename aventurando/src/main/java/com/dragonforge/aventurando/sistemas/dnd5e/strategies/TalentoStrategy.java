@@ -5,8 +5,7 @@ import com.dragonforge.aventurando.sistemas.dnd5e.models.Talento;
 
 @Component
 public class TalentoStrategy implements FormularioStrategy{
-	@Override
-	public String getTipoComponente() { return "talentos"; }
-	@Override
-	public Object getEntidadeVazia() { return new Talento(); }
+	@Override public String getTipoComponente() { return "talentos"; }
+	@Override public Object getEntidadeVazia() { return new Talento(); }
+	@Override public String getEndpoint() {return "/talento-api"; }
 }

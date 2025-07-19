@@ -20,14 +20,11 @@ import jakarta.validation.Valid;
 @Controller
 @RequestMapping("/grimorio-api")
 public class GrimorioController {
-	@Autowired
-	private GrimorioRepository repo;
-	@Autowired
-	private HabMagiaRepository repoHab;
-	@Autowired
-	private GlossarioRepository repoMagic;
+	@Autowired private GrimorioRepository repo;
+	@Autowired private HabMagiaRepository repoHab;
+	@Autowired private GlossarioRepository repoMagic;
 	
-	@PostMapping("/salvar")
+	@PostMapping
 	public String salvar(@Valid Grimorio grim, @RequestParam("habmagia") Integer hab, @RequestParam("magia") Integer magic,
 			 @RequestParam("idJogador") Integer player, BindingResult result) {
 		if(result.hasErrors()) { return "codigo=06"; }

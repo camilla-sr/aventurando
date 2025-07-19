@@ -5,8 +5,7 @@ import com.dragonforge.aventurando.sistemas.dnd5e.models.Deposito;
 
 @Component
 public class DepositoStrategy implements FormularioStrategy{
-	@Override
-	public String getTipoComponente() { return "deposito"; }
-	@Override
-	public Object getEntidadeVazia() { return new Deposito(); }
+	@Override public String getTipoComponente() { return "deposito"; }
+	@Override public Object getEntidadeVazia() { return new Deposito(); }
+	@Override public String getEndpoint() {return "/deposito-api"; }
 }

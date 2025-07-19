@@ -15,7 +15,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class FormGerador {
-
     @Autowired private AntecedenteRepository antec;
     @Autowired private ArmaRepository arma;
     @Autowired private ArmaduraRepository armadura;

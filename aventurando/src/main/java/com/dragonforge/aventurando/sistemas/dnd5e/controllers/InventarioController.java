@@ -26,20 +26,14 @@ import jakarta.validation.Valid;
 @Controller
 @RequestMapping("/inventario-api")
 public class InventarioController {
-	@Autowired
-	private InventarioRepository repo;
-	@Autowired
-	private DepositoRepository repoDep;
-	@Autowired
-	private ArsenalRepository repoArs;
-	@Autowired
-	private MochilaRepository repoBag;
-	@Autowired
-	private UtilitariosRepository repoUtil;
-	@Autowired
-	private TranqueirasRepository repoTranq;
+	@Autowired private InventarioRepository repo;
+	@Autowired private DepositoRepository repoDep;
+	@Autowired private ArsenalRepository repoArs;
+	@Autowired private MochilaRepository repoBag;
+	@Autowired private UtilitariosRepository repoUtil;
+	@Autowired private TranqueirasRepository repoTranq;
 	
-	@PostMapping("/salvar")
+	@PostMapping
 	public String salvar(@Valid Inventario inventario, @RequestParam("armaduras") Integer dep, @RequestParam("armas") Integer ars,
 			 @RequestParam("equipamentos") Integer bag, @RequestParam("ferramentas") Integer util, @RequestParam("bugigangas") Integer tranq,
 			 @RequestParam("idJogador") Integer player, BindingResult result) {

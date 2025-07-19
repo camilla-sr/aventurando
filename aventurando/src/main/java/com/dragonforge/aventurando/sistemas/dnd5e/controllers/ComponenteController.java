@@ -21,7 +21,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/admin/tabela")
+@RequestMapping("/painelSistema/dnd5e/tabela")
 public class ComponenteController {
 	@Autowired private AntecedenteRepository repoAntec;
 	@Autowired private ArmaRepository repoWeapon;
@@ -46,7 +46,6 @@ public class ComponenteController {
 	@Autowired private VinculoRepository repoLink;	
 	@Autowired private ObjectMapper objectMapper;
 
-	
     private List<Map<String, Object>> converter(Iterable<?> dados) {
         return StreamSupport.stream(dados.spliterator(), false)
                 .map(dado -> objectMapper.convertValue(dado, Map.class))

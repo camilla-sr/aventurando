@@ -21,16 +21,12 @@ import jakarta.validation.Valid;
 @Controller
 @RequestMapping("/classemagica-api")
 public class ClasseMagicaController {
-	@Autowired
-	private ClasseMagicaRepository repo;
-	@Autowired
-	private ClasseRepository repoClass;
-	@Autowired
-	private GlossarioRepository repoGloss;
-	@Autowired
-	private HabMagiaRepository repoHab;
+	@Autowired private ClasseMagicaRepository repo;
+	@Autowired private ClasseRepository repoClass;
+	@Autowired private GlossarioRepository repoGloss;
+	@Autowired private HabMagiaRepository repoHab;
 	
-	@PostMapping("/salvar")
+	@PostMapping
 	public String salvar(@Valid ClasseMagica cMagica, @RequestParam("classe") Integer classe,
 						@RequestParam("magia") Integer magia, @RequestParam("habilidade") Integer hab,BindingResult result) {
 		if(result.hasErrors()) { return "codigo=06"; }

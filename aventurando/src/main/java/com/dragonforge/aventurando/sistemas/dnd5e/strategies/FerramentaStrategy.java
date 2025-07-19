@@ -5,8 +5,7 @@ import com.dragonforge.aventurando.sistemas.dnd5e.models.Ferramenta;
 
 @Component
 public class FerramentaStrategy implements FormularioStrategy{
-	@Override
-	public String getTipoComponente() { return "ferramentas"; }
-	@Override
-	public Object getEntidadeVazia() { return new Ferramenta(); }
+	@Override public String getTipoComponente() { return "ferramentas"; }
+	@Override public Object getEntidadeVazia() { return new Ferramenta(); }
+	@Override public String getEndpoint() {return "/ferramenta-api"; }
 }

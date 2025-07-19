@@ -5,8 +5,7 @@ import com.dragonforge.aventurando.sistemas.dnd5e.models.Arsenal;
 
 @Component
 public class ArsenalStrategy implements FormularioStrategy{
-	@Override
-	public String getTipoComponente() { return "arsenal"; }
-	@Override
-	public Object getEntidadeVazia() { return new Arsenal(); }
+	@Override public String getTipoComponente() { return "arsenal"; }
+	@Override public Object getEntidadeVazia() { return new Arsenal(); }
+	@Override public String getEndpoint() {return "/arsenal-api"; }
 }

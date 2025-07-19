@@ -3,6 +3,7 @@ package com.dragonforge.aventurando.sistemas.dnd5e.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,12 +16,11 @@ import jakarta.validation.Valid;
 @Controller
 @RequestMapping("/glossario-api")
 public class GlossarioController {
-	@Autowired
-	private GlossarioRepository repo;
+	@Autowired private GlossarioRepository repo;
 	
-	@PostMapping("/salvar")
-	public String salvar(@Valid GlossarioMagias magia, BindingResult result) {
-		if(result.hasErrors()) { return "codigo=06"; }
+	@PostMapping
+	public String salvar(@Valid GlossarioMagias magia, BindingResult result, @RequestParam("url") String url) {
+		if(result.hasErrors()) { return "redirect:" + url + "?codigo=06"; }
 	
 		if(magia.getIdMagia() != null) {
 			GlossarioMagias existe = repo.findById(magia.getIdMagia()).orElse(new GlossarioMagias());
@@ -30,16 +30,16 @@ public class GlossarioController {
 			if(!magia.getDescricaoMagia().isEmpty()) { existe.setDescricaoMagia(magia.getDescricaoMagia()); }
 			
 			repo.save(existe);
-			return "codigo=12";
+			return "redirect:" + url + "?codigo=12";
 		}else{
 			repo.save(magia);
-			return "codigo=07";
+			return "redirect:" + url + "?codigo=07";
 		}
 	}
 	
-	@PostMapping("/apagar")
-	public String apagar(@RequestParam Integer id) {
-		if(id != null) { repo.deleteById(id); }
-		return "codigo=15";		//APAGOU
+	@DeleteMapping("/{id}")
+	public String apagar(@RequestParam Integer id, @RequestParam("url") String url) {
+		repo.deleteById(id);
+		return "redirect:" + url + "?codigo=15";
 	}
 }

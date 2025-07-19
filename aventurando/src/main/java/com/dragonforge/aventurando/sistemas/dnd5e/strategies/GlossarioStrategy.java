@@ -5,8 +5,7 @@ import com.dragonforge.aventurando.sistemas.dnd5e.models.GlossarioMagias;
 
 @Component
 public class GlossarioStrategy implements FormularioStrategy{
-	@Override
-	public String getTipoComponente() { return "magias"; }
-	@Override
-	public Object getEntidadeVazia() { return new GlossarioMagias(); }
+	@Override public String getTipoComponente() { return "magias"; }
+	@Override public Object getEntidadeVazia() { return new GlossarioMagias(); }
+	@Override public String getEndpoint() {return "/glossario-api"; }
 }

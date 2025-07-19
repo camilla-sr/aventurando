@@ -3,6 +3,7 @@ package com.dragonforge.aventurando.sistemas.dnd5e.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,14 +18,12 @@ import jakarta.validation.Valid;
 @Controller
 @RequestMapping("/equipamento-api")
 public class EquipamentoController {
-	@Autowired
-	private EquipamentoRepository repo;
-	@Autowired
-	private MoedaRepository repoCoin;
+	@Autowired private EquipamentoRepository repo;
+	@Autowired private MoedaRepository repoCoin;
 	
-	@PostMapping("/salvar")
-	public String salvar(@Valid Equipamento equip, @RequestParam("moeda") Integer moeda, BindingResult result) {
-		if(result.hasErrors()) { return "codigo=06"; }
+	@PostMapping
+	public String salvar(@Valid Equipamento equip, @RequestParam("moeda") Integer moeda, BindingResult result, @RequestParam("url") String url) {
+		if(result.hasErrors()) { return "redirect:" + url + "?codigo=06"; }
 	
 		Moeda moedaSelect = repoCoin.findById(moeda).orElseThrow();
 		
@@ -37,16 +36,16 @@ public class EquipamentoController {
 			if(equip.getPeso() != null) { existe.setPeso(equip.getPeso()); }
 			
 			repo.save(existe);
-			return "codigo=12";
+			return "redirect:" + url + "?codigo=12";
 		}else{
 			repo.save(equip);
-			return "codigo=07";
+			return "redirect:" + url + "?codigo=07";
 		}
 	}
 	
-	@PostMapping("/apagar")
-	public String apagar(@RequestParam Integer id) {
-		if(id != null) { repo.deleteById(id); }
-		return "codigo=15";		//APAGOU
+	@DeleteMapping("/{id}")
+	public String apagar(@RequestParam Integer id, @RequestParam("url") String url) {
+		repo.deleteById(id);
+		return "redirect:" + url + "?codigo=15";
 	}
 }

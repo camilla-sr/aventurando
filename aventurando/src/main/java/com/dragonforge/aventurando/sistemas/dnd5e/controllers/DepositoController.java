@@ -17,12 +17,10 @@ import jakarta.validation.Valid;
 @Controller
 @RequestMapping("/deposito-api")
 public class DepositoController {
-	@Autowired
-	private DepositoRepository repo;
-	@Autowired
-	private ArmaduraRepository repoArmor;
+	@Autowired private DepositoRepository repo;
+	@Autowired private ArmaduraRepository repoArmor;
 	
-	@PostMapping("/salvar")
+	@PostMapping
 	public String salvar(@Valid Deposito depo, @RequestParam("armadura") Integer armor, BindingResult result) {
 		if(result.hasErrors()) { return "codigo=06"; }
 	

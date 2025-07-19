@@ -5,8 +5,7 @@ import com.dragonforge.aventurando.sistemas.dnd5e.models.DetalhesPersonagem;
 
 @Component
 public class DetalheStrategy implements FormularioStrategy{
-	@Override
-	public String getTipoComponente() { return "detalhes_personagem"; }
-	@Override
-	public Object getEntidadeVazia() { return new DetalhesPersonagem(); }
+	@Override public String getTipoComponente() { return "detalhes_personagem"; }
+	@Override public Object getEntidadeVazia() { return new DetalhesPersonagem(); }
+	@Override public String getEndpoint() {return "/detalhes-api"; }
 }
