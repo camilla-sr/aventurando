@@ -12,25 +12,20 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name = "DEFEITOS")
 public class Defeito {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idDefeito;
-	@ManyToOne
-	@JoinColumn(name = "i_antecedente")
-	private Antecedente antecedente;
-	@NotBlank
-	private String descricaoDefeito;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@ManyToOne @JoinColumn(name = "i_antecedente") private Antecedente antecedente;
+	@NotBlank private String descricaoDefeito;
 	
 	public Defeito() {}
 	
-	public Defeito(Integer idDefeito, Antecedente antecedente, String descricaoDefeito) {
-		this.idDefeito = idDefeito;
+	public Defeito(Integer id, Antecedente antecedente, String descricaoDefeito) {
+		this.id = id;
 		this.antecedente = antecedente;
 		this.descricaoDefeito = descricaoDefeito;
 	}
 
-	public Integer getIdDefeito() { return idDefeito; }
-	public void setIdDefeito(Integer idDefeito) { this.idDefeito = idDefeito; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public Antecedente getAntecedente() { return antecedente; }
 	public void setAntecedente(Antecedente antecedente) { this.antecedente = antecedente; }
 	public String getDescricaoDefeito() { return descricaoDefeito; }

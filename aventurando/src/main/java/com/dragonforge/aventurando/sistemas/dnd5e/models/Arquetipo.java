@@ -12,28 +12,22 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name = "ARQUETIPOS")
 public class Arquetipo {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idArquetipo;
-	@ManyToOne
-	@JoinColumn(name = "i_classe")
-	private Classe classe;
-	@NotBlank
-	private String titulo;
-	@NotBlank
-	private String descricaoArquetipo;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@ManyToOne @JoinColumn(name = "i_classe") private Classe classe;
+	@NotBlank private String titulo;
+	@NotBlank private String descricaoArquetipo;
 	
 	public Arquetipo() {}
 	
-	public Arquetipo(Integer idArquetipo, Classe classe, String titulo, String descricaoArquetipo) {
-		this.idArquetipo = idArquetipo;
+	public Arquetipo(Integer id, Classe classe, String titulo, String descricaoArquetipo) {
+		this.id = id;
 		this.classe = classe;
 		this.titulo = titulo;
 		this.descricaoArquetipo = descricaoArquetipo;
 	}
 
-	public Integer getIdArquetipo() { return idArquetipo; }
-	public void setIdArquetipo(Integer idArquetipo) { this.idArquetipo = idArquetipo; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public Classe getClasse() { return classe; }
 	public void setClasse(Classe classe) { this.classe = classe; }
 	public String getTitulo() { return titulo; }

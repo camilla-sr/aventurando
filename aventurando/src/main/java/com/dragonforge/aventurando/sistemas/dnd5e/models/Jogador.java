@@ -13,23 +13,12 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "JOGADOR")
 public class Jogador {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idJogador;
-	@Column(name = "i_usuario")
-	private Integer usuario;
-	@ManyToOne
-	@JoinColumn(name = "i_raca")
-	private Raca raca;
-	@ManyToOne
-	@JoinColumn(name = "i_classe")
-	private Classe classe;
-	@OneToOne
-	@JoinColumn(name = "i_tendencia")
-	private Tendencia tendencia;
-	@OneToOne
-	@JoinColumn(name = "i_antecedente")
-	private Antecedente antecedente;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@Column(name = "i_usuario") private Integer usuario;
+	@ManyToOne @JoinColumn(name = "i_raca") private Raca raca;
+	@ManyToOne @JoinColumn(name = "i_classe") private Classe classe;
+	@OneToOne @JoinColumn(name = "i_tendencia") private Tendencia tendencia;
+	@OneToOne @JoinColumn(name = "i_antecedente") private Antecedente antecedente;
 	
 	private Integer xp = 0;
 	private Integer nivel = 0;
@@ -102,7 +91,7 @@ public class Jogador {
 
 	public Jogador() {}
 	
-	public Jogador( Integer idJogador, Integer usuario, Raca raca, Classe classe, Tendencia tendencia, Antecedente antecedente,
+	public Jogador( Integer id, Integer usuario, Raca raca, Classe classe, Tendencia tendencia, Antecedente antecedente,
 			Integer xp, Integer nivel, Integer pontosVida, Integer pontosVidaAtual, Integer pontosVidaTemporaria, Integer proficiencia,
 			Integer classeArmadura, Integer classeArmaduraBonus, Integer iniciativa, Integer iniciativaBonus, Float deslocamento, Float deslocamentoBonus,
 		    Float deslocamentoAgua, Float deslocamentoEscalada, Float deslocamentoVoo, Integer percepcaoPassiva, Integer forca, Integer modFor,
@@ -113,7 +102,7 @@ public class Jogador {
 		    Integer lidarAnimais, Integer medicinaBase, Integer medicina, Integer percepcaoBase, Integer percepcao, Integer sobrevivenciaBase, Integer sobrevivencia, Integer atuacaoBase, Integer atuacao, Integer enganacaoBase, Integer enganacao,
 		    Integer intimidacaoBase, Integer intimidacao, Integer persuasaoBase, Integer persuasao ) {
 		
-		    this.idJogador = idJogador; this.usuario = usuario; this.raca = raca; this.classe = classe; this.tendencia = tendencia;
+		    this.id = id; this.usuario = usuario; this.raca = raca; this.classe = classe; this.tendencia = tendencia;
 		    this.antecedente = antecedente; this.xp = xp; this.nivel = nivel; this.pontosVida = pontosVida; this.pontosVidaAtual = pontosVidaAtual;
 		    this.pontosVidaTemporaria = pontosVidaTemporaria; this.proficiencia = proficiencia; this.classeArmadura = classeArmadura;
 		    this.classeArmaduraBonus = classeArmaduraBonus; this.iniciativa = iniciativa; this.iniciativaBonus = iniciativaBonus;
@@ -144,8 +133,8 @@ public class Jogador {
 	public Antecedente getAntecedente() { return antecedente; }
 	public void setAntecedente(Antecedente antecedente) { this.antecedente = antecedente; }
 	
-	public Integer getIdJogador() { return idJogador; }
-	public void setIdJogador(Integer idJogador) { this.idJogador = idJogador; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public Integer getXp() { return xp; }
 	public void setXp(Integer xp) { this.xp = xp; }
 	public Integer getNivel() { return nivel; }

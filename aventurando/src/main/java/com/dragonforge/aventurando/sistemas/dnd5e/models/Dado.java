@@ -10,18 +10,18 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name = "DADOS")
 public class Dado {
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer idDado;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
 	@NotBlank private String tipo;
 	
 	public Dado() {}
 	
-	public Dado(Integer idDado, String tipo) {
-		this.idDado = idDado;
+	public Dado(Integer id, String tipo) {
+		this.id = id;
 		this.tipo = tipo;
 	}
 	
-	public Integer getIdDado() { return idDado; }
-	public void setIdDado(Integer idDado) { this.idDado = idDado; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public String getTipo() { return tipo; }
 	public void setTipo(String tipo) { this.tipo = tipo; }
 }

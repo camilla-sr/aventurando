@@ -10,21 +10,18 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name = "HABILIDADE_MAGIA")
 public class HabilidadeMagia {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idHabilidade;
-	@NotBlank
-	private String habilidadeChave;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@NotBlank private String habilidadeChave;
 	
 	public HabilidadeMagia() {}
 	
-	public HabilidadeMagia(Integer idHabilidade, String habilidadeChave) {
-		this.idHabilidade = idHabilidade;
+	public HabilidadeMagia(Integer id, String habilidadeChave) {
+		this.id = id;
 		this.habilidadeChave = habilidadeChave;
 	}
 	
-	public Integer getIdHabilidade() { return idHabilidade; }
-	public void setIdHabilidade(Integer idHabilidade) { this.idHabilidade = idHabilidade; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public String getHabilidadeChave() { return habilidadeChave; }
 	public void setHabilidadeChave(String habilidadeChave) { this.habilidadeChave = habilidadeChave; }
 }

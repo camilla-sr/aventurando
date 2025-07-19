@@ -12,25 +12,20 @@ import jakarta.validation.constraints.Positive;
 @Entity
 @Table(name = "ARSENAL")
 public class Arsenal {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idArsenal;
-	@ManyToOne
-	@JoinColumn(name = "i_arma")
-	private Arma arma;
-	@Positive
-	private Integer quantidade = 0;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@ManyToOne @JoinColumn(name = "i_arma") private Arma arma;
+	@Positive private Integer quantidade = 0;
 	
 	public Arsenal() {}
 	
-	public Arsenal(Integer idArsenal, Arma arma, Integer quantidade) {
-		this.idArsenal = idArsenal;
+	public Arsenal(Integer id, Arma arma, Integer quantidade) {
+		this.id = id;
 		this.arma = arma;
 		this.quantidade = quantidade;
 	}
 	
-	public Integer getIdArsenal() { return idArsenal; }
-	public void setIdArsenal(Integer idArsenal) { this.idArsenal = idArsenal; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public Arma getArma() { return arma; }
 	public void setArma(Arma arma) { this.arma = arma; }
 	public Integer getQuantidade() { return quantidade; }

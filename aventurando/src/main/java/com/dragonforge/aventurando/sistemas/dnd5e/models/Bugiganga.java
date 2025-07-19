@@ -10,21 +10,18 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name = "BUGIGANGAS")
 public class Bugiganga {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idBugiganga;
-	@NotBlank
-	private String descricaoBugiganga;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@NotBlank private String descricaoBugiganga;
 	
 	public Bugiganga() {}
 	
-	public Bugiganga(Integer idBugiganga, String descricaoBugiganga) {
-		this.idBugiganga = idBugiganga;
+	public Bugiganga(Integer id, String descricaoBugiganga) {
+		this.id = id;
 		this.descricaoBugiganga = descricaoBugiganga;
 	}
 	
-	public Integer getIdBugiganga() { return idBugiganga; }
-	public void setIdBugiganga(Integer idBugiganga) { this.idBugiganga = idBugiganga; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public String getDescricaoBugiganga() { return descricaoBugiganga; }
 	public void setDescricaoBugiganga(String descricaoBugiganga) { this.descricaoBugiganga = descricaoBugiganga; }
 }

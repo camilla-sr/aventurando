@@ -14,48 +14,30 @@ import jakarta.validation.constraints.Positive;
 @Entity
 @Table(name = "INVENTARIO")
 public class Inventario {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idInventario;
-	@Column(name = "i_jogador")
-	private Integer player;
-	@ManyToOne
-	@JoinColumn(name = "i_deposito")
-	private Deposito deposito;
-	@ManyToOne
-	@JoinColumn(name = "i_arsenal")
-	private Arsenal arsenal;
-	@ManyToOne
-	@JoinColumn(name = "i_mochila")
-	private Mochila mochila;
-	@ManyToOne
-	@JoinColumn(name = "i_utilitarios")
-	private Utilitarios utilitarios;
-	@ManyToOne
-	@JoinColumn(name = "i_tranqueiras")
-	private Tranqueiras tranqueiras;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@Column(name = "i_jogador") private Integer player;
+	@ManyToOne @JoinColumn(name = "i_deposito") private Deposito deposito;
+	@ManyToOne @JoinColumn(name = "i_arsenal") private Arsenal arsenal;
+	@ManyToOne @JoinColumn(name = "i_mochila") private Mochila mochila;
+	@ManyToOne @JoinColumn(name = "i_utilitarios") private Utilitarios utilitarios;
+	@ManyToOne @JoinColumn(name = "i_tranqueiras")private Tranqueiras tranqueiras;
 	
-	@Positive
-	private Integer cobre;
-	@Positive
-	private Integer prata;
-	@Positive
-	private Integer electro;
-	@Positive
-	private Integer ouro;
-	@Positive
-	private Integer platina;
+	@Positive private Integer cobre;
+	@Positive private Integer prata;
+	@Positive private Integer electro;
+	@Positive private Integer ouro;
+	@Positive private Integer platina;
 	
 	public Inventario() {}
 	
-	public Inventario(Integer idInventario, Integer player, Deposito deposito, Arsenal arsenal, Mochila mochila,
+	public Inventario(Integer id, Integer player, Deposito deposito, Arsenal arsenal, Mochila mochila,
 		Utilitarios utilitarios, Tranqueiras tranqueiras, Integer cobre, Integer prata, Integer electro, Integer ouro, Integer platina) {
-		this.idInventario = idInventario; this.player = player; this.deposito = deposito; this.arsenal = arsenal;
+		this.id = id; this.player = player; this.deposito = deposito; this.arsenal = arsenal;
 		this.mochila = mochila; this.utilitarios = utilitarios; this.tranqueiras = tranqueiras;
 	}
 
-	public Integer getIdInventario() { return idInventario; }
-	public void setIdInventario(Integer idInventario) { this.idInventario = idInventario; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public Integer getPlayer() { return player; }
 	public void setPlayer(Integer player) { this.player = player; }
 	public Deposito getDeposito() { return deposito; }

@@ -12,28 +12,22 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name = "HABILIDADES_RACA")
 public class HabilidadeRaca {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idHabilidadeRaca;
-	@ManyToOne
-	@JoinColumn(name = "i_raca")
-	private Raca raca;
-	@NotBlank
-	private String nome;
-	@NotBlank
-	private String descricaoHabilidadeRaca;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@ManyToOne @JoinColumn(name = "i_raca") private Raca raca;
+	@NotBlank private String nome;
+	@NotBlank private String descricaoHabilidadeRaca;
 	
 	public HabilidadeRaca() {}
 	
-	public HabilidadeRaca(Integer idHabilidadeRaca, Raca raca, String nome, String descricaoHabilidadeRaca) {
-		this.idHabilidadeRaca = idHabilidadeRaca;
+	public HabilidadeRaca(Integer id, Raca raca, String nome, String descricaoHabilidadeRaca) {
+		this.id = id;
 		this.raca = raca;
 		this.nome = nome;
 		this.descricaoHabilidadeRaca = descricaoHabilidadeRaca;
 	}
 
-	public Integer getIdHabilidadeRaca() { return idHabilidadeRaca; }
-	public void setIdHabilidadeRaca(Integer idHabilidadeRaca) { this.idHabilidadeRaca = idHabilidadeRaca; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public Raca getRaca() { return raca; }
 	public void setRaca(Raca raca) { this.raca = raca; }
 	public String getNome() { return nome; }

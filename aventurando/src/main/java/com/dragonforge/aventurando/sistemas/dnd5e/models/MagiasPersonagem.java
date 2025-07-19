@@ -12,30 +12,22 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "MAGIAS_PERSONAGEM")
 public class MagiasPersonagem {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idRegistro;
-	private String tipo = "";
-	@Column(name = "i_jogador")
-	private Integer player;
-	@ManyToOne
-	@JoinColumn(name = "i_magia")
-	private GlossarioMagias magia;
-	@ManyToOne
-	@JoinColumn(name = "i_classe")
-	private Classe classe;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	private String tipo = ""; @Column(name = "i_jogador") private Integer player;
+	@ManyToOne @JoinColumn(name = "i_magia") private GlossarioMagias magia;
+	@ManyToOne @JoinColumn(name = "i_classe") private Classe classe;
 	
 	public MagiasPersonagem() {}
 	
-	public MagiasPersonagem(Integer idRegistro, Integer player, GlossarioMagias magia, Classe classe) {
-		this.idRegistro = idRegistro;
+	public MagiasPersonagem(Integer id, Integer player, GlossarioMagias magia, Classe classe) {
+		this.id = id;
 		this.player = player;
 		this.magia = magia;
 		this.classe = classe;
 	}
 
-	public Integer getIdRegistro() { return idRegistro; }
-	public void setIdRegistro(Integer idRegistro) { this.idRegistro = idRegistro; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public String getTipo() { return tipo; }
 	public void setTipo(String tipo) { this.tipo = tipo; }
 	public Integer getPlayer() { return player; }

@@ -13,34 +13,21 @@ import jakarta.validation.constraints.Positive;
 @Entity
 @Table(name = "ARMAS")
 public class Arma {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idArma;
-	@NotBlank
-	private String arma;
-	@Positive
-	private Integer preco;
-	@OneToOne
-	@JoinColumn(name = "i_moeda")
-	private Moeda moeda;
-	@Positive
-	private Integer quantidadeDano;
-	@OneToOne
-	@JoinColumn(name = "i_dado_dano")
-	private Dado dadoDano;
-	@OneToOne
-	@JoinColumn(name = "i_dano")
-	private TipoDano dano;
-	@Positive
-	private Float peso;
-	@NotBlank
-	private String propriedades = "";
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@NotBlank private String arma;
+	@Positive private Integer preco;
+	@OneToOne @JoinColumn(name = "i_moeda") private Moeda moeda;
+	@Positive private Integer quantidadeDano;
+	@OneToOne @JoinColumn(name = "i_dado_dano") private Dado dadoDano;
+	@OneToOne @JoinColumn(name = "i_dano") private TipoDano dano;
+	@Positive private Float peso;
+	@NotBlank private String propriedades = "";
 	
 	public Arma() {}
 	
-	public Arma(Integer idArma, String arma, Integer preco, Moeda moeda, Integer quantidadeDano, Dado dadoDano,
+	public Arma(Integer id, String arma, Integer preco, Moeda moeda, Integer quantidadeDano, Dado dadoDano,
 		TipoDano dano, Float peso, String propriedades) {
-		this.idArma = idArma;
+		this.id = id;
 		this.arma = arma;
 		this.preco = preco;
 		this.moeda = moeda;
@@ -51,8 +38,8 @@ public class Arma {
 		this.propriedades = propriedades;
 	}
 
-	public Integer getIdArma() { return idArma; }
-	public void setIdArma(Integer idArma) { this.idArma = idArma; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public String getArma() { return arma; }
 	public void setArma(String arma) { this.arma = arma; }
 	public Integer getPreco() { return preco; }

@@ -12,28 +12,22 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name = "HABILIDADES_CLASSE")
 public class HabilidadeClasse {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idHabilidadeClasse;
-	@OneToOne
-	@JoinColumn(name = "i_classe")
-	private Classe classe;
-	@NotBlank
-	private String nome;
-	@NotBlank
-	private String descricaoHabilidadeClasse;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@OneToOne @JoinColumn(name = "i_classe") private Classe classe;
+	@NotBlank private String nome;
+	@NotBlank private String descricaoHabilidadeClasse;
 	
 	public HabilidadeClasse() {}
 	
-	public HabilidadeClasse(Integer idHabilidadeClasse, String nome, Classe classe, String descricaoHabilidadeClasse) {
-		this.idHabilidadeClasse = idHabilidadeClasse;
+	public HabilidadeClasse(Integer id, String nome, Classe classe, String descricaoHabilidadeClasse) {
+		this.id = id;
 		this.classe = classe;
 		this.nome = nome;
 		this.descricaoHabilidadeClasse = descricaoHabilidadeClasse;
 	}
 
-	public Integer getIdHabilidadeClasse() { return idHabilidadeClasse; }
-	public void setIdHabilidadeClasse(Integer idHabilidadeClasse) { this.idHabilidadeClasse = idHabilidadeClasse; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public Classe getClasse() { return classe; }
 	public void setClasse(Classe classe) { this.classe = classe; }
 	public String getNome() { return nome; }

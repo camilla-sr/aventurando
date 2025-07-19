@@ -10,23 +10,20 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name = "IDIOMAS")
 public class Idioma {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idIdioma;
-	@NotBlank
-	private String descricaoIdioma;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@NotBlank private String descricaoIdioma;
 	private String alfabeto = "";
 	
 	public Idioma() {}
 	
-	public Idioma(Integer idIdioma, String descricaoIdioma, String alfabeto) {
-		this.idIdioma = idIdioma;
+	public Idioma(Integer id, String descricaoIdioma, String alfabeto) {
+		this.id = id;
 		this.descricaoIdioma = descricaoIdioma;
 		this.alfabeto = alfabeto;
 	}
 	
-	public Integer getIdIdioma() { return idIdioma; }
-	public void setIdIdioma(Integer idIdioma) { this.idIdioma = idIdioma; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public String getDescricaoIdioma() { return descricaoIdioma; }
 	public void setDescricaoIdioma(String descricaoIdioma) { this.descricaoIdioma = descricaoIdioma; }
 	public String getAlfabeto() { return alfabeto; }

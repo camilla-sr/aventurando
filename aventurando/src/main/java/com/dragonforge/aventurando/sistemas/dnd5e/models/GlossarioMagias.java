@@ -11,27 +11,22 @@ import jakarta.validation.constraints.NotEmpty;
 @Entity
 @Table(name = "GLOSSARIO_MAGIAS")
 public class GlossarioMagias {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idMagia;
-	@NotBlank
-	private String magia;
-	@NotEmpty
-	private Integer nivel;
-	@NotBlank
-	private String descricaoMagia;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@NotBlank private String magia;
+	@NotEmpty private Integer nivel;
+	@NotBlank private String descricaoMagia;
 	
 	public GlossarioMagias() {}
 	
-	public GlossarioMagias(Integer idMagia, String magia, Integer nivel, String descricaoMagia) {
-		this.idMagia = idMagia;
+	public GlossarioMagias(Integer id, String magia, Integer nivel, String descricaoMagia) {
+		this.id = id;
 		this.magia = magia;
 		this.nivel = nivel;
 		this.descricaoMagia = descricaoMagia;
 	}
 
-	public Integer getIdMagia() { return idMagia; }
-	public void setIdMagia(Integer idMagia) { this.idMagia = idMagia; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public String getMagia() { return magia; }
 	public void setMagia(String magia) { this.magia = magia; }
 	public Integer getNivel() { return nivel; }

@@ -13,24 +13,17 @@ import jakarta.validation.constraints.Positive;
 @Entity
 @Table(name = "FERRAMENTAS")
 public class Ferramenta {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idFerramenta;
-	@NotBlank
-	private String ferramenta;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@NotBlank private String ferramenta;
 	private String descricaoFerramenta;
-	@Positive
-	private Integer preco;
-	@OneToOne
-	@JoinColumn(name = "i_moeda")
-	private Moeda moeda;
-	@Positive
-	private Float peso = 0.0f;
+	@Positive private Integer preco;
+	@OneToOne @JoinColumn(name = "i_moeda") private Moeda moeda;
+	@Positive private Float peso = 0.0f;
 	
 	public Ferramenta() {}
 	
-	public Ferramenta(Integer idFerramenta, String ferramenta, String descricaoFerramenta, Integer preco, Moeda moeda, Float peso) {
-		this.idFerramenta = idFerramenta;
+	public Ferramenta(Integer id, String ferramenta, String descricaoFerramenta, Integer preco, Moeda moeda, Float peso) {
+		this.id = id;
 		this.ferramenta = ferramenta;
 		this.descricaoFerramenta = descricaoFerramenta;
 		this.preco = preco;
@@ -38,8 +31,8 @@ public class Ferramenta {
 		this.peso = peso;
 	}
 
-	public Integer getIdFerramenta() { return idFerramenta; }
-	public void setIdFerramenta(Integer idFerramenta) { this.idFerramenta = idFerramenta; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public String getFerramenta() { return ferramenta; }
 	public void setFerramenta(String ferramenta) { this.ferramenta = ferramenta; }
 	public String getDescricaoFerramenta() { return descricaoFerramenta; }

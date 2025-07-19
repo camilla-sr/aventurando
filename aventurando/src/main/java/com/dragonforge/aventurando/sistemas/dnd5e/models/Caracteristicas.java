@@ -13,29 +13,16 @@ import jakarta.validation.constraints.Positive;
 @Entity
 @Table(name = "CARACTERISTICAS")
 public class Caracteristicas {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idCaracteristica;
-	@Column(name = "i_jogador")
-	private Integer player;
-	@ManyToOne
-	@JoinColumn(name = "i_traco_personalizado")
-	private TracoPersonalidade traco;
-	@ManyToOne
-	@JoinColumn(name = "i_ideal")
-	private Ideal ideal;
-	@ManyToOne
-	@JoinColumn(name = "i_vinculo")
-	private Vinculo vinculo;
-	@ManyToOne
-	@JoinColumn(name = "i_defeito")
-	private Defeito defeito;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@Column(name = "i_jogador") private Integer player;
+	@ManyToOne @JoinColumn(name = "i_traco_personalizado") private TracoPersonalidade traco;
+	@ManyToOne @JoinColumn(name = "i_ideal") private Ideal ideal;
+	@ManyToOne @JoinColumn(name = "i_vinculo") private Vinculo vinculo;
+	@ManyToOne @JoinColumn(name = "i_defeito") private Defeito defeito;
 	
 	private String foto = "";
-	@Positive
-	private Integer idade;
-	@Positive
-	private Float peso = 0.0f;
+	@Positive private Integer idade;
+	@Positive private Float peso = 0.0f;
 	private String cabelos;
 	private String olhos;
 	private String pele;
@@ -46,18 +33,18 @@ public class Caracteristicas {
 	
 	public Caracteristicas() {}
 	
-	public Caracteristicas(Integer idCaracteristica, Integer jogadorId, String foto, Integer idade,
+	public Caracteristicas(Integer id, Integer jogadorId, String foto, Integer idade,
 			Float peso, String cabelos, String olhos, String pele, String caracteristicaPersonalizada,
 			TracoPersonalidade traco, Ideal ideal, Vinculo vinculo, Defeito defeito, String historia,
 			String aliadosOrg, String tesouro) {
-		this.idCaracteristica = idCaracteristica; this.player = jogadorId; this.foto = foto; this.idade = idade;
+		this.id = id; this.player = jogadorId; this.foto = foto; this.idade = idade;
 		this.peso = peso; this.cabelos = cabelos; this.olhos = olhos; this.pele = pele; this.tesouro = tesouro;
 		this.caracteristicaPersonalizada = caracteristicaPersonalizada; this.traco = traco; this.ideal = ideal;
 		this.vinculo = vinculo; this.defeito = defeito; this.historia = historia;this.aliadosOrg = aliadosOrg;
 	}
 
-	public Integer getIdCaracteristica() { return idCaracteristica; }
-	public void setIdCaracteristica(Integer idCaracteristica) { this.idCaracteristica = idCaracteristica; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public Integer getPlayer() { return player; }
 	public void setPlayer(Integer player) { this.player = player; }
 	public TracoPersonalidade getTraco() { return traco; }

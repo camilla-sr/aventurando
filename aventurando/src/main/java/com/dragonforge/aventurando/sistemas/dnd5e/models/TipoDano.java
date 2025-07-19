@@ -10,21 +10,18 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name = "TIPO_DANO")
 public class TipoDano {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idDano;
-	@NotBlank
-	private String descricaoDano;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@NotBlank private String descricaoDano;
 	
 	public TipoDano() {}
 	
-	public TipoDano(Integer idDano, String descricaoDano) {
-		this.idDano = idDano;
+	public TipoDano(Integer id, String descricaoDano) {
+		this.id = id;
 		this.descricaoDano = descricaoDano;
 	}
 	
-	public Integer getIdDano() { return idDano; }
-	public void setIdDano(Integer idDano) { this.idDano = idDano; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public String getDescricaoDano() { return descricaoDano; }
 	public void setDescricaoDano(String descricaoDano) { this.descricaoDano = descricaoDano; }
 }

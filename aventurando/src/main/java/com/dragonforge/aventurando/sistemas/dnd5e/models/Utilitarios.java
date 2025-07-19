@@ -12,25 +12,20 @@ import jakarta.validation.constraints.Positive;
 @Entity
 @Table(name = "UTILITARIOS")
 public class Utilitarios {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idUtilitario;
-	@ManyToOne
-	@JoinColumn(name = "i_ferramenta")
-	private Ferramenta ferramenta;
-	@Positive
-	private Integer quantidade;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@ManyToOne @JoinColumn(name = "i_ferramenta") private Ferramenta ferramenta;
+	@Positive private Integer quantidade;
 	
 	public Utilitarios() {}
 	
-	public Utilitarios(Integer idUtilitario, Ferramenta ferramenta, Integer quantidade) {
-		this.idUtilitario = idUtilitario;
+	public Utilitarios(Integer id, Ferramenta ferramenta, Integer quantidade) {
+		this.id = id;
 		this.ferramenta = ferramenta;
 		this.quantidade = quantidade;
 	}
 
-	public Integer getIdUtilitario() { return idUtilitario; }
-	public void setIdUtilitario(Integer idUtilitario) { this.idUtilitario = idUtilitario; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public Ferramenta getFerramenta() { return ferramenta; }
 	public void setFerramenta(Ferramenta ferramenta) { this.ferramenta = ferramenta; }
 	public Integer getQuantidade() { return quantidade; }

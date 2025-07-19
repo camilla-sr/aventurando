@@ -10,21 +10,18 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name = "TENDENCIAS")
 public class Tendencia {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idTendencia;
-	@NotBlank
-	private String tendencia;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@NotBlank private String tendencia;
 	
 	public Tendencia() {}
 	
-	public Tendencia(Integer idTendencia, String tendencia) {
-		this.idTendencia = idTendencia;
+	public Tendencia(Integer id, String tendencia) {
+		this.id = id;
 		this.tendencia = tendencia;
 	}
 	
-	public Integer getIdTendencia() { return idTendencia; }
-	public void setIdTendencia(Integer idTendencia) { this.idTendencia = idTendencia; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public String getTendencia() { return tendencia; }
 	public void setTendencia(String tendencia) { this.tendencia = tendencia; }
 }

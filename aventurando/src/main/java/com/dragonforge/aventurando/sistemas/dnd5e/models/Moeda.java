@@ -11,24 +11,20 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name = "MOEDA")
 public class Moeda {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idMoeda;
-	@NotBlank
-	@Column(length = 2)
-	private String moeda;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@NotBlank @Column(length = 2) private String moeda;
 	private Float peso = 0.0f;
 	
 	public Moeda() {}
 	
-	public Moeda(Integer idMoeda, String moeda, Float peso) {
-		this.idMoeda = idMoeda;
+	public Moeda(Integer id, String moeda, Float peso) {
+		this.id = id;
 		this.moeda = moeda;
 		this.peso = peso;
 	}
 
-	public Integer getIdMoeda() { return idMoeda; }
-	public void setIdMoeda(Integer idMoeda) { this.idMoeda = idMoeda; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public String getMoeda() { return moeda; }
 	public void setMoeda(String moeda) { this.moeda = moeda; }
 	public Float getPeso() { return peso; }

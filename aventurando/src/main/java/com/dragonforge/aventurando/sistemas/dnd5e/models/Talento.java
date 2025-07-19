@@ -10,26 +10,22 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name = "talentos")
 public class Talento {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idTalento;
-	@NotBlank
-	private String talento;
-	@NotBlank
-	private String descricaoTalento;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@NotBlank private String talento;
+	@NotBlank private String descricaoTalento;
 	private String requisito = "Não necessário";
 	
 	public Talento() {}
 	
-	public Talento(Integer idTalento, String talento, String descricaoTalento, String requisito) {
-		this.idTalento = idTalento;
+	public Talento(Integer id, String talento, String descricaoTalento, String requisito) {
+		this.id = id;
 		this.talento = talento;
 		this.descricaoTalento = descricaoTalento;
 		this.requisito = requisito;
 	}
 	
-	public Integer getIdTalento() { return idTalento; }
-	public void setIdTalento(Integer idTalento) { this.idTalento = idTalento; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public String getTalento() { return talento; }
 	public void setTalento(String talento) { this.talento = talento; }
 	public String getDescricaoTalento() { return descricaoTalento; }

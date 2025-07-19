@@ -12,25 +12,20 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name = "VINCULOS")
 public class Vinculo {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idVinculo;
-	@ManyToOne
-	@JoinColumn(name = "i_antecedente")
-	private Antecedente antecedente;
-	@NotBlank
-	private String descricaoVinculo;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@ManyToOne @JoinColumn(name = "i_antecedente") private Antecedente antecedente;
+	@NotBlank private String descricaoVinculo;
 	
 	public Vinculo() {}
 	
-	public Vinculo(Integer idVinculo, Antecedente antecedente, String descricaoVinculo) {
-		this.idVinculo = idVinculo;
+	public Vinculo(Integer id, Antecedente antecedente, String descricaoVinculo) {
+		this.id = id;
 		this.antecedente = antecedente;
 		this.descricaoVinculo = descricaoVinculo;
 	}
 
-	public Integer getIdVinculo() { return idVinculo; }
-	public void setIdVinculo(Integer idVinculo) { this.idVinculo = idVinculo; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public Antecedente getAntecedente() { return antecedente; }
 	public void setAntecedente(Antecedente antecedente) { this.antecedente = antecedente; }
 	public String getDescricaoVinculo() { return descricaoVinculo; }

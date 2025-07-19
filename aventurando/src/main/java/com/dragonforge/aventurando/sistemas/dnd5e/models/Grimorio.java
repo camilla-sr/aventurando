@@ -14,62 +14,37 @@ import jakarta.validation.constraints.Positive;
 @Entity
 @Table(name = "GRIMORIO")
 public class Grimorio {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idGrimorio;
-	@Column(name = "i_jogador")
-	private Integer jogador;
-	@ManyToOne
-	@JoinColumn(name = "i_habilidade_chave")
-	private HabilidadeMagia habilidadeMagia;
-	@ManyToOne
-	@JoinColumn(name = "i_magia")
-	private GlossarioMagias magia;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@Column(name = "i_jogador") private Integer jogador;
+	@ManyToOne @JoinColumn(name = "i_habilidade_chave") private HabilidadeMagia habilidadeMagia;
+	@ManyToOne @JoinColumn(name = "i_magia") private GlossarioMagias magia;
 	
-	@Positive
-	private Integer uso1Max;
-	@Positive
-	private Integer uso1Atual;
-	@Positive
-	private Integer uso2Max;
-	@Positive
-	private Integer uso2Atual;
-	@Positive
-	private Integer uso3Max;
-	@Positive
-	private Integer uso3Atual;
-	@Positive
-	private Integer uso4Max;
-	@Positive
-	private Integer uso4Atual;
-	@Positive
-	private Integer uso5Max;
-	@Positive
-	private Integer uso5Atual;
-	@Positive
-	private Integer uso6Max;
-	@Positive
-	private Integer uso6Atual;
-	@Positive
-	private Integer uso7Max;
-	@Positive
-	private Integer uso7Atual;
-	@Positive
-	private Integer uso8Max;
-	@Positive
-	private Integer uso8Atual;
-	@Positive
-	private Integer uso9Max;
-	@Positive
-	private Integer uso9Atual;
+	@Positive private Integer uso1Max;
+	@Positive private Integer uso1Atual;
+	@Positive private Integer uso2Max;
+	@Positive private Integer uso2Atual;
+	@Positive private Integer uso3Max;
+	@Positive private Integer uso3Atual;
+	@Positive private Integer uso4Max;
+	@Positive private Integer uso4Atual;
+	@Positive private Integer uso5Max;
+	@Positive private Integer uso5Atual;
+	@Positive private Integer uso6Max;
+	@Positive private Integer uso6Atual;
+	@Positive private Integer uso7Max;
+	@Positive private Integer uso7Atual;
+	@Positive private Integer uso8Max;
+	@Positive private Integer uso8Atual;
+	@Positive private Integer uso9Max;
+	@Positive private Integer uso9Atual;
 	
 	public Grimorio() {}
 	
-	public Grimorio(Integer idGrimorio, Integer jogador, HabilidadeMagia habilidadeMagia, GlossarioMagias magia,
+	public Grimorio(Integer id, Integer jogador, HabilidadeMagia habilidadeMagia, GlossarioMagias magia,
 		Integer uso1Max, Integer uso1Atual, Integer uso2Max, Integer uso2Atual, Integer uso3Max, Integer uso3Atual, Integer uso4Max,
 		Integer uso4Atual, Integer uso5Max, Integer uso5Atual, Integer uso6Max, Integer uso6Atual, Integer uso7Max, Integer uso7Atual,
 		Integer uso8Max, Integer uso8Atual, Integer uso9Max, Integer uso9Atual) {
-		this.idGrimorio = idGrimorio; this.jogador = jogador; this.habilidadeMagia = habilidadeMagia;
+		this.id = id; this.jogador = jogador; this.habilidadeMagia = habilidadeMagia;
 		this.magia = magia; this.uso1Max = uso1Max; this.uso1Atual = uso1Atual; this.uso2Max = uso2Max;
 		this.uso2Atual = uso2Atual; this.uso3Max = uso3Max; this.uso3Atual = uso3Atual; this.uso4Max = uso4Max;
 		this.uso4Atual = uso4Atual; this.uso5Max = uso5Max; this.uso5Atual = uso5Atual; this.uso6Max = uso6Max;
@@ -77,8 +52,8 @@ public class Grimorio {
 		this.uso8Atual = uso8Atual; this.uso9Max = uso9Max; this.uso9Atual = uso9Atual;
 	}
 
-	public Integer getIdGrimorio() { return idGrimorio; }
-	public void setIdGrimorio(Integer idGrimorio) { this.idGrimorio = idGrimorio; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public Integer getJogador() { return jogador; }
 	public void setJogador(Integer jogador) { this.jogador = jogador; }
 	public HabilidadeMagia getHabilidadeMagia() { return habilidadeMagia; }

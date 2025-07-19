@@ -13,31 +13,24 @@ import jakarta.validation.constraints.Positive;
 @Entity
 @Table(name = "EQUIPAMENTOS")
 public class Equipamento {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idItem;
-	@NotBlank
-	private String item;
-	@Positive
-	private Integer preco;
-	@OneToOne
-	@JoinColumn(name = "i_moeda")
-	private Moeda moeda;
-	@Positive
-	private Float peso = 0.0f;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@NotBlank private String item;
+	@Positive private Integer preco;
+	@OneToOne @JoinColumn(name = "i_moeda") private Moeda moeda;
+	@Positive private Float peso = 0.0f;
 	
 	public Equipamento() {}
 	
-	public Equipamento(Integer idItem, String item, Integer preco, Moeda moeda, Float peso) {
-		this.idItem = idItem;
+	public Equipamento(Integer id, String item, Integer preco, Moeda moeda, Float peso) {
+		this.id = id;
 		this.item = item;
 		this.preco = preco;
 		this.moeda = moeda;
 		this.peso = peso;
 	}
 
-	public Integer getIdItem() { return idItem; }
-	public void setIdItem(Integer idItem) { this.idItem = idItem; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public String getItem() { return item; }
 	public void setItem(String item) { this.item = item; }
 	public Integer getPreco() { return preco; }

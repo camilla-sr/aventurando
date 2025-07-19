@@ -13,29 +13,21 @@ import jakarta.validation.constraints.Positive;
 @Entity
 @Table(name = "ARMADURAS")
 public class Armadura {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idArmadura;
-	@NotBlank
-	private String tipo;
-	@Positive
-	private Integer preco;
-	@OneToOne
-	@JoinColumn(name = "i_moeda")
-	private Moeda moeda;
-	@Positive
-	private Integer classeArmadura;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@NotBlank private String tipo;
+	@Positive private Integer preco;
+	@OneToOne @JoinColumn(name = "i_moeda") private Moeda moeda;
+	@Positive private Integer classeArmadura;
 	private String modificador;
 	private String requisito;
 	private String desvantagem;
-	@Positive
-	private Float peso = 0.0f;
+	@Positive private Float peso = 0.0f;
 	
 	public Armadura() {}
 	
-	public Armadura(Integer idArmadura, String tipo, Integer preco, Moeda moeda, Integer classeArmadura, String modificador,
+	public Armadura(Integer id, String tipo, Integer preco, Moeda moeda, Integer classeArmadura, String modificador,
 			String requisito, String desvantagem, Float peso) {
-		this.idArmadura = idArmadura;
+		this.id = id;
 		this.tipo = tipo;
 		this.preco = preco;
 		this.moeda = moeda;
@@ -46,8 +38,8 @@ public class Armadura {
 		this.peso = peso;
 	}
 
-	public Integer getIdArmadura() { return idArmadura; }
-	public void setIdArmadura(Integer idArmadura) { this.idArmadura = idArmadura; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public String getTipo() {return tipo; }
 	public void setTipo(String tipo) { this.tipo = tipo; }
 	public Integer getPreco() { return preco; }

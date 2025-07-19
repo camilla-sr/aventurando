@@ -11,32 +11,22 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "CLASSES_MAGIA")
 public class ClasseMagica {			//ISSO AQUI É PRA LIGAR CLASSES NAS MAGIAS
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idLigacao;
-	@ManyToOne
-	@JoinColumn(name = "i_magia")
-	private GlossarioMagias magia;
-	
-	@ManyToOne
-	@JoinColumn(name = "i_classe")
-	private Classe classe;
-	
-	@ManyToOne
-	@JoinColumn(name = "i_habilidade")
-	private HabilidadeMagia habilidade;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@ManyToOne @JoinColumn(name = "i_magia") private GlossarioMagias magia;
+	@ManyToOne @JoinColumn(name = "i_classe") private Classe classe;
+	@ManyToOne @JoinColumn(name = "i_habilidade") private HabilidadeMagia habilidade;
 	
 	public ClasseMagica() {}
 	
-	public ClasseMagica(Integer idLigacao, GlossarioMagias magia, Classe classe, HabilidadeMagia habilidade) {
-		this.idLigacao = idLigacao;
+	public ClasseMagica(Integer id, GlossarioMagias magia, Classe classe, HabilidadeMagia habilidade) {
+		this.id = id;
 		this.magia = magia;
 		this.classe = classe;
 		this.habilidade = habilidade;
 	}
 
-	public Integer getIdLigacao() { return idLigacao; }
-	public void setIdLigacao(Integer idLigacao) { this.idLigacao = idLigacao; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public GlossarioMagias getMagia() { return magia; }
 	public void setMagia(GlossarioMagias magia) { this.magia = magia; }
 	public Classe getClasse() { return classe; }

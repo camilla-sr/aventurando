@@ -12,42 +12,23 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "DETALHES_PERSONAGEM")
 public class DetalhesPersonagem {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idDetalhes;	
-	@Column(name = "i_jogador")
-	private Integer player;
-	@ManyToOne
-	@JoinColumn(name = "i_habilidade_classe")
-	private HabilidadeClasse habilidadeClasse;
-	@ManyToOne
-	@JoinColumn(name = "i_habilidade_raca")
-	private HabilidadeRaca habilidadeRaca;
-	@ManyToOne
-	@JoinColumn(name = "i_arquetipo")
-	private Arquetipo arquetipo;
-	@ManyToOne
-	@JoinColumn(name = "i_talento")
-	private Talento talento;
-	@ManyToOne
-	@JoinColumn(name = "i_idioma")
-	private Idioma idioma;
-	@ManyToOne
-	@JoinColumn(name = "i_p_arma")		//PROFICIÊNCIA EM ARMAS
-	private Arma arma;
-	@ManyToOne
-	@JoinColumn(name = "i_p_armadura")	//PROFICIẼNCIA EM ARMADURAS
-	private Armadura armadura;
-	@ManyToOne
-	@JoinColumn(name = "i_p_ferramenta")	//PROFICIÊNCIA EM FERRAMENTA
-	private Ferramenta ferramenta;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;	
+	@Column(name = "i_jogador") private Integer player;
+	@ManyToOne @JoinColumn(name = "i_habilidade_classe") private HabilidadeClasse habilidadeClasse;
+	@ManyToOne @JoinColumn(name = "i_habilidade_raca") private HabilidadeRaca habilidadeRaca;
+	@ManyToOne @JoinColumn(name = "i_arquetipo") private Arquetipo arquetipo;
+	@ManyToOne @JoinColumn(name = "i_talento") private Talento talento;
+	@ManyToOne @JoinColumn(name = "i_idioma") private Idioma idioma;
+	@ManyToOne @JoinColumn(name = "i_p_arma") private Arma arma; //PROFICIÊNCIA EM ARMAS 
+	@ManyToOne @JoinColumn(name = "i_p_armadura") private Armadura armadura; //PROFICIẼNCIA EM ARMADURAS 
+	@ManyToOne @JoinColumn(name = "i_p_ferramenta") private Ferramenta ferramenta; //PROFICIÊNCIA EM FERRAMENTA 
 	
 	public DetalhesPersonagem() {}
 	
-	public DetalhesPersonagem(Integer idDetalhes, Integer player, HabilidadeClasse habilidadeClasse,
+	public DetalhesPersonagem(Integer id, Integer player, HabilidadeClasse habilidadeClasse,
 			HabilidadeRaca habilidadeRaca, Arquetipo arquetipo, Talento talento, Idioma idioma, Arma arma,
 			Armadura armadura, Ferramenta ferramenta) {
-		this.idDetalhes = idDetalhes;
+		this.id = id;
 		this.player = player;
 		this.habilidadeClasse = habilidadeClasse;
 		this.habilidadeRaca = habilidadeRaca;
@@ -59,8 +40,8 @@ public class DetalhesPersonagem {
 		this.ferramenta = ferramenta;
 	}
 
-	public Integer getIdDetalhes() { return idDetalhes; }
-	public void setIdDetalhes(Integer idDetalhes) { this.idDetalhes = idDetalhes; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public Integer getPlayer() { return player; }
 	public void setPlayer(Integer player) { this.player = player; }
 	public HabilidadeClasse getHabilidadeClasse() { return habilidadeClasse; }

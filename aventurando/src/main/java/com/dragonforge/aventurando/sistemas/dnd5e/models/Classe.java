@@ -12,28 +12,19 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name = "CLASSES")
 public class Classe {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idClasse;
-	@NotBlank
-	private String classe;
-	@NotBlank
-	private String descricaoClasse;
-	@NotBlank
-	private String habilidadePrimaria;
-	@OneToOne
-	@JoinColumn(name = "dado_vida")
-	private Dado dadoVida;
-	@NotBlank
-	private String pArmasArmaduras;
-	@NotBlank
-	private String pTesteResistencia;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Integer id;
+	@NotBlank private String classe;
+	@NotBlank private String descricaoClasse;
+	@NotBlank private String habilidadePrimaria;
+	@OneToOne @JoinColumn(name = "dado_vida") private Dado dadoVida;
+	@NotBlank private String pArmasArmaduras;
+	@NotBlank private String pTesteResistencia;
 	
 	public Classe() {}
 	
-	public Classe(Integer idClasse, String classe, String descricaoClasse, String habilidadePrimaria, Dado dadoVida, String pArmasArmaduras,
+	public Classe(Integer id, String classe, String descricaoClasse, String habilidadePrimaria, Dado dadoVida, String pArmasArmaduras,
 			String pTesteResistencia) {
-		this.idClasse = idClasse;
+		this.id = id;
 		this.classe = classe;
 		this.descricaoClasse = descricaoClasse;
 		this.habilidadePrimaria = habilidadePrimaria;
@@ -42,8 +33,8 @@ public class Classe {
 		this.pTesteResistencia = pTesteResistencia;
 	}
 
-	public Integer getIdClasse() { return idClasse; }
-	public void setIdClasse(Integer idClasse) { this.idClasse = idClasse; }
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
 	public String getClasse() { return classe; }
 	public void setClasse(String classe) { this.classe = classe; }
 	public String getDescricaoClasse() { return descricaoClasse; }
